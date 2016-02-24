@@ -1,0 +1,16 @@
+.breadcrumb {
+  list-style: none;
+  > li {
+    display: inline-block;
+    + li::before {
+      padding-left: 3px;
+      padding-right: 3px;
+      color: $breadcrumb-divider-color;
+      content: "#{$breadcrumb-divider}";
+    }
+  }
+
+  > .active {
+    color: $breadcrumb-active-color;
+  }
+}

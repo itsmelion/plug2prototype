@@ -1,0 +1,54 @@
+ol{
+  padding: 0;
+  list-style-position: inside;
+}
+#tablehead > ul{
+  padding: .6em .3em;
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: $black-38;
+  list-style-position: inside;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $black-12;
+  > li{
+  display: inline-block;
+  list-style: none;
+  }
+}
+
+.tablecard > ul{
+  padding: 1em .5em;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $black-38;
+  list-style-position: inside;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $black-12;
+  &:hover,&:focus{
+    background: rgba(0,0,0,.05);
+  }
+  > li{
+  display: inline-block;
+  list-style: none;
+  }
+}
+
+.celula-negocio > div{
+  float: left;
+  width: auto;
+  position: relative;
+  max-width: 50%;
+}
+
+
+$grid-width: 3.9%;
+.grid-1{width: $grid-width;}
+.grid-2{width: $grid-width*2}
+.grid-3{width: $grid-width*3}
+.grid-4{width: $grid-width*4}
+.grid-5{width: $grid-width*5}
+.grid-6{width: $grid-width*6}
+.grid-7{width: $grid-width*7}
+.grid-8{width: $grid-width*8}

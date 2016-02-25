@@ -1,44 +1,40 @@
+body{
+  background-color: #e0e0e0;
+}
+
 // CUSTOM checkbox        #####################
 /* Base for label styling */
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
-  margin-top: 10px;
-  margin-bottom: 10px;
   left: -9999px;
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #aaaaaa;
+  background: #f2f2f2;
+  border-radius: 0px;
   cursor: pointer;
+  margin-bottom: 0;
 }
 
 /* checkbox aspect */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
-  content: '';
-  position: relative;
-  left:.5em; top: 50%;
-  width: 30px; height: 30px;
-  margin-top: -15px;
-  margin-left: -15px;
-  border: 1px solid #777777;
-  background: #e0e0e0;
-  border-radius: 0px;
-  box-shadow: none
+  content: ''; //\25A1
 }
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
-  content: 'x';
-  position: relative;
-  top: 50%; left: .5em;
-  font-size: 30px;
-  line-height: 0.8;
+  content: '\2713';
+  position: absolute;
+  font-size: 2em;
   color: #09ad7e;
+  line-height: 30px;
+  left: 12px;
   transition: all .2s;
 }
 /* checked mark aspect changes */
@@ -70,7 +66,7 @@
 }
 
 /* hover style just for information */
-label:hover:before {
-  border: 1px solid #f00!important;
+label:hover {
+  border: 1px solid $brand-info !important;
 }
 // CUSTOM CHECKBOX END ######################

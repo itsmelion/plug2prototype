@@ -21,8 +21,9 @@
         <div class="col-lg-12">
           <div id="tablehead">
             <ul>
-              <li class="grid-1 text-truncate"> <input type="checkbox" name="#" value="#" /> </li>
-              <li class="grid-1 text-truncate"> <a href="#"><input type="checkbox" name="#" value="#" /><i class="icon"></i></a> </li>
+              <li class="grid-1 text-truncate hidden-sm-down"> <input type="checkbox" id="test1" name="#" value="#" checked="checked" />
+    						<label for="test1"></label> </li>
+              <li class="grid-1 text-truncate hidden-sm-down"> <a href="#"><i class="icon">&clubs;</i></a> </li>
               <li class="grid-8 text-truncate">
                 <ol class="breadcrumb text-truncate">
                   <li><a href="#">Home</a></li>
@@ -30,7 +31,7 @@
                   <li class="active">Data</li>
                 </ol>
               </li>
-              <li class="grid-2 text-truncate">
+              <li class="grid-2 text-truncate text-xs-center">
                 <span>Responsável</span>
               </li>
               <li class="grid-4 text-truncate">
@@ -50,40 +51,56 @@
         <div class="col-lg-12">
           <div class="tablecard">
             <ul>
-              <li class="grid-1"> <input type="checkbox" id="test2" name="#" value="#" checked="checked" />
+              <li class="grid-1 hidden-sm-down"> <input type="checkbox" id="test2" name="#" value="#" checked="checked" />
     <label for="test2"></label></li>
-              <li class="grid-1"> <a href="#"><i class="icon">Leaf</i></a> </li>
+              <li class="grid-1 hidden-sm-down"> <a href="#"><i class="icon">&clubs;</i></a> </li>
               <li class="grid-8 celula-negocio">
-                  <div class="text-truncate">Adesivagem Enterprise para Cafeína e Coca-Cola</div>
-                  <div class="text-truncate"> Intergalactic Federation of Plantes </div>
+                  <div class="text-truncate ">Adesivagem Enterprise para Cafeína e Coca-Cola</div>
+                  <div class="text-truncate textpurple"> Intergalactic Federation of Planets </div>
                   <div class="minifunil">
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">Circle</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
                   </div>
                   <div class="minirate">
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">Circle</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">Circle</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
+                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
                   </div>
               </li>
               <li class="grid-2 text-truncate">
-                <span>Responsável</span>
+                <img class="user-icon center-block" src="../master_img/round-dummy.svg" />
               </li>
-              <li class="grid-4 text-truncate">
-                <span>Previsão</span>
+              <li class="grid-4 hidden-sm-down previsao-warn text-truncate">
+                <span>12/03/2019</span>
+								<p>
+									Apenas 2 dias para fechar o negócio
+								</p>
               </li>
-              <li class="grid-4 text-truncate">
-                <span>Valores <a href="#"> Único <i class="caret"></i></a> / <a href="#"> Recorrente <i class="caret"></i></a> </span>
+              <li class="grid-4">
+                <ul class="valorunico hidden-sm-down text-truncate">
+									<li><img src="../master_img/round-dummy.svg" width="8px"/></li>
+									<li><p class="text-truncate">R$ 1200,<span>00</span></p></li>
+									<li><p class="text-truncate"><span class="text-truncate">recorrentes</span></p></li>
+								</ul>
+								<ul class="valorunico">
+									<li><img src="../master_img/round-dummy.svg" width="8px"/></li>
+									<li><p class="text-truncate">R$ 422,<span>65</span></p></li>
+									<li><p class="text-truncate"><span>único</span></p></li>
+								</ul>
               </li>
-              <li class="grid-3 text-truncate">
+              <li class="grid-3 text-truncate previsao-danger">
+								<i><img src="../master_img/round-dummy.svg" width="30px" /></i>
                 <span>Tarefas</span>
+								<span>
+									5 fev , às 18:00h
+								</span>
               </li>
             </ul>
           </div>

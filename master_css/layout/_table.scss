@@ -2,6 +2,7 @@ ol{
   padding: 0;
   list-style-position: inside;
 }
+#tablehead{@include media-breakpoint-down(sm) { width: 100%;}}
 #tablehead > ul{
   padding: .6em .3em;
   margin: 0;
@@ -11,9 +12,13 @@ ol{
   list-style-position: inside;
   border: 1px solid transparent;
   border-bottom: 1px solid $black-12;
+  background-color: #f2f2f2;
+  height: 50px;
+  @include media-breakpoint-down(sm) {height: auto; background-color: #f2f2f2; text-align: center; height: 8.2rem;}
   > li{
-  display: inline-block;
-  list-style: none;
+    float: left;
+    list-style: none;
+    @include media-breakpoint-down(sm) {width: 50%; padding: 0.5rem 0.5rem;}
   }
 }
 
@@ -23,16 +28,48 @@ ol{
   font-size: 1rem;
   font-weight: 500;
   color: $black-38;
+  background-color: #f5f5f5;
   list-style-position: inside;
   border: 1px solid transparent;
   border-bottom: 1px solid $black-12;
+  height: 100px;
   &:hover,&:focus{
     background: rgba(0,0,0,.05);
   }
+  @include media-breakpoint-down(sm) {height: auto;}
   > li{
-  display: inline-block;
+  float: left;
   list-style: none;
+  @include media-breakpoint-down(sm) {
+    display: inline-block;
+    float: none;
   }
+  }
+}
+.textpurple{
+  color: $brand-purple;
+}
+.previsao{
+  >span{font-size: 0.9rem;}
+  > p {font-size: 0.8rem; color: $brand-warning; font-weight: 300;}
+}
+.previsao-warn{
+  @extend .previsao;
+}
+.previsao-danger{
+  @extend .previsao;
+  color: $brand-danger;
+}
+.minifunil{
+  font-size: 2rem;
+  color: $brand-success;
+  background-image: url('#');
+  span:last-child{ font-size: 4rem; line-height: .3;}
+}
+.minirate{
+  margin-left: 2em;
+  font-size: 1.6rem;
+  color: $brand-primary;
 }
 
 .celula-negocio > div{
@@ -40,15 +77,32 @@ ol{
   width: auto;
   position: relative;
   max-width: 50%;
+  @include media-breakpoint-down(sm) { max-width: none; float: none;}
 }
 
+.user-icon{
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+.valorunico{padding:0;margin: 0;}
+.valorunico li{
+  display: inline-block;
+  list-style: none;
+  img{margin-top: -15px;}
+  p{
+  > span{
+    font-size: 0.75rem;
+    line-height: 0;
+  }}
+}
 
 $grid-width: 3.9%;
 .grid-1{width: $grid-width;}
-.grid-2{width: $grid-width*2}
-.grid-3{width: $grid-width*3}
-.grid-4{width: $grid-width*4}
-.grid-5{width: $grid-width*5}
-.grid-6{width: $grid-width*6}
-.grid-7{width: $grid-width*7}
-.grid-8{width: $grid-width*8}
+.grid-2{width: $grid-width*2; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-3{width: $grid-width*3; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-4{width: $grid-width*4; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-5{width: $grid-width*5; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-6{width: $grid-width*6; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-7{width: $grid-width*7; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-8{width: $grid-width*8; @include media-breakpoint-down(sm) {width: 100%;}}

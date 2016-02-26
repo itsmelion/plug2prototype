@@ -4,28 +4,34 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>PlugCRM 2{Dawnbreak}</title>
+		<title>PlugCRM {Dawnbreak}</title>
 		<meta name="description" content="Plataforma PlugCRM" />
 		<meta name="keywords" content="Plug CRM app" />
 		<meta name="author" content="PlugCRM" />
 		<link rel="shortcut icon" href="../master_img/favicon.ico">
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 		<link rel="stylesheet" type="text/css" href="../master_css/main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/css/tether-theme-arrows.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/css/tooltip-theme-arrows.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows-bounce.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-select/1.1.1/css/select-theme-default.css" />
+		<link rel="stylesheet" type="text/css" href="../master_css/vendor/shepherd-theme-arrows.css" />
+
 
 	</head>
 	<body>
 <!-- TABLE VIEW -->
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-lg-12">
           <div id="tablehead">
             <ul>
-              <li class="grid-1 text-truncate hidden-sm-down"> <input type="checkbox" id="test1" name="#" value="#" checked="checked" />
-    						<label for="test1"></label> </li>
-              <li class="grid-1 text-truncate hidden-sm-down"> <a href="#"><i class="icon">&clubs;</i></a> </li>
-              <li class="grid-8 text-truncate">
-                <ol class="breadcrumb text-truncate">
+              <li class="grid-1 hidden-sm-down">
+								<input type="checkbox" id="test1" name="#" value="#" checked="checked" />
+    						<label for="test1"></label>
+								<a href="#"><i class="ion-leaf"></i></a>
+							</li>
+              <li class="grid-6">
+                <ol class="breadcrumb">
                   <li><a href="#">Home</a></li>
                   <li><a href="#">Library</a></li>
                   <li class="active">Data</li>
@@ -34,57 +40,62 @@
               <li class="grid-2 text-truncate text-xs-center">
                 <span>Responsável</span>
               </li>
-              <li class="grid-4 text-truncate">
+              <li class="grid-3 text-truncate">
                 <span>Previsão</span>
               </li>
-              <li class="grid-4 text-truncate">
+              <li class="grid-4">
                 <span>Valores <a href="#"> Único <i class="caret"></i></a> / <a href="#"> Recorrente <i class="caret"></i></a> </span>
               </li>
-              <li class="grid-4 text-truncate">
-                <span>Tarefas</span><a href="#">...</a>
+              <li class="grid-2 text-truncate">
+                <span>Tarefas</span>
+              </li>
+							<li class="tablehead-menu">
+                <a href="#"><i class="ion-ios-keypad-outline"></i></a>
               </li>
             </ul>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12">
           <div class="tablecard">
             <ul>
-              <li class="grid-1 hidden-sm-down"> <input type="checkbox" id="test2" name="#" value="#" checked="checked" />
-    <label for="test2"></label></li>
-              <li class="grid-1 hidden-sm-down"> <a href="#"><i class="icon">&clubs;</i></a> </li>
-              <li class="grid-8 celula-negocio">
+              <li class="grid-1 hidden-sm-down">
+								<input type="checkbox" id="test2" name="#" value="#" checked="checked" />
+								<label for="test2"></label>
+								<a href="#"><i class="ion-leaf"></i></a>
+							</li>
+              <li class="grid-6 celula-negocio">
                   <div class="text-truncate ">Adesivagem Enterprise para Cafeína e Coca-Cola</div>
                   <div class="text-truncate textpurple"> Intergalactic Federation of Planets </div>
                   <div class="minifunil">
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Etapa Funil">&bull;</i></span>
+										<ol>
+                    <li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+                    <li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										<li><i class="ion-happy" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
+										</ol>
                   </div>
                   <div class="minirate">
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
-                    <span><i data-tooltip-placement="bottom" data-tooltip="Qualificação">&hearts;</i></span>
+										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
+										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
+										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
+										<span><i class="ion-android-star-outline" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
+										<span><i class="ion-android-star-outline" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
                   </div>
               </li>
               <li class="grid-2 text-truncate">
                 <img class="user-icon center-block" src="../master_img/round-dummy.svg" />
               </li>
-              <li class="grid-4 hidden-sm-down previsao-warn text-truncate">
+              <li class="grid-3 previsao-warn">
                 <span>12/03/2019</span>
 								<p>
 									Apenas 2 dias para fechar o negócio
 								</p>
               </li>
               <li class="grid-4">
-                <ul class="valorunico hidden-sm-down text-truncate">
+                <ul class="valorunico text-truncate">
 									<li><img src="../master_img/round-dummy.svg" width="8px"/></li>
 									<li><p class="text-truncate">R$ 1200,<span>00</span></p></li>
 									<li><p class="text-truncate"><span class="text-truncate">recorrentes</span></p></li>
@@ -95,16 +106,15 @@
 									<li><p class="text-truncate"><span>único</span></p></li>
 								</ul>
               </li>
-              <li class="grid-3 text-truncate previsao-danger">
-								<i><img src="../master_img/round-dummy.svg" width="30px" /></i>
-                <span>Tarefas</span>
+              <li class="grid-2 previsao-danger">
+								<i class="ion-android-call"></i>
+                <span>Tarefas</span><br />
 								<span>
 									5 fev , às 18:00h
 								</span>
               </li>
             </ul>
           </div>
-        </div>
       </div>
     </div>
 
@@ -112,11 +122,11 @@
 
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="master_js/tether.min.js"></script>
-    <script type="text/javascript" src="master_js/drop.min.js"></script>
-    <script type="text/javascript" src="master_js/select.min.js"></script>
-    <script type="text/javascript" src="master_js/smoothscroll.min.js"></script>
-    <script type="text/javascript" src="master_js/tooltip.min.js"></script>
+    <script src="../master_js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+    <script type="text/javascript" src="../master_js/drop.min.js"></script>
+    <script type="text/javascript" src="../master_js/select.min.js"></script>
+    <script type="text/javascript" src="../master_js/smoothscroll.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/js/tooltip.min.js"></script>
 	</body>
 </html>

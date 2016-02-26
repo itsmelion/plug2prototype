@@ -12,8 +12,11 @@ body{
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
-  height: 30px;
-  width: 30px;
+  height: 21px;
+  width: 21px;
+  position: relative;
+  left: 12px;
+  top: 8px;
   border: 1px solid #aaaaaa;
   background: #f2f2f2;
   border-radius: 0px;
@@ -30,11 +33,11 @@ body{
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '\2713';
-  position: absolute;
-  font-size: 2em;
+  position: relative;
+  font-size: 21px;
   color: #09ad7e;
-  line-height: 30px;
-  left: 12px;
+  left: 1px;
+  top: -5px;
   transition: all .2s;
 }
 /* checked mark aspect changes */

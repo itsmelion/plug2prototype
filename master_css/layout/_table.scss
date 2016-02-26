@@ -4,26 +4,27 @@ ol{
 }
 #tablehead{@include media-breakpoint-down(sm) { width: 100%;}}
 #tablehead > ul{
-  padding: .6em .3em;
+  padding: 4px 8px;
   margin: 0;
-  font-size: 0.85rem;
-  font-weight: 300;
+  font-size: 0.7rem;
+  font-weight: 500;
   color: $black-38;
   list-style-position: inside;
   border: 1px solid transparent;
   border-bottom: 1px solid $black-12;
   background-color: #f2f2f2;
-  height: 50px;
-  @include media-breakpoint-down(sm) {height: auto; background-color: #f2f2f2; text-align: center; height: 8.2rem;}
+  @include media-breakpoint-down(sm) {height: auto; background-color: #f2f2f2; text-align: center;}
   > li{
-    float: left;
+    display: inline-block;
     list-style: none;
-    @include media-breakpoint-down(sm) {width: 50%; padding: 0.5rem 0.5rem;}
+    @include media-breakpoint-down(sm) {width: 49%; padding: 0.5rem 0.5rem;}
   }
 }
 
+.tablehead-menu{ position: absolute; font-size: 1.7rem; @include media-breakpoint-down(sm) {position: static;} > a{padding:6px 12px;color: $black-54; &:hover, &:focus{color: $black-54; background-color: $black-12;}}}
+
 .tablecard > ul{
-  padding: 1em .5em;
+  padding: 12px 8px;
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
@@ -32,20 +33,24 @@ ol{
   list-style-position: inside;
   border: 1px solid transparent;
   border-bottom: 1px solid $black-12;
-  height: 100px;
+  border-left-width: 0;
+  border-right-width: 0;
   &:hover,&:focus{
     background: rgba(0,0,0,.05);
   }
-  @include media-breakpoint-down(sm) {height: auto;}
+  @include media-breakpoint-down(sm) {padding:1.5rem 1rem 0.8rem 1rem;}
   > li{
-  float: left;
+  display: inline-block;
   list-style: none;
+  > label{position: relative; top: -12px !important;left: 10px;}
   @include media-breakpoint-down(sm) {
     display: inline-block;
     float: none;
   }
   }
 }
+.ion-leaf{font-size: 1.2rem; position: relative;}
+.tablecard .ion-leaf{ top: -18px; }
 .textpurple{
   color: $brand-purple;
 }
@@ -60,24 +65,35 @@ ol{
   @extend .previsao;
   color: $brand-danger;
 }
-.minifunil{
-  font-size: 2rem;
-  color: $brand-success;
-  background-image: url('#');
-  span:last-child{ font-size: 4rem; line-height: .3;}
-}
-.minirate{
-  margin-left: 2em;
-  font-size: 1.6rem;
-  color: $brand-primary;
-}
-
-.celula-negocio > div{
+.celula-negocio {
+  min-width: 200px;
+  > div{
   float: left;
-  width: auto;
   position: relative;
   max-width: 50%;
+  padding-right: 1em;
   @include media-breakpoint-down(sm) { max-width: none; float: none;}
+  }
+}
+
+.minifunil{
+  background-image: url('../master_img/stroke.svg');
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: contain;
+  padding-right: 0 !important;
+  width: 175px !important;
+  max-width: none !important;
+  >ol{list-style: none;}
+  ol > li{display: inline-block; color: $brand-success; cursor: pointer; height: 28px; top: -7px; width: 21px; position: relative; font-size: 16px;}
+  ol > li:last-child{ font-size: 32px; top: 0; color: green;}
+}
+.minirate{
+  font-size: 1.4rem;
+  margin-left: .5em;
+  color: $brand-primary;
+  @include media-breakpoint-down(sm) {margin-left: 0;};
+  i{cursor: pointer;}
 }
 
 .user-icon{
@@ -97,7 +113,7 @@ ol{
   }}
 }
 
-$grid-width: 3.9%;
+$grid-width: 4.933%;
 .grid-1{width: $grid-width;}
 .grid-2{width: $grid-width*2; @include media-breakpoint-down(sm) {width: 100%;}}
 .grid-3{width: $grid-width*3; @include media-breakpoint-down(sm) {width: 100%;}}
@@ -106,3 +122,15 @@ $grid-width: 3.9%;
 .grid-6{width: $grid-width*6; @include media-breakpoint-down(sm) {width: 100%;}}
 .grid-7{width: $grid-width*7; @include media-breakpoint-down(sm) {width: 100%;}}
 .grid-8{width: $grid-width*8; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-9{width: $grid-width*9; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-10{width: $grid-width*10; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-11{width: $grid-width*11; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-12{width: $grid-width*12; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-13{width: $grid-width*13; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-14{width: $grid-width*14; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-15{width: $grid-width*15; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-16{width: $grid-width*16; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-17{width: $grid-width*17; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-18{width: $grid-width*18; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-19{width: $grid-width*19; @include media-breakpoint-down(sm) {width: 100%;}}
+.grid-20{width: $grid-width*20; @include media-breakpoint-down(sm) {width: 100%;}}

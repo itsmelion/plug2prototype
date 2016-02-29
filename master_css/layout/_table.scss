@@ -1,9 +1,10 @@
 ol{
   padding: 0;
+  margin-bottom: 0;
   list-style-position: inside;
 }
-#tablehead{@include media-breakpoint-down(sm) { width: 100%;}}
-#tablehead > ul{
+
+#tablehead {
   padding: 4px 8px;
   margin: 0;
   font-size: 0.7rem;
@@ -13,17 +14,17 @@ ol{
   border: 1px solid transparent;
   border-bottom: 1px solid $black-12;
   background-color: #f2f2f2;
-  @include media-breakpoint-down(sm) {height: auto; background-color: #f2f2f2; text-align: center;}
+  overflow: hidden;
+  @include media-breakpoint-down(sm) {height: auto; background-color: #f2f2f2; text-align: center; width: 100%;}
   > li{
-    display: inline-block;
     list-style: none;
     @include media-breakpoint-down(sm) {width: 49%; padding: 0.5rem 0.5rem;}
   }
 }
 
-.tablehead-menu{ position: absolute; font-size: 1.7rem; @include media-breakpoint-down(sm) {position: static;} > a{padding:6px 12px;color: $black-54; &:hover, &:focus{color: $black-54; background-color: $black-12;}}}
+.tablehead-menu{ font-size: 1.6rem; > a{padding:5px 10px; color: $black-54; &:hover, &:focus{color: $black-54; background-color: $black-12;}}}
 
-.tablecard > ul{
+.tablecard {
   padding: 12px 8px;
   margin: 0;
   font-size: 1rem;
@@ -31,7 +32,7 @@ ol{
   color: $black-38;
   background-color: #f5f5f5;
   list-style-position: inside;
-  border: 1px solid transparent;
+  border: 0;
   border-bottom: 1px solid $black-12;
   border-left-width: 0;
   border-right-width: 0;
@@ -40,8 +41,8 @@ ol{
   }
   @include media-breakpoint-down(sm) {padding:1.5rem 1rem 0.8rem 1rem;}
   > li{
-  display: inline-block;
   list-style: none;
+  display: inline-block;
   > label{position: relative; top: -12px !important;left: 10px;}
   @include media-breakpoint-down(sm) {
     display: inline-block;
@@ -49,8 +50,8 @@ ol{
   }
   }
 }
-.ion-leaf{font-size: 1.2rem; position: relative;}
-.tablecard .ion-leaf{ top: -18px; }
+.ion-leaf{font-size: 1.2rem;}
+// .tablecard a > .ion-leaf{ top: -18px; }
 .textpurple{
   color: $brand-purple;
 }
@@ -71,7 +72,6 @@ ol{
   float: left;
   position: relative;
   max-width: 50%;
-  padding-right: 1em;
   @include media-breakpoint-down(sm) { max-width: none; float: none;}
   }
 }
@@ -81,25 +81,23 @@ ol{
   background-position: center center;
   background-repeat: repeat;
   background-size: contain;
-  padding-right: 0 !important;
-  width: 175px !important;
+  padding-left: 0.5em;
   max-width: none !important;
-  >ol{list-style: none;}
-  ol > li{display: inline-block; color: $brand-success; cursor: pointer; height: 28px; top: -7px; width: 21px; position: relative; font-size: 16px;}
-  ol > li:last-child{ font-size: 32px; top: 0; color: green;}
+  >ol{list-style: none; height: 32px; line-height: 0; padding-right: 10px;}
+  ol > li{display: inline-block; color: $brand-success; cursor: pointer; height: 32px; top: -7px; width: 16px; position: relative; font-size: 16px;}
+  ol > li:last-child{ font-size: 32px; top: 0; color: #83bc25;}
 }
 .minirate{
-  font-size: 1.4rem;
-  margin-left: .5em;
+  font-size: 1.1rem;
+  margin-left: .2em;
   color: $brand-primary;
   @include media-breakpoint-down(sm) {margin-left: 0;};
   i{cursor: pointer;}
 }
 
 .user-icon{
-  width: 50px;
-  height: 50px;
-  margin-top: 5px;
+  width: 40px;
+  height: 40px;
 }
 .valorunico{padding:0;margin: 0;}
 .valorunico li{
@@ -112,9 +110,9 @@ ol{
     line-height: 0;
   }}
 }
-
-$grid-width: 4.933%;
-.grid-1{width: $grid-width;}
+$grid-1: 32px;
+$grid-width: 4.94%;
+.grid-1{width: $grid-1;}
 .grid-2{width: $grid-width*2; @include media-breakpoint-down(sm) {width: 100%;}}
 .grid-3{width: $grid-width*3; @include media-breakpoint-down(sm) {width: 100%;}}
 .grid-4{width: $grid-width*4; @include media-breakpoint-down(sm) {width: 100%;}}

@@ -1,7 +1,7 @@
 body{
   background-color: #e0e0e0;
 }
-
+p{margin: 0; margin-bottom: 0;}
 // CUSTOM checkbox        #####################
 /* Base for label styling */
 /* Base for label styling */
@@ -12,16 +12,11 @@ body{
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
-  height: 21px;
-  width: 21px;
-  position: relative;
-  left: 12px;
-  top: 8px;
   border: 1px solid #aaaaaa;
   background: #f2f2f2;
   border-radius: 0px;
   cursor: pointer;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* checkbox aspect */
@@ -34,11 +29,10 @@ body{
 [type="checkbox"]:checked + label:after {
   content: '\2713';
   position: relative;
-  font-size: 21px;
+  font-size: 1rem;
   color: #09ad7e;
-  left: 1px;
-  top: -5px;
   transition: all .2s;
+  padding: 0 0.2rem
 }
 /* checked mark aspect changes */
 [type="checkbox"]:not(:checked) + label:after {

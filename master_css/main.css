@@ -4413,6 +4413,8 @@ p {
   border: 1px solid #aaaaaa;
   background: #f2f2f2;
   border-radius: 0px;
+  width: 1.2rem;
+  height: 1.2rem;
   cursor: pointer;
   margin: 0; }
 
@@ -4427,6 +4429,7 @@ p {
   content: '\2713';
   position: relative;
   font-size: 1rem;
+  top: -0.14rem;
   color: #09ad7e;
   -webkit-transition: all .2s;
           transition: all .2s;

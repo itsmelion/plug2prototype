@@ -2,7 +2,7 @@ body{
   background-color: #e0e0e0;
 }
 p{margin: 0; margin-bottom: 0;}
-// CUSTOM checkbox        #####################
+// CUSTOM checkbox   #####################
 /* Base for label styling */
 /* Base for label styling */
 [type="checkbox"]:not(:checked),
@@ -15,6 +15,8 @@ p{margin: 0; margin-bottom: 0;}
   border: 1px solid #aaaaaa;
   background: #f2f2f2;
   border-radius: 0px;
+  width: 1.2rem;
+  height: 1.2rem;
   cursor: pointer;
   margin: 0;
 }
@@ -30,6 +32,7 @@ p{margin: 0; margin-bottom: 0;}
   content: '\2713';
   position: relative;
   font-size: 1rem;
+  top: -0.14rem;
   color: #09ad7e;
   transition: all .2s;
   padding: 0 0.2rem

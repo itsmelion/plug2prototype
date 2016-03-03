@@ -1,154 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="PlugDawnbreak">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>PlugCRM {Dawnbreak}</title>
-		<meta name="description" content="Plataforma PlugCRM" />
-		<meta name="keywords" content="Plug CRM app" />
-		<meta name="author" content="PlugCRM" />
-		<link rel="shortcut icon" href="../master_img/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../master_css/main.css" />
-		<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/css/tether-theme-arrows.css" />
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/css/tooltip-theme-arrows.css" />
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/css/drop-theme-arrows-bounce.css" />
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether-select/1.1.1/css/select-theme-default.css" />
-		<link rel="stylesheet" type="text/css" href="../master_css/vendor/shepherd-theme-arrows.css" />
-
-
-	</head>
-	<body>
-<!-- TABLE VIEW -->
-    <div class="container">
-      <div class="row">
-          <div id="tablehead" class="ghost-block">
-							<li class="grid-unit hidden-sm-down centered">
-								<div>
-									<input type="checkbox" id="test1" name="#" value="#" />
-									<label for="test1"></label>
-								</div>
-							</li>
-							<li class="grid-unit hidden-sm-down centered">
-								<div><a href="#" title="Negociação novinha em folha!"><i class="ion-leaf"></i></a></div>
-							</li>
-              <li class="grid-12 centered">
-                <ol class="breadcrumb">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Library</a></li>
-                  <li class="active">Data</li>
-                </ol>
-              </li>
-              <li class="grid-2 centered text-truncate text-xs-center">
-                <span>Responsável</span>
-              </li>
-              <li class="grid-2 centered text-truncate">
-                <span>Previsão</span>
-              </li>
-              <li class="grid-3 centered text-xs-center">
-                <span>Valores <a href="#"> Único <i class="caret"></i></a> / <a href="#"> Recorrente <i class="caret"></i></a> </span>
-              </li>
-              <li class="grid-2 centered text-truncate">
-                <span>Tarefas</span>
-              </li>
-							<li class="grid-unit centered tablehead-menu">
-                <a href="#"><i class="ion-ios-keypad-outline"></i></a>
-              </li>
-        </div>
-      </div>
-			<div class="row">
-          <div class="tablecard ghost-block">
-              <li class="grid-unit centered hidden-sm-down ">
-								<div>
-									<input type="checkbox" id="test2" name="#" value="#" checked="checked" />
-									<label for="test2"></label>
-								</div>
-							</li>
-							<li class="grid-unit centered hidden-sm-down ">
-								<div><a href="#" title="Negociação novinha em folha!"><i class="ion-leaf"></i></a></div>
-							</li>
-              <li class="grid-12 centered">
-								<div class="celula-negocio">
-									<div class="text-truncate ">Adesivagem Enterprise para Cafeína e Coca-Cola</div>
-                  <div class="text-truncate textpurple"> Intergalactic Federation of Planets </div>
-                  <div class="minifunil">
-										<ol>
-                    <li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-                    <li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										<li><i class="ion-record" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										<li><i class="ion-happy" data-tooltip-placement="bottom" data-tooltip="Etapa Funil"></i></li>
-										</ol>
-                  </div>
-                  <div class="minirate">
-										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
-										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
-										<span><i class="ion-android-star" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
-										<span><i class="ion-android-star-outline" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
-										<span><i class="ion-android-star-outline" data-tooltip-placement="bottom" data-tooltip="Qualificação"></i></span>
-                  </div>
-								</div>
-              </li>
-              <li class="grid-2 centered">
-                <div class="user-icon">
-									<i class="ion-record"></i>
-									<span>jk</span>
-									<!-- If there is a user picture:
-										<img src="../master_img/round-dummy.svg"
-									-->
-								</div>
-              </li>
-              <li class="grid-2 centered previsao-warn">
-                <p><span class="text-gray">12/03/2019</span><br />
-								Apenas 2 dias para fechar o negócio</p>
-              </li>
-              <li class="grid-3 centered text-gray">
-                <ul class="valorunico text-truncate">
-									<li><i class="ion-record"></i></li>
-									<li><p class="text-truncate">R$ 1200,<span>00</span></p></li>
-									<li><p class="text-truncate tipo-valor"><span class="text-truncate">recorrentes</span></p></li>
-								</ul>
-								<ul class="valorunico">
-									<li><i class="ion-record"></i></li>
-									<li><p class="text-truncate">R$ 422,<span>65</span></p></li>
-									<li><p class="text-truncate tipo-valor"><span class="text-truncate">único</span></p></li>
-								</ul>
-              </li>
-              <li class="grid-3 centered">
-								<ul class="previsao-warn">
-									<li>
-										<i class="ion-android-call"></i>
-									</li>
-									<li>
-										<p>
-										<span>Tarefas</span>
-										<br/> 5 fev , às 18:00h
-										</p>
-									</li>
-								</ul>
-              </li>
-          </div>
-      </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PlugCRM {Dawnbreak}</title>
+	<meta name="description" content="Plataforma PlugCRM" />
+	<meta name="keywords" content="Plug CRM app" />
+	<meta name="author" content="PlugCRM" />
+	<link rel="shortcut icon" href="../master_img/favicon.ico">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,500,900,100,100italic,300italic,400,400italic,500italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="../css/main.css" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
+</head>
+<body>
+<header class="blue text-white">
+	<a href="#" data-activates="gaveta-perfil" class="button-collapse"><i class="material-icons">menu</i></a>
+	<ul class="side-nav" id="gaveta-perfil">
+		<li><a href="#">Sass</a></li>
+		<li><a href="#">Components</a></li>
+		<li><a href="#">Javascript</a></li>
+		<li><a href="#">Mobile</a></li>
+	</ul>
 </div>
-<div class="container">
+</header>
+<main>
 	<div class="row">
-		<img src="../master_img/reference-list.png" />
+		Conteudo table
 	</div>
-</div>
+</main>
 
-
-
-
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="../master_js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/js/tooltip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-select/1.1.1/js/select.min.js"></script>
-    <script type="text/javascript" src="../master_js/smoothscroll.min.js"></script>
-
-	</body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- <script type="text/javascript" src="../js/bin/materialize.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/smoothscroll.min.js"></script>
+	<script type="text/javascript" src="../js/ready.js"></script>
+</body>
 </html>

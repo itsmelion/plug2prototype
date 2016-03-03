@@ -2,6 +2,14 @@ body{
   background-color: #e0e0e0;
 }
 p{margin: 0; margin-bottom: 0;}
+
+ul,ol{
+  padding-left: 0;
+  margin: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
 // CUSTOM checkbox   #####################
 /* Base for label styling */
 /* Base for label styling */
@@ -12,11 +20,11 @@ p{margin: 0; margin-bottom: 0;}
 }
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #cccccc;
   background: #f2f2f2;
   border-radius: 0px;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   cursor: pointer;
   margin: 0;
 }
@@ -32,10 +40,11 @@ p{margin: 0; margin-bottom: 0;}
   content: '\2713';
   position: relative;
   font-size: 1rem;
-  top: -0.14rem;
+  top: -0.18rem;
+  left: -0.1rem;
   color: #09ad7e;
   transition: all .2s;
-  padding: 0 0.2rem
+  padding: 0 0.2rem;
 }
 /* checked mark aspect changes */
 [type="checkbox"]:not(:checked) + label:after {

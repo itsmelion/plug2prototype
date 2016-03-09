@@ -1,94 +1,190 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PlugDawnbreak" ng-cloak>
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PlugCRM {Dawnbreak}</title>
-	<meta name="description" content="Plataforma PlugCRM" />
-	<meta name="keywords" content="Plug CRM app" />
-	<meta name="author" content="PlugCRM" />
-	<link rel="shortcut icon" href="../master_img/favicon.ico">
+<!-- General Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-language" content="pt-br">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<title>PlugCRM {Dawnbreak}</title>
+		<meta name="author" content="PlugCRM" />
+<!-- Favicon and others -->
+						<!-- O image tile é .PNG 144x144px transparente -->
+						<meta name="msapplication-TileImage" content="img/tile.png"/>
+						<meta name="msapplication-TileColor" content="#FF0000"/>
+						<!-- Opera Speed Dial Favicon -->
+						<link rel="icon" type="image/png" href="/speeddial-160px.png" />
+						<!-- Standard Favicon -->
+						<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"><![endif]-->
+						<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+						<link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16">
+						<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+						<link rel="icon" type="image/png" href="favicon-48.png" sizes="48x48">
+						<link rel="icon" type="image/png" href="favicon-64.png" sizes="64x64">
+						<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128">
+						<!-- iPad iOS7+ com Retina Display -->
+						<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+						<!-- iPad iOS7- com Retina Display -->
+						<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+						<!-- iPhone iOS7+ com Retina Display -->
+						<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+						<!-- iPhone iOS7- com Retina Display -->
+						<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+						<!-- iPad iOS7+ sem retina display e iPad Mini-->
+						<link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+						<!-- iPad iOS7- sem retina display  -->
+						<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+						<!-- iPhone iOS7-, iPod Touch e Android 2.2+  -->
+						<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!--end Favicon and others -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="reply-to" content="diego.cante@plugcrm.net">
+    <meta name="author" content="Christhopher Lion">
+    <meta name="fragment" content="!">
+    <base href="/" />
+    <!-- Responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-status-bar-style" content="lightblue">
+    <!-- Semantic meta -->
+    <meta name="description" content="Plataforma PlugCRM" />
+    <meta name="keywords" content="Plug CRM app" />
+    <!-- Facebook meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt-BR">
+    <meta property="og:locale:alternate" content="en_UK" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="fb:app_id" content="{{facebookAppId}}">
+    <meta property="og:site_name" content="{{page_title}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{url}}" />
+        <!-- if there is Image -->
+    <meta property="og:image" content="/img/brand/logo.png" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
+         <!-- if there is video -->
+    <meta property="og:video" content="{{video_url}}" />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+    <meta property="og:video:width" content="400" />
+    <meta property="og:video:height" content="300" />
+        <!-- If there is Audio -->
+    <meta property="og:audio" content="{{Audio_Url}}" />
+    <meta property="og:audio:type" content="audio/mpeg" />
+    <!-- Twitter meta -->
+    <meta property="twitter:title" content="{{title}}" />
+
+
+	<!-- Regular CSS & JS Includes -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,500,900,100,100italic,300italic,400,400italic,500italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-	<link type="text/css" rel="stylesheet" href="../css/main.css" />
+  <!-- <link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/angular-material.min.css" /> -->
+	<link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/main.css.min.css" />
 </head>
-<body layout="row" layout-align="start strech" style="background-color: #e0e0e0;" ng-controller="MyController">
-		<md-sidenav flex="15" layout="column" md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')">
+<body ng-app="PlugDawnbreak" ng-cloak layout="row" layout-align="start strech" style="background-color: #e0e0e0;" ng-controller="MyController">
+
+	<md-sidenav flex="25" layout="column" md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')" >
+			  <md-toolbar class="md-primary md-hue-1" layout="column" layout-padding>
+          <img src="#" width="100px" alt="logo" />
+          <md-list-item class="md-2-line" style="padding:0">
+            <img src="#" class="md-avatar" alt="avatar" />
+              <div class="md-list-item-text">
+                <h3>Christhopher Lion</h3>
+                <md-input-container style="margin:0">
+                <md-select placeholder="lion@stormcloud.me" ng-model="usermail" class="md-caption ">
+    			       <md-option> lion@stormcloud.me </md-option>
+                  <md-option> christhopher.leao@plugcrm.net </md-option>
+    			    	</md-select></md-input-container>
+              </div>
+          </md-list-item>
+			  </md-toolbar>
+    <div layout-align="space-around center" layout-padding>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+    </div>
+    <span flex></span>
+    <div layout-align="space-around center" layout-padding>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <p> Negociações </p>
+        </md-list-item>
+    </div>
+</md-sidenav>
 
 
+	<md-content layout="column" layout-fill>
 
-			  <div layout="column" layout-align="center center">
-					<div flex>
-						<img src="#" width="50px" />
-					</div>
-					<div flex>
-			    <md-select placeholder="Assign to user" ng-model="user" style="min-width: 200px;">
-			      <md-option> User </md-option>
-			    </md-select>
-					</div>
-			  </div>
-
-
-				<div flex>MENU ITEM</div>
-				<div flex>MENU ITEM</div>
-				<div flex>MENU ITEM</div>
-				<div flex>MENU ITEM</div>
-				<div flex>MENU ITEM</div>
-		</md-sidenav>
-
-
-	<div flex layout-fill layout="column">
-
-		<md-toolbar class="md-tall" style="background-color: #039BE5;" >
-      <div class="md-toolbar-tools">
+	<md-toolbar class="md-tall md-primary" layout-padding>
+      <div class="md-toolbar-tools" layout="row">
 				<md-button ng-click="openLeftMenu()" ng-controller="MyController">
 					<md-icon md-font-icon="material-icons " style="">menu</md-icon>
 				</md-button>
+
         <span flex></span>
 
-				<md-input-container class="md-block" style="margin-top:30px">
-	      <md-icon md-font-icon="material-icons ">search</md-icon>
-	      <input type="text" placeholder="Search">
-	    	</md-input-container>
+        <md-input-container md-no-float class="md-block">
+        <md-icon md-font-icon="material-icons ">search</md-icon>
+        <input ng-model="search" type="text" placeholder="Phone Number" style="padding-left: 30px">
+        </md-input-container>
 
         <md-button class="md-icon-button" aria-label="Favorite">
           <md-icon md-font-icon="material-icons " style="">notifications</md-icon>
         </md-button>
       </div>
 
-	    <div class="md-toolbar-tools">
-	      <div class="md-toolbar-tools">
-					<h2>Negociações</h2>
-				</div>
-	    </div>
-		<div class="md-toolbar-tools">
-				<div class="md-toolbar-tools md-toolbar-tools-bottom">
-					<md-select placeholder="Assign to user" ng-model="trem" style="min-width: 200px;">
-						<md-option> User </md-option>
-					</md-select>
-					<md-select placeholder="Assign to user" ng-model="user" style="min-width: 200px;">
-						<md-option> User </md-option>
-					</md-select>
-					<md-select placeholder="Assign to user" ng-model="user" style="min-width: 200px;">
-						<md-option> User </md-option>
-					</md-select>
+
+		<div class="md-toolbar-tools" >
+        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 20px;">
+          <label>Size</label>
+          <md-select ng-model="size">
+            <md-option value="#">Negociacoes</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 10px;">
+          <label>Size</label>
+          <md-select ng-model="size">
+            <md-option value="#">Negociacoes</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 10px;">
+          <label>Size</label>
+          <md-select ng-model="size">
+            <md-option value="#">Negociacoes</md-option>
+          </md-select>
+        </md-input-container>
 				<span flex></span>
-				<md-input-container style="margin-right: 10px; display:inline-block">
+
 					<md-button class="md-icon-button" aria-label="Favorite">
 						<md-icon md-font-icon="material-icons " style="">filter_list</md-icon>
 	        </md-button>
-				</md-input-container>
-				</div>
+
 		</div>
-	  </md-toolbar>
+	</md-toolbar>
 
-<div layout="row" style="overflow-y:scroll;">
+<div layout="column" style="overflow-y:auto;" layout-padding>
 
-	<div layout="row" flex="fill" class="list-item" style="height:4000px;">
-		<div flex="initial">
+	<div layout="row" layout-align="space-around center">
+		<div flex="none">
 			<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
 		</div>
 		<div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
@@ -97,12 +193,33 @@
 		<div flex>Second item in column</div>
 		<div flex>Second item in column</div>
 	</div>
+  <md-divider></md-divider>
 
 </div>
 
+<md-fab-toolbar md-open="demo.isOpen"
+                  md-direction="left">
+    <md-fab-trigger class="align-with-text">
+      <md-button aria-label="menu" class="md-fab md-secondary">
+        <md-icon md-font-icon="material-icons ">menu</md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-toolbar>
+      <md-fab-actions class="md-toolbar-tools">
+        <md-button aria-label="comment" class="md-icon-button">
+          <md-icon md-font-icon="material-icons ">account_circle</md-icon>
+        </md-button>
+        <md-button aria-label="label" class="md-icon-button">
+          <md-icon md-font-icon="material-icons ">account_circle</md-icon>
+        </md-button>
+        <md-button aria-label="photo" class="md-icon-button">
+          <md-icon md-font-icon="material-icons ">account_circle</md-icon>
+        </md-button>
+      </md-fab-actions>
+    </md-toolbar>
+  </md-fab-toolbar>
 
-
-</div> <!-- End Main Cointainer -->
+</md-content> <!-- End Main Cointainer -->
 
 
 

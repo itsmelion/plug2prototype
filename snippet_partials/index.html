@@ -79,20 +79,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,500,900,100,100italic,300italic,400,400italic,500italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-  <!-- <link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/angular-material.min.css" /> -->
+	<!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
+  <link type="text/css" rel="stylesheet" href="/Users/lion/bower-material/angular-material.nested.css" />
 	<link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/main.css.min.css" />
 </head>
-<body ng-app="PlugDawnbreak" ng-cloak layout="row" layout-align="start strech" style="background-color: #e0e0e0;" ng-controller="MyController">
+<body ng-app="PlugDawnbreak" ng-cloak layout="row" layout-align="start strech" ng-controller="MyController">
 
-	<md-sidenav flex="25" layout="column" md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')" >
-			  <md-toolbar class="md-primary md-hue-1" layout="column" layout-padding>
-          <img src="#" width="100px" alt="logo" />
+	<md-sidenav flex="none" style="max-width:300px"  layout="column" md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')" >
+			  <md-toolbar flex="initial" class="md-primary md-hue-1 user-toolbar" layout="column" layout-padding style="background-image: url(/Users/lion/plug2.0/master_img/userbg.jpg);">
+          <img src="/Users/lion/plug2.0/master_img/brand.png" width="72px" alt="logo" />
           <md-list-item class="md-2-line" style="padding:0">
-            <img src="#" class="md-avatar" alt="avatar" />
+            <img src="/Users/lion/plug2.0/master_img/dummy_square.png" class="md-avatar" alt="avatar" />
               <div class="md-list-item-text">
                 <h3>Christhopher Lion</h3>
-                <md-input-container style="margin:0">
+                <md-input-container>
                 <md-select placeholder="lion@stormcloud.me" ng-model="usermail" class="md-caption ">
     			       <md-option> lion@stormcloud.me </md-option>
                   <md-option> christhopher.leao@plugcrm.net </md-option>
@@ -102,103 +102,162 @@
 			  </md-toolbar>
     <div layout-align="space-around center" layout-padding>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <md-icon md-font-icon="material-icons ">work</md-icon>
           <p> Negociações </p>
         </md-list-item>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
-          <p> Negociações </p>
+          <md-icon md-font-icon="material-icons ">location_city</md-icon>
+          <p> Organizações </p>
         </md-list-item>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
-          <p> Negociações </p>
+          <md-icon md-font-icon="material-icons ">contacts</md-icon>
+          <p> Contatos </p>
         </md-list-item>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
-          <p> Negociações </p>
+          <md-icon md-font-icon="material-icons ">assignment</md-icon>
+          <p> Tarefas </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">insert_chart</md-icon>
+          <p> Relatórios </p>
+        </md-list-item>
+        <md-list-item ng-click="#">
+          <md-icon md-font-icon="material-icons ">dashboard</md-icon>
+          <p> Plug Live </p>
         </md-list-item>
     </div>
     <span flex></span>
     <div layout-align="space-around center" layout-padding>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <md-icon md-font-icon="material-icons ">settings</md-icon>
           <p> Negociações </p>
         </md-list-item>
         <md-list-item ng-click="#">
-          <md-icon md-font-icon="material-icons ">search</md-icon>
+          <md-icon md-font-icon="material-icons ">help</md-icon>
           <p> Negociações </p>
         </md-list-item>
     </div>
 </md-sidenav>
 
 
-	<md-content layout="column" layout-fill>
+	<div layout="column" layout-fill>
 
-	<md-toolbar class="md-tall md-primary" layout-padding>
+	<md-toolbar flex class="md-tall internal-header" layout-padding layout-fill layout"column">
       <div class="md-toolbar-tools" layout="row">
-				<md-button ng-click="openLeftMenu()" ng-controller="MyController">
-					<md-icon md-font-icon="material-icons " style="">menu</md-icon>
+				<md-button class="md-icon-button" aria-label="Navigation" ng-click="openLeftMenu()" ng-controller="MyController">
+					<md-icon md-font-icon="material-icons ">menu</md-icon>
 				</md-button>
-
         <span flex></span>
-
         <md-input-container md-no-float class="md-block">
         <md-icon md-font-icon="material-icons ">search</md-icon>
-        <input ng-model="search" type="text" placeholder="Phone Number" style="padding-left: 30px">
+        <input ng-model="search" type="text" placeholder="Phone Number">
         </md-input-container>
 
-        <md-button class="md-icon-button" aria-label="Favorite">
-          <md-icon md-font-icon="material-icons " style="">notifications</md-icon>
+        <md-button class="md-icon-button" aria-label="Notifications" ng-click="#">
+          <md-icon md-font-icon="material-icons ">notifications</md-icon>
         </md-button>
       </div>
 
+      <div class="md-toolbar-tools" flex="grow" layout-align="space-between center">
+        <h1 >Negociações</h1>
+      </div>
 
-		<div class="md-toolbar-tools" >
-        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 20px;">
-          <label>Size</label>
-          <md-select ng-model="size">
-            <md-option value="#">Negociacoes</md-option>
-          </md-select>
-        </md-input-container>
-        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 10px;">
-          <label>Size</label>
-          <md-select ng-model="size">
-            <md-option value="#">Negociacoes</md-option>
-          </md-select>
-        </md-input-container>
-        <md-input-container class="md-toolbar-tools-bottom " layout="row" style="margin-right: 10px;">
-          <label>Size</label>
-          <md-select ng-model="size">
-            <md-option value="#">Negociacoes</md-option>
+
+		<div layout="row" layout-align="space-between center" class="md-toolbar-tools-bottom" >
+      <md-input-container flex="none"  class="md-subhead ">
+        <md-select placeholder="Negociacoes" ng-model="user">
+          <md-option ng-value="user">Negocieacos</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container flex="none" class="md-subhead " >
+        <md-select placeholder="Negociacoes" ng-model="user">
+          <md-option ng-value="user">Negocieacos</md-option>
+          <md-option ng-value="user">Negocieacos</md-option>
+        </md-select>
+      </md-input-container>
+        <md-input-container flex="none" class="md-subhead " >
+          <md-select placeholder="Negociacoes" ng-model="user">
+            <md-option ng-value="user">Negocieacos</md-option>
+            <md-option ng-value="user">Negocieacos</md-option>
+            <md-option ng-value="user">Negocieacos</md-option>
           </md-select>
         </md-input-container>
 				<span flex></span>
 
-					<md-button class="md-icon-button" aria-label="Favorite">
-						<md-icon md-font-icon="material-icons " style="">filter_list</md-icon>
+					<md-button class="md-icon-button" aria-label="Favorite" ng-click="#">
+						<md-icon md-font-icon="material-icons">filter_list</md-icon>
 	        </md-button>
-
+        <br />
 		</div>
 	</md-toolbar>
 
-<div layout="column" style="overflow-y:auto;" layout-padding>
+<md-content layout="column" >
+  <md-subheader class="md-primary">
 
-	<div layout="row" layout-align="space-around center">
-		<div flex="none">
-			<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
-		</div>
-		<div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
-		<div flex>Second item in column</div>
-		<div flex>Second item in column</div>
-		<div flex>Second item in column</div>
-		<div flex>Second item in column</div>
-	</div>
-  <md-divider></md-divider>
 
-</div>
+        <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+         <md-button aria-label="Settings">
+           Responsável
+         </md-button>
+         <md-button aria-label="Settings">
+           otro
+         </md-button>
+         <md-button aria-label="Settings">
+           Responsável
+         </md-button>
+         <md-button aria-label="Settings">
+           Responsável
+         </md-button>
+         <md-button aria-label="Settings">
+           Responsável
+         </md-button>
 
-<md-fab-toolbar md-open="demo.isOpen"
-                  md-direction="left">
+  </md-subheader>
+
+    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
+    <div flex="none" >
+      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+    </div>
+    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    </md-card>
+    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
+    <div flex="none" >
+      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+    </div>
+    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    </md-card>
+    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
+    <div flex="none" >
+      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+    </div>
+    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    </md-card>
+    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
+    <div flex="none" >
+      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+    </div>
+    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    <div flex>Second item in column</div>
+    </md-card>
+
+</md-content>
+
+<md-fab-toolbar md-open="demo.isOpen" md-direction="left">
     <md-fab-trigger class="align-with-text">
       <md-button aria-label="menu" class="md-fab md-secondary">
         <md-icon md-font-icon="material-icons ">menu</md-icon>
@@ -219,7 +278,7 @@
     </md-toolbar>
   </md-fab-toolbar>
 
-</md-content> <!-- End Main Cointainer -->
+</div> <!-- End Main Cointainer -->
 
 
 
@@ -239,7 +298,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
 	<!-- Angular Material Library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+	<script src="/Users/lion/bower-material/angular-material.min.js"></script>
 
 	<!-- Your application bootstrap  -->
 	<script type="text/javascript">
@@ -251,6 +310,7 @@
 	  };
 	});
 	</script>
+
 	<script type="text/javascript" src="../js/smoothscroll.min.js"></script>
 </body>
 </html>

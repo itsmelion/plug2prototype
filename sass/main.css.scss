@@ -3,3 +3,21 @@
 md-input-container{
   margin: 0 0 0 0 !important;
 }
+md-checkbox {
+  margin-bottom: 0;
+}
+
+.internal-header md-input-container .md-errors-spacer{
+  position: absolute;
+  margin-top: 32px;
+}
+
+.user-toolbar{
+  background-size: cover;
+}
+
+.table-list{
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: none;
+}

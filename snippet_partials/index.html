@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="PlugDawnbreak">
 <head>
 <!-- General Meta -->
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
 <!-- Favicon and others -->
 						<!-- O image tile é .PNG 144x144px transparente -->
 						<meta name="msapplication-TileImage" content="img/tile.png"/>
-						<meta name="msapplication-TileColor" content="#FF0000"/>
+						<meta name="msapplication-TileColor" content="#4285F4"/>
 						<!-- Opera Speed Dial Favicon -->
 						<link rel="icon" type="image/png" href="/speeddial-160px.png" />
 						<!-- Standard Favicon -->
@@ -80,10 +80,10 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,500,900,100,100italic,300italic,400,400italic,500italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
-  <link type="text/css" rel="stylesheet" href="/Users/lion/bower-material/angular-material.nested.css" />
+  <link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/angular-material.nested.css" />
 	<link type="text/css" rel="stylesheet" href="/Users/lion/plug2.0/sass/main.css.min.css" />
 </head>
-<body ng-app="PlugDawnbreak" ng-cloak layout="row" layout-align="start strech" ng-controller="MyController">
+<body layout="row" layout-align="start strech" ng-controller="MyController">
 
 	<md-sidenav flex="none" style="max-width:300px"  layout="column" md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')" >
 			  <md-toolbar flex="initial" class="md-primary md-hue-1 user-toolbar" layout="column" layout-padding style="background-image: url(/Users/lion/plug2.0/master_img/userbg.jpg);">
@@ -130,19 +130,19 @@
     <div layout-align="space-around center" layout-padding>
         <md-list-item ng-click="#">
           <md-icon md-font-icon="material-icons ">settings</md-icon>
-          <p> Negociações </p>
+          <p> Configurações </p>
         </md-list-item>
         <md-list-item ng-click="#">
           <md-icon md-font-icon="material-icons ">help</md-icon>
-          <p> Negociações </p>
+          <p> Ajuda </p>
         </md-list-item>
     </div>
 </md-sidenav>
 
 
-	<div layout="column" layout-fill>
+<div layout="column" layout-fill>
 
-	<md-toolbar flex class="md-tall internal-header" layout-padding layout-fill layout"column">
+	<md-toolbar class="md-tall internal-header" layout-padding layout-fill layout"column">
       <div class="md-toolbar-tools" layout="row">
 				<md-button class="md-icon-button" aria-label="Navigation" ng-click="openLeftMenu()" ng-controller="MyController">
 					<md-icon md-font-icon="material-icons ">menu</md-icon>
@@ -190,11 +190,7 @@
         <br />
 		</div>
 	</md-toolbar>
-
-<md-content layout="column" >
   <md-subheader class="md-primary">
-
-
         <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
          <md-button aria-label="Settings">
            Responsável
@@ -211,56 +207,1320 @@
          <md-button aria-label="Settings">
            Responsável
          </md-button>
-
   </md-subheader>
+<md-content layout="column" >
 
-    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
+
+    <md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
     <div flex="none" >
       <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
     </div>
-    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    </md-card>
-    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
-    <div flex="none" >
-      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+    <md-list >
+      <md-list-item>
+      <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+      <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list class="who">
+      <md-list-item>
+      <span>Louis Laurence</span>
+      </md-list-item>
+      <md-list-item>
+      <span>Inside Sails</span>
+      </md-list-item>
+    </md-list>
+    <md-radio-group ng-model="rating" class="rate">
+      <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+      <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+      <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+      <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+    </md-radio-group>
+    <md-list class="recorrencia">
+      <md-list-item>
+      <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+      <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+      </md-list-item>
+      <md-list-item>
+      <md-icon class="material-icons">fiber_smart_record</md-icon>
+      <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+      </md-list-item>
+    </md-list>
+    <md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+    <div class="tarefas" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+      <md-list>
+        <md-list-item>
+          <span>Reunião</span>
+        </md-list-item>
+        <md-list-item>
+          <span>Ontem, às 13 horas</span>
+        </md-list-item>
+      </md-list>
     </div>
-    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    </md-card>
-    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
-    <div flex="none" >
-      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
-    </div>
-    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    </md-card>
-    <md-card class="table-list" layout="row" layout-align="space-around center" layout-padding >
-    <div flex="none" >
-      <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
-    </div>
-    <div flex="initial" class="user-picture"><md-icon md-font-icon="material-icons ">account_circle</md-icon><span>LA</span></div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    <div flex>Second item in column</div>
-    </md-card>
+    <md-button class="md-icon-button" aria-label="More" ng-click="#">
+      <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+    </md-button>
+  </md-card>
+
+  <md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+  <div flex="none" >
+    <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+  </div>
+  <md-list >
+    <md-list-item>
+    <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+    <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+    </md-list-item>
+  </md-list>
+  <md-list class="who">
+    <md-list-item>
+    <span>Louis Laurence</span>
+    </md-list-item>
+    <md-list-item>
+    <span>Inside Sails</span>
+    </md-list-item>
+  </md-list>
+  <md-radio-group ng-model="rating" class="rate">
+    <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+    <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+    <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+    <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+    <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  </md-radio-group>
+  <md-list class="recorrencia">
+    <md-list-item>
+    <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+    <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+    </md-list-item>
+    <md-list-item>
+    <md-icon class="material-icons">fiber_smart_record</md-icon>
+    <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+    </md-list-item>
+  </md-list>
+  <md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+  <div class="tarefas" layout="row">
+    <md-icon class="material-icons md-primary">phone</md-icon>
+    <md-list>
+      <md-list-item>
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item>
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+  </div>
+  <md-button class="md-icon-button" aria-label="More" ng-click="#">
+    <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+  </md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+<md-card class="table-list"  layout="row" layout-align="space-around center" layout-padding >
+<div flex="none" >
+  <md-checkbox ng-model="check" aria-label="Checkbox 1"></md-checkbox>
+</div>
+<md-list >
+  <md-list-item>
+  <img class="md-avatar" src="/Users/lion/plug2.0/master_img/dummy_square.png">
+  <!--IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+  </md-list-item>
+</md-list>
+<md-list class="who">
+  <md-list-item>
+  <span>Louis Laurence</span>
+  </md-list-item>
+  <md-list-item>
+  <span>Inside Sails</span>
+  </md-list-item>
+</md-list>
+<md-radio-group ng-model="rating" class="rate">
+  <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+  <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+  <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+</md-radio-group>
+<md-list class="recorrencia">
+  <md-list-item>
+  <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
+  <p>R$ 12.338,<span>00</span></p><span>únicos</span>
+  </md-list-item>
+  <md-list-item>
+  <md-icon class="material-icons">fiber_smart_record</md-icon>
+  <p>R$ 1200,<span>00</span></p><span>recorrentes</span>
+  </md-list-item>
+</md-list>
+<md-slider flex class="md-primary" md-discrete ng-model="funil" step="1" min="1" max="7" aria-label="rating"></md-slider>
+<div class="tarefas" layout="row">
+  <md-icon class="material-icons md-primary">phone</md-icon>
+  <md-list>
+    <md-list-item>
+      <span>Reunião</span>
+    </md-list-item>
+    <md-list-item>
+      <span>Ontem, às 13 horas</span>
+    </md-list-item>
+  </md-list>
+</div>
+<md-button class="md-icon-button" aria-label="More" ng-click="#">
+  <md-icon md-font-icon="material-icons ">more_vert</md-icon>
+</md-button>
+</md-card>
+
+
 
 </md-content>
 
 <md-fab-toolbar md-open="demo.isOpen" md-direction="left">
     <md-fab-trigger class="align-with-text">
       <md-button aria-label="menu" class="md-fab md-secondary">
-        <md-icon md-font-icon="material-icons ">menu</md-icon>
+        <md-icon md-font-icon="material-icons ">add</md-icon>
       </md-button>
     </md-fab-trigger>
     <md-toolbar>
@@ -298,7 +1558,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
 	<!-- Angular Material Library -->
-	<script src="/Users/lion/bower-material/angular-material.min.js"></script>
+	<script src="/Users/lion/plug2.0/js/angular-material.min.js"></script>
 
 	<!-- Your application bootstrap  -->
 	<script type="text/javascript">
@@ -311,6 +1571,6 @@
 	});
 	</script>
 
-	<script type="text/javascript" src="../js/smoothscroll.min.js"></script>
+	<!-- Script for nice and ease scroll in scrollspy <script type="text/javascript" src="/Users/lion/plug2.0/js/smoothscroll.min.js"></script> -->
 </body>
 </html>

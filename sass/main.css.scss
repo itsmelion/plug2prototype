@@ -16,8 +16,67 @@ md-checkbox {
   background-size: cover;
 }
 
+
 .table-list{
   margin: 0;
   border-bottom: 1px solid #e0e0e0;
   box-shadow: none;
+  border-left: 3px solid #d53b3b;
+  min-height: 90px;
+  &:nth-of-type(2){border-left: 3px solid transparent;}
+  &:nth-of-type(3){border-left: 3px solid transparent;}
+  &:nth-of-type(4){border-left: 3px solid rgb(112, 201, 113);}
+  &:nth-of-type(5){border-left: 3px solid transparent;}
+  &:nth-of-type(6){border-left: 3px solid rgb(112, 201, 113);}
+  &:nth-of-type(7){border-left: 3px solid rgb(236, 218, 99);}
+}
+
+.rate{
+  display: inline-block;
+  md-radio-button{display: inline-block; margin-bottom: 0}
+  md-radio-button ._md-container {display: none;}
+  md-radio-button ._md-label {margin-left: 0;}
+}
+.who{
+  md-list-item .md-avatar, md-list-item .md-avatar-icon, md-list-item ._md-list-item-inner .md-avatar, md-list-item ._md-list-item-inner .md-avatar-icon {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+  md-list-item, md-list-item ._md-list-item-inner {
+    min-height: 20px;
+    &:nth-child(2){font-size: .8rem; color: rgba(0,0,0,.37);}
+  }
+}
+
+.recorrencia{
+  md-list-item > div.md-primary > md-icon:not(.md-avatar-icon), md-list-item > div.md-secondary > md-icon:not(.md-avatar-icon), md-list-item > md-icon:first-child:not(.md-avatar-icon), md-list-item > md-icon.md-secondary:not(.md-avatar-icon), md-list-item ._md-list-item-inner > div.md-primary > md-icon:not(.md-avatar-icon), md-list-item ._md-list-item-inner > div.md-secondary > md-icon:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon.md-secondary:not(.md-avatar-icon) {
+  width: auto;
+  margin-top: 3px;
+  margin-bottom: 0;
+  min-height: 0;
+  }
+  span{color: rgba(0,0,0,0.54); font-size: 0.8rem; margin-left: 10px;}
+  p >span{color: inherit; font-size: 0.8rem; vertical-align: top; margin-left: 0;}
+  md-list-item > md-icon:first-child:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
+    margin-right: 10px;
+    font-size: .8rem;
+  }
+  md-list-item, md-list-item ._md-list-item-inner {
+    min-height: 32px;
+  }
+  md-icon{height: auto;}
+}
+
+.tarefas{
+  md-list-item .md-avatar, md-list-item .md-avatar-icon, md-list-item ._md-list-item-inner .md-avatar, md-list-item ._md-list-item-inner .md-avatar-icon {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+  }
+  md-list-item, md-list-item ._md-list-item-inner {
+    min-height: 20px;
+    &:nth-child(2){font-size: .8rem; color: rgba(0,0,0,.37);}
+  }
+  md-icon{height: auto; }
 }

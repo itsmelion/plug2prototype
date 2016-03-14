@@ -16,6 +16,31 @@ md-checkbox {
   background-size: cover;
 }
 
+.subtoolbar{
+  *{text-align: left; margin-right: 0}
+}
+
+md-fab-toolbar {
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+;}
+
+.truncate{
+  overflow: hidden; text-overflow: ellipsis;
+}
+
+.md-subheader ._md-subheader-inner {
+    display: inline-block;
+    padding: 0px;
+    // md-checkbox{margin-left: 8px}
+}
+
+md-list-item._md-no-proxy, md-list-item ._md-no-style {
+    position: relative;
+    padding: 0px 0px;
+    .md-avatar{ margin: 0}
+}
 
 .table-list{
   margin: 0;
@@ -23,6 +48,7 @@ md-checkbox {
   box-shadow: none;
   border-left: 3px solid #d53b3b;
   min-height: 90px;
+  @media screen and (max-width: 600px){ border-left: 0; border-top: 5px solid #d53b3b; }
   &:nth-of-type(2){border-left: 3px solid transparent;}
   &:nth-of-type(3){border-left: 3px solid transparent;}
   &:nth-of-type(4){border-left: 3px solid rgb(112, 201, 113);}
@@ -79,4 +105,8 @@ md-checkbox {
     &:nth-child(2){font-size: .8rem; color: rgba(0,0,0,.37);}
   }
   md-icon{height: auto; }
+}
+
+.md-caption{
+  font-size: 12px !important;
 }

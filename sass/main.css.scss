@@ -1,12 +1,5 @@
 @import '../sass/_personal_vars.scss';
 
-md-input-container{
-  margin: 0 0 0 0 !important;
-}
-md-checkbox {
-  margin-bottom: 0;
-}
-
 .internal-header md-input-container .md-errors-spacer{
   position: absolute;
   margin-top: 32px;
@@ -20,12 +13,6 @@ md-checkbox {
   *{text-align: left; margin-right: 0}
 }
 
-md-fab-toolbar {
-    position: fixed;
-    bottom: 0;
-    right: 5px;
-;}
-
 .truncate{
   overflow: hidden; text-overflow: ellipsis;
 }
@@ -36,11 +23,11 @@ md-fab-toolbar {
     // md-checkbox{margin-left: 8px}
 }
 
-md-list-item._md-no-proxy, md-list-item ._md-no-style {
-    position: relative;
-    padding: 0px 0px;
-    .md-avatar{ margin: 0}
-}
+// md-list-item._md-no-proxy, md-list-item ._md-no-style {
+//     position: relative;
+//     padding: 0px 0px;
+//     .md-avatar{ margin: 0}
+// }
 
 .table-list{
   margin: 0;

@@ -9,12 +9,18 @@
   margin-top: 32px;
 }
 
+.toolbarselect{
+  md-input-container{
+  margin: 0 6px; padding: 8px}
+}
+
 .user-toolbar{
   background-size: cover;
 }
 
 .subtoolbar{
-  *{text-align: left; margin-right: 0}
+  outline: 0;
+  *{text-align: left;}
 }
 
 .truncate{
@@ -27,7 +33,9 @@
   box-shadow: none;
   border-left: 3px solid #d53b3b;
   min-height: 90px;
-  @media screen and (max-width: 600px){ border-left: 0; border-top: 5px solid #d53b3b; }
+  > *{margin-right: 16px;}
+  @media screen and (max-width: 960px){ border-left: 6px solid #d53b3b; margin-bottom: 24px;}
+  @media screen and (max-width: 600px){ border-left: 0; border-top: 5px solid #d53b3b; margin-bottom: 24px;}
   &:nth-of-type(2){border-left: 3px solid transparent;}
   &:nth-of-type(3){border-left: 3px solid transparent;}
   &:nth-of-type(4){border-left: 3px solid rgb(112, 201, 113);}
@@ -41,6 +49,12 @@
   md-radio-button{display: inline-block; margin-bottom: 0}
   md-radio-button ._md-container {display: none;}
   md-radio-button ._md-label {margin-left: 0;}
+  .material-icons{font-size: 20px}
+  md-icon{width: 20px; height: 20px;}
+}
+
+.userpic{
+.md-avatar{margin:0;}
 }
 .who{
   md-list-item .md-avatar, md-list-item .md-avatar-icon, md-list-item ._md-list-item-inner .md-avatar, md-list-item ._md-list-item-inner .md-avatar-icon {

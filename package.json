@@ -1,0 +1,30 @@
+{
+  "name": "Plug2.0",
+  "private": true,
+  "version": "2.0.1",
+  "description": "The newest PlugCRM",
+  "repository": "https://git.izap.com.br/plugcrm/plug_2-0.git",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://git.izap.com.br/plugcrm/plug_2-0"
+    }
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-aria": "latest",
+    "angular-material": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest",
+    "karma": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-jasmine": "latest",
+    "live-server": "latest"
+  },
+  "scripts": {
+    "prestart": "npm update",
+    "tests": "karma start ./test/karma.conf.js"
+  }
+}

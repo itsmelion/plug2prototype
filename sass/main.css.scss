@@ -1,5 +1,9 @@
 @import '../sass/_personal_vars.scss';
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+ display: none !important;
+}
+
 .internal-header md-input-container .md-errors-spacer{
   position: absolute;
   margin-top: 32px;
@@ -16,18 +20,6 @@
 .truncate{
   overflow: hidden; text-overflow: ellipsis;
 }
-
-.md-subheader ._md-subheader-inner {
-    display: inline-block;
-    padding: 0px;
-    // md-checkbox{margin-left: 8px}
-}
-
-// md-list-item._md-no-proxy, md-list-item ._md-no-style {
-//     position: relative;
-//     padding: 0px 0px;
-//     .md-avatar{ margin: 0}
-// }
 
 .table-list{
   margin: 0;
@@ -92,8 +84,4 @@
     &:nth-child(2){font-size: .8rem; color: rgba(0,0,0,.37);}
   }
   md-icon{height: auto; }
-}
-
-.md-caption{
-  font-size: 12px !important;
 }

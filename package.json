@@ -16,7 +16,8 @@
     "angular-aria": "latest",
     "angular-material": "http://github.com/angular/bower-material/tarball/master",
     "angular-messages": "^1.5.1",
-    "jasmine-core": "^2.4.1"
+    "jasmine-core": "^2.4.1",
+    "material-design-icons": "^2.2.2"
   },
   "devDependencies": {
     "angular-mocks": "latest",

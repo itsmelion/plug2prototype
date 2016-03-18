@@ -17,6 +17,15 @@
   .subtoolbar * {
     text-align: left; }
 
+.filterpull .innerfilters md-list md-list-item {
+  margin-left: 32px;
+  min-height: auto; }
+  .filterpull .innerfilters md-list md-list-item > md-icon {
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    margin-top: -12px; }
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis; }

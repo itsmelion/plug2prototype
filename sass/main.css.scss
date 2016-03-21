@@ -24,13 +24,18 @@
 }
 
 .filterpull{
-  .innerfilters md-list{
-    md-list-item{
-    > md-icon{position: absolute; left: -18px; top: 50%; margin-top: -12px;}
-    margin-left: 32px;
-    min-height: auto;
+  .innerfilters {
+    padding-top: .8rem;
+    md-list{
+        margin-top: .5rem;
+        margin-left: 32px;
+        min-height: auto;
+        md-list-item > md-icon{position: absolute; left: -18px; top: 50%; margin-top: -1rem;}
+        md-list-item.md-2-line{min-height: 20px;}
     }
+    md-list:last-of-type{margin-bottom: 1.4rem;}
   }
+  .savefilter{md-list-item.md-2-line{min-height: 20px;} md-list-item{ height: auto;} md-input-container{margin: .6rem 0;} p{margin: 0.2rem;}}
 }
 
 .truncate{
@@ -109,3 +114,58 @@
   }
   md-icon{height: auto; }
 }
+
+// FUNIL SELECT
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.progress li {
+  height: 35px;
+  float: left;
+  white-space: nowrap;
+  position: relative;
+  line-height: 2.1rem;
+  color: rgb(29, 194, 231);
+  &:first-of-type{
+    width: 10px;
+  }
+}
+
+
+.progress li {
+  svg{position: absolute; z-index: 1; top: 50%; left:-0.8rem; margin-top: -1px; stroke: #1dc2e7; stroke-width:3; width: 100%;}
+  &:after{
+    font-family: 'Material Icons';
+    -webkit-font-feature-settings: 'liga';
+    content: "fiber_manual_record";
+    font-size: 0.8rem;
+    position: absolute;
+    right: .4rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+
+.progress li.active {
+  svg{stroke:#1dc2e7; transition: 0.3s ease;}
+  &:after{transition: 0.2s ease; font-size: 1.6rem; right: 0; }
+}
+
+// .progress li.active:before {
+//   background-color: #89807A
+// }
+
+.progress li.active ~ li {
+  svg{stroke: #aaaaaa}
+  color: #ababab;
+}
+//
+// .progress li.active + li:before {
+//   background-color: rgb(79, 227, 107);
+// }
+
+// Funil Select END

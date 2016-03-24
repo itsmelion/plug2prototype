@@ -196,9 +196,181 @@
                 </md-list>
 
 
-                <md-menu  ng-click="$mdOpenMenu($event)" md-position-mode="target-right target" >
+
+
+
+                <md-menu-bar layout="column">
+                          <md-menu>
+                            <md-list>
+                              <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
+                                <md-icon class="material-icons md-discrete">check</md-icon>
+                                <div class="md-list-item-text">
+                                  <h3>Data de criação</h3>
+                                  <p class="truncate md-caption">item description</p>
+                                </div>
+                              </md-list-item>
+                            </md-list>
+                            <md-menu-content width=4  class="innermenus">
+                              <md-menu-item >
+                                <div layout="row" flex>
+                                  <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+
+                                    <md-not-found>
+                                      nada encontrado
+                                    </md-not-found>
+                                  </md-autocomplete>
+                                </div>
+                              </md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('Print', $event)">
+                                  Print
+                                  <span class="md-alt-text">{{ 'M-P' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                          <md-menu>
+                            <md-list>
+                              <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
+                                <md-icon class="material-icons md-discrete">check</md-icon>
+                                <div class="md-list-item-text">
+                                  <h3>Data de criação</h3>
+                                  <p class="truncate md-caption">item description</p>
+                                </div>
+                              </md-list-item>
+                            </md-list>
+                            <md-menu-content>
+                              <md-menu-item class="md-indent">
+                                <md-icon md-svg-icon="undo"></md-icon>
+                                <md-button ng-click="ctrl.sampleAction('undo', $event)">
+                                  Undo
+                                  <span class="md-alt-text">{{ 'M-Z' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item class="md-indent">
+                                <md-icon md-svg-icon="redo"></md-icon>
+                                <md-button ng-click="ctrl.sampleAction('redo', $event)">
+                                  Redo
+                                  <span class="md-alt-text">{{ 'M-Y' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item class="md-indent">
+                                <md-icon md-svg-icon="content-cut"></md-icon>
+                                <md-button ng-click="ctrl.sampleAction('cut', $event)">
+                                  Cut
+                                  <span class="md-alt-text">{{ 'M-X' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item class="md-indent">
+                                <md-icon md-svg-icon="content-copy"></md-icon>
+                                <md-button ng-click="ctrl.sampleAction('copy', $event)">
+                                  Copy
+                                  <span class="md-alt-text">{{ 'M-C' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item class="md-indent">
+                                <md-icon md-svg-icon="content-paste"></md-icon>
+                                <md-button ng-click="ctrl.sampleAction('paste', $event)">
+                                  Paste
+                                  <span class="md-alt-text">{{ 'M-P' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item class="md-indent">
+                                <md-button ng-click="ctrl.sampleAction('Find and replace', $event)">
+                                  Find and replace...
+                                  <span class="md-alt-text">{{ 'M-S-H' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                          <md-menu>
+                            <button ng-click="$mdOpenMenu()">
+                              View
+                            </button>
+                            <md-menu-content>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.printLayout">Print layout</md-menu-item>
+                              <md-menu-item class="md-indent">
+                                <md-menu>
+                                  <md-button ng-click="$mdOpenMenu()">Mode</md-button>
+                                  <md-menu-content width="3">
+                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'presentation'">Presentation</md-menu-item>
+                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'edit'">Edit</md-menu-item>
+                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'modifiable'">Modifiable</md-menu-item>
+                                  </md-menu-content>
+                                </md-menu>
+                              </md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showRuler">Show ruler</md-menu-item>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showEquationToolbar">Show equation toolbar</md-menu-item>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showSpellingSuggestions">Show spelling suggestions</md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.compactControls">Compact controls</md-menu-item>
+                              <md-menu-item type="checkbox" ng-model="ctrl.settings.fullScreen">Full screen</md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                          <md-menu>
+                            <button ng-click="$mdOpenMenu()">
+                              Format
+                            </button>
+                            <md-menu-content>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('bold', $event)">
+                                  Bold
+                                  <span class="md-alt-text"> {{ 'M-B' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('italic', $event)">
+                                  Italic
+                                  <span class="md-alt-text">{{ 'M-I' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('underline', $event)">
+                                  Underline
+                                  <span class="md-alt-text">{{ 'M-U' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('strikethrough', $event)">
+                                  Strikethrough
+                                  <span class="md-alt-text">{{ 'A-S-5' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('superscript', $event)">
+                                  Superscript
+                                  <span class="md-alt-text">{{ 'M-.' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-item>
+                                <md-button ng-click="ctrl.sampleAction('subscript', $event)">
+                                  Subscript
+                                  <span class="md-alt-text">{{ 'M-,' | keyboardShortcut }}</span>
+                                </md-button>
+                              </md-menu-item>
+                              <md-menu-divider></md-menu-divider>
+                              <md-menu-item><md-button ng-click="ctrl.toggleSetting('clearFormatting')">Clear Formatting</md-button></md-menu-item>
+                            </md-menu-content>
+                          </md-menu>
+                        </md-menu-bar>
+
+
+
+
+
+
+
+                <md-menu>
                     <md-list >
-                      <md-list-item class="md-2-line">
+                      <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
                         <div class="md-list-item-text">
                           <h3>Estado da negociação</h3>
@@ -219,9 +391,9 @@
                         </md-menu>
 
 
-
+              <md-menu>
                 <md-list>
-                  <md-list-item class="md-2-line">
+                  <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
                     <md-icon class="material-icons md-discrete">check</md-icon>
                     <div class="md-list-item-text">
                       <h3>Data de criação</h3>
@@ -229,6 +401,55 @@
                     </div>
                   </md-list-item>
                 </md-list>
+                <md-menu-content width="4" >
+                  <md-menu-item >
+                    <md-button >
+                        <div layout="row" flex>
+                          <p flex>Option2</p>
+                          <md-icon></md-icon>
+                        </div>
+                    </md-button>
+                  </md-menu-item>
+                  <md-menu-item >
+                    <md-button >
+                        <div layout="row" flex>
+                          <p flex>Option3</p>
+                          <md-icon></md-icon>
+                        </div>
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+
+              <md-menu>
+                  <md-list >
+                    <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
+                      <md-icon class="material-icons md-discrete">check</md-icon>
+                      <div class="md-list-item-text">
+                        <h3>Campanha</h3>
+                        <p class="truncate md-caption">item description</p>
+                      </div>
+                    </md-list-item>
+                  </md-list>
+                        <md-menu-content width="4" >
+
+                          <md-menu-item >
+
+                                <div layout="row" flex>
+                                  <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                                    <md-item-template>
+                                      <span md-highlight-text="searchText">item display</span>
+                                    </md-item-template>
+                                    <md-not-found>
+                                      nada encontrado
+                                    </md-not-found>
+                                  </md-autocomplete>
+                                  <md-icon></md-icon>
+                                </div>
+                          </md-menu-item>
+
+                        </md-menu-content>
+                      </md-menu>
 
                 <md-button ng-click="$nothing()">
                   Limpar todos
@@ -236,7 +457,6 @@
                 <md-button ng-click="$nothing()">
                   OK
                 </md-button>
-
         </md-content>
 <md-divider></md-divider>
 <div class="savefilter" layout-padding>
@@ -272,7 +492,7 @@
 
 
 
-<md-card layout-wrap class="table-list" layout="row" layout-sm="column" layout-xs="column"  layout-align="start center" layout-align-xs="space-around center" layout-align-sm="center center" >
+<md-card layout-wrap class="table-list" layout="row" layout-sm="column" layout-xs="column"  layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
 <div flex="none" layout-margin layout-align-sm="center center">
   <md-checkbox aria-label="check" ng-model="check" ></md-checkbox>
 </div>
@@ -297,11 +517,11 @@
   <div flex="90" flex-gt-sm="33" layout-padding layout="row" layout-align="space-between center">
     <div flex="noshrink">
       <md-radio-group class="rate">
-        <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
-        <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
-        <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
-        <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
-        <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
       </md-radio-group>
     </div>
     <md-list flex="noshrink" class="recorrencia" layout-padding>
@@ -315,7 +535,7 @@
       </md-list-item>
     </md-list>
   </div>
-  <div flex="100" flex-gt-sm="15" >
+  <div flex="90" flex-gt-sm="15" >
     <ol layout="row" class="progress">
       <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
       <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>

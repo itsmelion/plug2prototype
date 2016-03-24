@@ -26,16 +26,16 @@
 .filterpull{
   .innerfilters {
     padding-top: .8rem;
-    md-list{
-        margin-top: .5rem;
-        margin-left: 32px;
-        min-height: auto;
-        md-list-item > md-icon{position: absolute; left: -18px; top: 50%; margin-top: -1rem;}
-        md-list-item.md-2-line{min-height: 20px;}
-    }
-    md-list:last-of-type{margin-bottom: 1.4rem;}
+    >md-list >md-list-item >md-icon{position: absolute; margin: 0; top: 50%; margin-top: -1rem; left: 12px;}
+    >md-list >md-list-item {padding-left: 48px;}
+    md-list{padding: 0;}
+    md-menu-bar{padding: 0}
+  .savefilter{}
   }
-  .savefilter{md-list-item.md-2-line{min-height: 20px;} md-list-item{ height: auto;} md-input-container{margin: .6rem 0;} p{margin: 0.2rem;}}
+}
+.checks{
+ md-icon.ng-isolate-scope{ width: 32px; height: 24px; position: absolute; pointer-events: none; padding-top: 12px; left: -12px;}
+button{padding-left: 48px;}
 }
 
 .truncate{
@@ -49,8 +49,8 @@
   border-left: 3px solid #d53b3b;
   min-height: 90px;
   > *{margin-right: 16px;}
-  @media screen and (max-width: 960px){ border-left: 6px solid #d53b3b; margin-bottom: 24px;}
-  @media screen and (max-width: 600px){ border-left: 0; border-top: 5px solid #d53b3b; margin-bottom: 24px;}
+  @media screen and (max-width: 960px){ border-left: 6px solid #d53b3b; margin-bottom: 24px; padding-left: 48px;}
+  @media screen and (max-width: 600px){ border-left: 0; border-top: 5px solid #d53b3b; margin-bottom: 24px; padding-left: 36px;}
   &:nth-of-type(2){border-left: 3px solid transparent;}
   &:nth-of-type(3){border-left: 3px solid transparent;}
   &:nth-of-type(4){border-left: 3px solid rgb(112, 201, 113);}
@@ -120,6 +120,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  min-width: 145px;
+  max-width: 620px;
 }
 
 .progress li {

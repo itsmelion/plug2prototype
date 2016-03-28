@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css">
 	<link type="text/css" rel="stylesheet" href="sass/main.css.nested.css" />
 </head>
-<body ng-app="PlugDawnbreak" layout="row" ng-controller="MyController" ng-cloak >
+<body ng-app="PlugDawnbreak" layout="row" layout-align="start stretch" ng-controller="MyController" ng-cloak >
 
 	<md-sidenav flex="noshrink" style="max-width:300px"  layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
 			  <md-toolbar flex="none" class="user-toolbar md-theme-light" layout="column" layout-padding style="background-image: url(master_img/userbg.jpg);">
@@ -72,13 +72,13 @@
 </md-sidenav>
 
 
-<div layout="column" flex="grow" tabIndex="1" role="main" >
+<div tabIndex="1" layout="column" class="relative" layout-fill role="main" >
 
-	<md-toolbar style="min-height: 180px" class="internal-header md-theme-light" layout-padding layout"column" >
+  <md-toolbar flex="noshrink" class="internal-header md-theme-light" layout-padding >
       <div class="md-toolbar-tools" layout="row">
-				<md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
-					<md-icon md-font-icon="material-icons ">menu</md-icon>
-				</md-button>
+        <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+          <md-icon md-font-icon="material-icons ">menu</md-icon>
+        </md-button>
         <span flex></span>
         <md-input-container class="md-block">
         <md-icon md-font-icon="material-icons ">search</md-icon>
@@ -95,7 +95,7 @@
       </div>
 
 
-		<div layout="row" layout-xs="column" class="md-toolbar-tools-bottom toolbarselect" >
+    <div layout="row" layout-xs="column" class="md-toolbar-tools-bottom toolbarselect" >
       <md-input-container class="md-subhead">
         <md-select placeholder="Negociacoes" ng-model="user">
           <md-option ng-value="user">Negocieacos</md-option>
@@ -114,17 +114,17 @@
             <md-option ng-value="user">Negocieacos</md-option>
           </md-select>
         </md-input-container>
-				<span flex></span>
+        <span flex></span>
 
         <md-button ng-click="toggleRight()" md-ink-ripple="#c5b0e9">
           <md-icon md-font-icon="material-icons">filter_list</md-icon>
         </md-button>
 
-		</div>
-	</md-toolbar>
+    </div>
+  </md-toolbar>
 
-<md-content style="height: 1000px;">
-  <div class="subtoolbar" md-scroll-shrink layout-margin tabIndex="2" style="border-left: 3px solid transparent">
+<md-content>
+  <div class="subtoolbar" layout-margin tabIndex="2" style="border-left: 3px solid transparent">
         <md-checkbox aria-label="check"></md-checkbox>
          <md-button  class="md-caption truncate" ng-click="$nowhere()" style="width: 88px">
            Responsável
@@ -199,10 +199,10 @@
 
 
 
-                <md-menu-bar layout="column">
+                <md-menu-bar layout="column" class="funil-item">
                           <md-menu>
                             <md-list>
-                              <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
+                              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                                 <md-icon class="material-icons md-discrete">check</md-icon>
                                 <div class="md-list-item-text">
                                   <h3>Data de criação</h3>
@@ -213,25 +213,38 @@
                             <md-menu-content width=4  class="innermenus">
                               <md-menu-item >
                                 <div layout="row" flex>
-                                  <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-
-                                    <md-not-found>
-                                      nada encontrado
-                                    </md-not-found>
+                                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                                  <span md-highlight-text="searchText">Dummy text</span>
                                   </md-autocomplete>
                                 </div>
                               </md-menu-item>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Com Campanha</md-menu-item>
+                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Sem Campanha</md-menu-item>
                               <md-menu-divider></md-menu-divider>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('Print', $event)">
-                                  Print
-                                  <span class="md-alt-text">{{ 'M-P' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
+                              <div id="containerForResults">
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                              </div>
+
+
+                              <div layout="row">
+                                <md-button md-no-ink class="md-primary">Cancel</md-button>
+                                <md-button md-no-ink class="md-primary">Salvar</md-button>
+                              </div>
                             </md-menu-content>
                           </md-menu>
                           <md-menu>
@@ -484,16 +497,15 @@
         <md-button ng-click="$nothing()">
           salvar
         </md-button>
-</div>
-
+      </div>
       </md-sidenav>
 
 
 
 
-
+<div>
 <md-card layout-wrap class="table-list" layout="row" layout-sm="column" layout-xs="column"  layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
-<div flex="none" layout-margin layout-align-sm="center center">
+<div layout-margin layout-align-sm="center center">
   <md-checkbox aria-label="check" ng-model="check" ></md-checkbox>
 </div>
 
@@ -559,6 +571,7 @@
       </md-list-item>
     </md-list>
   </div>
+<div>
   <md-menu md-position-mode="target-right target" >
         <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
           <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
@@ -590,16 +603,15 @@
           </md-menu-item>
         </md-menu-content>
       </md-menu>
+</div>
 
 </md-card>
 
 
-
-
+</div>
 </md-content>
-</div> <!-- End Main Cointainer -->
 
-
+</div>
 
 
 

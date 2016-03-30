@@ -28,22 +28,6 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
-.searchinput .md-errors-spacer {
-  position: absolute;
-  margin-top: 32px; }
-
-.toolbarselect md-input-container {
-  margin: 0 6px;
-  padding: 8px; }
-
-.user-toolbar {
-  background-size: cover; }
-
-.subtoolbar {
-  outline: 0; }
-  .subtoolbar * {
-    text-align: left; }
-
 .filterpull .innerfilters {
   padding-top: .8rem; }
   .filterpull .innerfilters > md-list > md-list-item > md-icon {
@@ -80,10 +64,6 @@
   overflow-y: scroll;
   max-height: 400px; }
 
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
 .table-list {
   margin: 0;
   border-bottom: 1px solid #e0e0e0;
@@ -104,18 +84,6 @@
       border-top: 5px solid #d53b3b;
       margin-bottom: 24px;
       padding-left: 36px; } }
-  .table-list:nth-of-type(2) {
-    border-left: 3px solid transparent; }
-  .table-list:nth-of-type(3) {
-    border-left: 3px solid transparent; }
-  .table-list:nth-of-type(4) {
-    border-left: 3px solid #70c971; }
-  .table-list:nth-of-type(5) {
-    border-left: 3px solid transparent; }
-  .table-list:nth-of-type(6) {
-    border-left: 3px solid #70c971; }
-  .table-list:nth-of-type(7) {
-    border-left: 3px solid #ecda63; }
 
 .rate {
   display: inline-block; }
@@ -237,3 +205,26 @@
   color: #ababab; }
   .progress li.active ~ li svg {
     stroke: #aaaaaa; }
+
+.searchinput .md-errors-spacer {
+  position: absolute;
+  margin-top: 32px; }
+
+.toolbarselect md-input-container {
+  margin: 0 6px;
+  padding: 8px; }
+
+.user-toolbar {
+  background-size: cover; }
+
+.subtoolbar {
+  outline: 0; }
+  .subtoolbar * {
+    text-align: left; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis; }

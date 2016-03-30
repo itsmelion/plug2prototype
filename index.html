@@ -17,7 +17,7 @@
 </head>
 <body ng-app="PlugDawnbreak" layout="row" ng-controller="MyController" ng-cloak >
 
-	<md-sidenav flex="noshrink" style="max-width:300px"  layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
+	<md-sidenav flex="noshrink" style="max-width:240px"  layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
 			  <md-toolbar flex="none" class="user-toolbar md-theme-light" layout="column" layout-padding style="background-image: url(master_img/userbg.jpg);">
           <img src="master_img/brand.png" width="72px" alt="logo" />
           <md-list-item class="md-2-line">
@@ -74,7 +74,7 @@
 
 <div flex tabIndex="1" layout="column" role="main" >
 
-  <md-toolbar flex="none" ng-cloak ng-show="!showSearch" class="internal-header md-theme-light" layout-padding >
+  <md-toolbar ng-show="!showSearch" flex="none" class="internal-header md-theme-light" layout-padding >
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
           <md-icon md-font-icon="material-icons ">menu</md-icon>
@@ -112,20 +112,20 @@
           </md-select>
         </md-input-container>
         <span flex></span>
-        <md-button ng-click="toggleRight()" md-ink-ripple="#c5b0e9">
+        <md-button ng-click="toggleRight()" md-ink-ripple="#916bd2">
           <md-icon md-font-icon="material-icons">filter_list</md-icon>
         </md-button>
     </div>
 
   </md-toolbar>
 
-      <md-toolbar style="background-color: #eeeeee" class="md-whiteframe-2dp" ng-cloak ng-show="showSearch">
+      <md-toolbar ng-show="showSearch" style="background-color: #c2c2c2" class="md-whiteframe-2dp md-theme-light" >
           <div class="md-toolbar-tools">
             <md-button ng-click="showSearch = !showSearch" aria-label="Back">
               <md-icon md-font-icon="material-icons">arrow_back</md-icon>
             </md-button>
             <h3 flex="10">Back</h3>
-            <md-input-container md-theme="input" flex>
+            <md-input-container class="searchinput" md-theme="input" flex>
               <input ng-model="search" placeholder="enter search">
             </md-input-container>
             <md-button aria-label="Search" ng-click="showSearch = !showSearch">
@@ -138,7 +138,7 @@
         </md-toolbar>
 
 <md-content flex>
-  <div class="subtoolbar" layout-margin tabIndex="2" style="border-left: 3px solid transparent">
+  <div ng-show="!showBar" class="subtoolbar" layout-margin tabIndex="2" style="border-left: 3px solid transparent; outline: 0;">
         <md-checkbox aria-label="check"></md-checkbox>
          <md-button  class="md-caption truncate" ng-click="$nowhere()" style="width: 88px">
            Responsável
@@ -163,14 +163,73 @@
          </md-button>
   </div>
 
+  <div ng-show="showBar" layout-margin tabIndex="2" flex="row" style="border-left: 3px solid transparent; outline: 0;">
+        <md-checkbox aria-label="check"></md-checkbox>
+         <span class="md-caption">
+           3 selecionados
+         </span>
+         <md-input-container>
+          <label>TRANSFERIR PARA</label>
+          <md-select ng-model="transfer">
+            <md-option>
+              Area de Trabalho
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+         <label>ALTERAR STATUS</label>
+         <md-select ng-model="transfer">
+           <md-option>
+             Area de Trabalho
+           </md-option>
+         </md-select>
+       </md-input-container>
+       <md-input-container>
+        <label>MOVER PARA ETAPA</label>
+        <md-select ng-model="transfer">
+          <md-option>
+            Area de Trabalho
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+       <label>ADICIONAR/ALTERAR</label>
+       <md-select ng-model="transfer">
+         <md-option>
+           Area de Trabalho
+         </md-option>
+       </md-select>
+     </md-input-container>
+     <md-input-container>
+      <label>ENVIAR</label>
+      <md-select ng-model="transfer">
+        <md-option>
+          Area de Trabalho
+        </md-option>
+      </md-select>
+     </md-input-container>
+     <md-input-container>
+      <label>CRIAR</label>
+      <md-select ng-model="transfer">
+        <md-option>
+          Area de Trabalho
+        </md-option>
+      </md-select>
+     </md-input-container>
+     <md-button class="md-caption md-warn" ng-click="$nowhere()" >
+       Excluir
+     </md-button>
+  </div>
+
 
 
 <ui-view layout="column" layout-fill>
+
   <md-sidenav class="md-sidenav-right md-whiteframe-3dp filterpull" md-disable-backdrop="true" md-component-id="right">
         <md-toolbar class="md-theme-light md-primary md-hue-1" md-theme="plugPurple">
           <md-list>
           <md-list-item>
-            <p>Filtrar: 4 ativos </p><span flex></span>
+            <p>Filtros: 4 ativos </p><span flex></span>
             <md-icon md-font-icon="material-icons">filter_list</md-icon>
           </md-list-item>
           <md-list-item class="md-subhead">
@@ -214,269 +273,145 @@
 
 
                 <md-menu-bar layout="column" class="funil-item">
-                          <md-menu>
-                            <md-list>
-                              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
-                                <md-icon class="material-icons md-discrete">check</md-icon>
-                                <div class="md-list-item-text">
-                                  <h3>Data de criação</h3>
-                                  <p class="truncate md-caption">item description</p>
-                                </div>
-                              </md-list-item>
-                            </md-list>
-                            <md-menu-content width=4  class="innermenus">
-                              <md-menu-item >
-                                <div layout="row" flex>
-                                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-                                  <span md-highlight-text="searchText">Dummy text</span>
-                                  </md-autocomplete>
-                                </div>
-                              </md-menu-item>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Com Campanha</md-menu-item>
-                              <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Sem Campanha</md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <div id="containerForResults">
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
-                              </div>
-
-
-                              <div layout="row">
-                                <md-button md-no-ink class="md-primary">Cancel</md-button>
-                                <md-button md-no-ink class="md-primary">Salvar</md-button>
-                              </div>
-                            </md-menu-content>
-                          </md-menu>
-                          <md-menu>
-                            <md-list>
-                              <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
-                                <md-icon class="material-icons md-discrete">check</md-icon>
-                                <div class="md-list-item-text">
-                                  <h3>Data de criação</h3>
-                                  <p class="truncate md-caption">item description</p>
-                                </div>
-                              </md-list-item>
-                            </md-list>
-                            <md-menu-content>
-                              <md-menu-item class="md-indent">
-                                <md-icon md-svg-icon="undo"></md-icon>
-                                <md-button ng-click="ctrl.sampleAction('undo', $event)">
-                                  Undo
-                                  <span class="md-alt-text">{{ 'M-Z' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item class="md-indent">
-                                <md-icon md-svg-icon="redo"></md-icon>
-                                <md-button ng-click="ctrl.sampleAction('redo', $event)">
-                                  Redo
-                                  <span class="md-alt-text">{{ 'M-Y' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item class="md-indent">
-                                <md-icon md-svg-icon="content-cut"></md-icon>
-                                <md-button ng-click="ctrl.sampleAction('cut', $event)">
-                                  Cut
-                                  <span class="md-alt-text">{{ 'M-X' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item class="md-indent">
-                                <md-icon md-svg-icon="content-copy"></md-icon>
-                                <md-button ng-click="ctrl.sampleAction('copy', $event)">
-                                  Copy
-                                  <span class="md-alt-text">{{ 'M-C' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item class="md-indent">
-                                <md-icon md-svg-icon="content-paste"></md-icon>
-                                <md-button ng-click="ctrl.sampleAction('paste', $event)">
-                                  Paste
-                                  <span class="md-alt-text">{{ 'M-P' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item class="md-indent">
-                                <md-button ng-click="ctrl.sampleAction('Find and replace', $event)">
-                                  Find and replace...
-                                  <span class="md-alt-text">{{ 'M-S-H' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                            </md-menu-content>
-                          </md-menu>
-                          <md-menu>
-                            <button ng-click="$mdOpenMenu()">
-                              View
-                            </button>
-                            <md-menu-content>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.printLayout">Print layout</md-menu-item>
-                              <md-menu-item class="md-indent">
-                                <md-menu>
-                                  <md-button ng-click="$mdOpenMenu()">Mode</md-button>
-                                  <md-menu-content width="3">
-                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'presentation'">Presentation</md-menu-item>
-                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'edit'">Edit</md-menu-item>
-                                    <md-menu-item type="radio" ng-model="ctrl.settings.presentationMode" value="'modifiable'">Modifiable</md-menu-item>
-                                  </md-menu-content>
-                                </md-menu>
-                              </md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showRuler">Show ruler</md-menu-item>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showEquationToolbar">Show equation toolbar</md-menu-item>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.showSpellingSuggestions">Show spelling suggestions</md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.compactControls">Compact controls</md-menu-item>
-                              <md-menu-item type="checkbox" ng-model="ctrl.settings.fullScreen">Full screen</md-menu-item>
-                            </md-menu-content>
-                          </md-menu>
-                          <md-menu>
-                            <button ng-click="$mdOpenMenu()">
-                              Format
-                            </button>
-                            <md-menu-content>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('bold', $event)">
-                                  Bold
-                                  <span class="md-alt-text"> {{ 'M-B' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('italic', $event)">
-                                  Italic
-                                  <span class="md-alt-text">{{ 'M-I' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('underline', $event)">
-                                  Underline
-                                  <span class="md-alt-text">{{ 'M-U' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('strikethrough', $event)">
-                                  Strikethrough
-                                  <span class="md-alt-text">{{ 'A-S-5' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('superscript', $event)">
-                                  Superscript
-                                  <span class="md-alt-text">{{ 'M-.' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-item>
-                                <md-button ng-click="ctrl.sampleAction('subscript', $event)">
-                                  Subscript
-                                  <span class="md-alt-text">{{ 'M-,' | keyboardShortcut }}</span>
-                                </md-button>
-                              </md-menu-item>
-                              <md-menu-divider></md-menu-divider>
-                              <md-menu-item><md-button ng-click="ctrl.toggleSetting('clearFormatting')">Clear Formatting</md-button></md-menu-item>
-                            </md-menu-content>
-                          </md-menu>
-                        </md-menu-bar>
-
-
-
-
-
-
-
-                <md-menu>
-                    <md-list >
-                      <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
+                  <md-menu>
+                    <md-list>
+                      <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
                         <div class="md-list-item-text">
-                          <h3>Estado da negociação</h3>
+                          <h3>Estado da Negociacão</h3>
+                          <p>Todos</p>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                    <md-menu-content width=4  class="innermenus">
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Ganho</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Pausado</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Perdido</md-menu-item>
+                    </md-menu-content>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Campanha</h3>
                           <p class="truncate md-caption">item description</p>
                         </div>
                       </md-list-item>
                     </md-list>
-                          <md-menu-content width="4" >
-                            <md-menu-item >
-                              <md-button >
-                                  <div layout="row" flex>
-                                    <p flex>Option</p>
-                                    <md-icon></md-icon>
-                                  </div>
-                              </md-button>
-                            </md-menu-item>
-                          </md-menu-content>
-                        </md-menu>
-
-
-              <md-menu>
-                <md-list>
-                  <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
-                    <md-icon class="material-icons md-discrete">check</md-icon>
-                    <div class="md-list-item-text">
-                      <h3>Data de criação</h3>
-                      <p class="truncate md-caption">item description</p>
-                    </div>
-                  </md-list-item>
-                </md-list>
-                <md-menu-content width="4" >
-                  <md-menu-item >
-                    <md-button >
+                    <md-menu-content width=4  class="innermenus">
+                      <md-menu-item >
                         <div layout="row" flex>
-                          <p flex>Option2</p>
-                          <md-icon></md-icon>
+                          <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                          <span md-highlight-text="searchText">Dummy text</span>
+                          </md-autocomplete>
                         </div>
-                    </md-button>
-                  </md-menu-item>
-                  <md-menu-item >
-                    <md-button >
-                        <div layout="row" flex>
-                          <p flex>Option3</p>
-                          <md-icon></md-icon>
-                        </div>
-                    </md-button>
-                  </md-menu-item>
-                </md-menu-content>
-              </md-menu>
-
-              <md-menu>
-                  <md-list >
-                    <md-list-item ng-click="$mdOpenMenu()" md-position-mode="target-left target" class="md-2-line">
-                      <md-icon class="material-icons md-discrete">check</md-icon>
-                      <div class="md-list-item-text">
-                        <h3>Campanha</h3>
-                        <p class="truncate md-caption">item description</p>
+                      </md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Todos</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Com Campanha</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Sem Campanha</md-menu-item>
+                      <md-menu-divider></md-menu-divider>
+                      <div id="containerForResults">
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
+                        <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Dummy item displayed</md-menu-item>
                       </div>
-                    </md-list-item>
-                  </md-list>
-                        <md-menu-content width="4" >
 
-                          <md-menu-item >
 
-                                <div layout="row" flex>
-                                  <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-                                    <md-item-template>
-                                      <span md-highlight-text="searchText">item display</span>
-                                    </md-item-template>
-                                    <md-not-found>
-                                      nada encontrado
-                                    </md-not-found>
-                                  </md-autocomplete>
-                                  <md-icon></md-icon>
-                                </div>
-                          </md-menu-item>
+                      <div layout="row">
+                        <md-button md-no-ink class="md-primary">Cancel</md-button>
+                        <md-button md-no-ink class="md-primary">Salvar</md-button>
+                      </div>
+                    </md-menu-content>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Data de criação</h3>
+                          <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Data do ultimo contato</h3>
+                          <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Data da próxima tarefa</h3>
+                          <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Fonte</h3>
+                          <p>Sem Fonte</p>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                    <md-menu-content width=4  class="innermenus">
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Ganho</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Pausado</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Perdido</md-menu-item>
+                    </md-menu-content>
+                  </md-menu>
+                  <md-menu>
+                    <md-list>
+                      <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Produto ou Serviço</h3>
+                          <p>Adesivagem Especial</p>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                    <md-menu-content width=4  class="innermenus">
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Ganho</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Pausado</md-menu-item>
+                      <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Perdido</md-menu-item>
+                    </md-menu-content>
+                  </md-menu>
 
-                        </md-menu-content>
-                      </md-menu>
+                </md-menu-bar>
 
                 <md-button ng-click="$nothing()">
                   Limpar todos
@@ -486,51 +421,59 @@
                 </md-button>
         </md-content>
 <md-divider></md-divider>
-<div class="savefilter" layout-padding>
-      <p class="md-subtitle">Salvar Filtro</p>
-        <md-list>
-          <md-list-item class="md-2-line">
-          <md-input-container class="md-block" flex-gt-sm>
-          <label>Nome do Filtro</label>
-          <input ng-model="Co">
-          </md-input-container>
-          </md-list-item>
-        </md-list>
-        <md-list>
-          <md-list-item class="md-2-line">
-            <div class="md-list-item-text">
-              <h3>Disponível para</h3>
-              <p class="truncate md-caption">item description</p>
-            </div>
-          </md-list-item>
-        </md-list>
+        <div class="savefilter" layout-padding>
+          <p class="md-subtitle">Salvar Filtro</p>
+            <md-list>
+              <md-list-item class="md-2-line">
+              <md-input-container class="md-block" flex-gt-sm>
+              <label>Nome do Filtro</label>
+              <input ng-model="Co">
+              </md-input-container>
+              </md-list-item>
+            </md-list>
+            <md-menu>
+              <md-list>
+                <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                  <md-icon class="material-icons md-discrete">check</md-icon>
+                  <div class="md-list-item-text">
+                    <h3>Disponível para</h3>
+                    <p>Todos</p>
+                  </div>
+                </md-list-item>
+              </md-list>
+              <md-menu-content width=4  class="innermenus">
+                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Ganho</md-menu-item>
+                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Pausado</md-menu-item>
+                <md-menu-item class="checks" type="checkbox" ng-model="ctrl.settings.printLayout">Perdido</md-menu-item>
+              </md-menu-content>
+            </md-menu>
 
-        <md-button ng-click="close()">
-          Cancelar
-        </md-button>
-        <md-button ng-click="$nothing()">
-          salvar
-        </md-button>
-      </div>
+            <md-button ng-click="$nothing()">
+              Cancelar
+            </md-button>
+            <md-button ng-click="$nothing()">
+              salvar
+            </md-button>
+          </div>
       </md-sidenav>
 
 
 
 
 <div>
-<md-card layout-wrap class="table-list" layout="row" layout-sm="column" layout-xs="column"  layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
-<div layout-margin layout-align-sm="center center">
-  <md-checkbox aria-label="check" ng-model="check" ></md-checkbox>
-</div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
 
-<div layout-align="start center" layout="row" flex="90" flex-gt-sm="20">
-    <md-list flex="noshrink"  class="userpic">
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
       <md-list-item>
       <img class="md-avatar" src="master_img/dummy_square.png">
       <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
       </md-list-item>
     </md-list>
-    <md-list class="who" flex="85">
+    <md-list flex="noshrink" class="who" flex="85">
       <md-list-item>
       <span class="truncate">Louis Lourence</span>
       </md-list-item>
@@ -540,7 +483,7 @@
     </md-list>
 </div>
 
-  <div flex="90" flex-gt-sm="33" layout-padding layout="row" layout-align="space-between center">
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
     <div flex="noshrink">
       <md-radio-group class="rate">
         <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
@@ -551,31 +494,34 @@
       </md-radio-group>
     </div>
     <md-list flex="noshrink" class="recorrencia" layout-padding>
-      <md-list-item style="min-width:170px;">
-      <md-icon class="material-icons md-primary">fiber_manual_record</md-icon>
-      <p class="truncate">R$ 12.338,<span>00</span></p><span class="truncate">únicos</span>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
       </md-list-item>
-      <md-list-item style="min-width:170px;">
-      <md-icon class="material-icons">fiber_smart_record</md-icon>
-      <p class="truncate">R$ 1200,<span>00</span></p><span class="truncate">recorrentes</span>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
       </md-list-item>
     </md-list>
   </div>
-  <div flex="90" flex-gt-sm="15" >
-    <ol layout="row" class="progress">
-      <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex><md-tooltip>Cantando a Mulher dele e pegando whatsapp da filha já, pra desembolar o lero cabuloooso com as novinha</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-      <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
-    </ol>
-  </div>
-  <div flex="none" flex-sm="90" class="tarefas" layout="row" layout-align="space-around center" >
-    <div flex="none">
-      <md-icon class="material-icons md-primary">phone</md-icon>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
     </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
     <md-list>
       <md-list-item style="padding-right: 0">
         <span>Reunião</span>
@@ -584,45 +530,1454 @@
         <span>Ontem, às 13 horas</span>
       </md-list-item>
     </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
   </div>
-<div>
-  <md-menu md-position-mode="target-right target" >
-        <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
-          <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
-        </md-button>
-        <md-menu-content width="4" >
-          <md-menu-item>
-            <md-button ng-click="$nowhere()">
-                <div layout="row" flex>
-                  <p flex>Option</p>
-                  <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                </div>
-            </md-button>
-          </md-menu-item>
-          <md-menu-item>
-            <md-button ng-click="$nowhere()">
-                <div layout="row" flex>
-                  <p flex>Option</p>
-                  <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                </div>
-            </md-button>
-          </md-menu-item>
-          <md-menu-item>
-            <md-button ng-click="$nowhere()">
-                <div layout="row" flex>
-                  <p flex>Option</p>
-                  <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                </div>
-            </md-button>
-          </md-menu-item>
-        </md-menu-content>
-      </md-menu>
-</div>
 
 </md-card>
-
-
 </div>
+
+
+
+
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+<div>
+<md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+  <div layout-margin layout="row" layout-align="center center" >
+    <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
+  </div>
+    <md-list flex="none"  class="userpic">
+      <md-list-item>
+      <img class="md-avatar" src="master_img/dummy_square.png">
+      <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
+      </md-list-item>
+    </md-list>
+    <md-list flex="noshrink" class="who" flex="85">
+      <md-list-item>
+      <span class="truncate">Louis Lourence</span>
+      </md-list-item>
+      <md-list-item>
+      <span class="truncate">Inside Sails</span>
+      </md-list-item>
+    </md-list>
+</div>
+
+  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+    <div flex="noshrink">
+      <md-radio-group class="rate">
+        <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Kind of good"><md-tooltip>Mai ô menos</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+        <md-radio-button value="Awesome"><md-tooltip>Bacana</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+      </md-radio-group>
+    </div>
+    <md-list flex="noshrink" class="recorrencia" layout-padding>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>fiber_manual_record</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p> <!-- <span class="truncate">únicos</span> -->
+      </md-list-item>
+      <md-list-item style="min-width:100px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>fiber_smart_record</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p> <!-- <span class="truncate">recorrentes</span> -->
+      </md-list-item>
+    </md-list>
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <div flex="noshrink">
+      <ol layout="row" class="progress">
+        <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Proposta Apresentada</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Aguardando resposta</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Conversando</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>A quick brown fox jumps over the lazy dog, meanwhile, the grumpy wizards make toxic brew for the evil Queen and Jack.</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+        <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
+      </ol>
+    </div>
+
+  </div>
+  <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
+    <div flex="none" layout="row">
+      <md-icon class="material-icons md-primary">phone</md-icon>
+
+    <md-list>
+      <md-list-item style="padding-right: 0">
+        <span>Reunião</span>
+      </md-list-item>
+      <md-list-item style="padding-right: 0">
+        <span>Ontem, às 13 horas</span>
+      </md-list-item>
+    </md-list>
+    </div>
+    <div layout="row" layout-align="end center">
+      <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="material-icons ">more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Option</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+    </div>
+  </div>
+
+</md-card>
+</div>
+
+
 
 </ui-view>
 </md-content>

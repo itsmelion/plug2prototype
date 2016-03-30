@@ -1,10 +1,10 @@
 @import '../sass/_personal_vars.scss';
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
- display: none !important;
-}
+// [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+//   display: none !important;
+// }
 
-.internal-header md-input-container .md-errors-spacer{
+.searchinput .md-errors-spacer{
   position: absolute;
   margin-top: 32px;
 }
@@ -29,21 +29,26 @@
     >md-list >md-list-item >md-icon{position: absolute; margin: 0; top: 50%; margin-top: -1rem; left: 12px;}
     >md-list >md-list-item {padding-left: 48px;}
     md-list{padding: 0;}
-    md-menu-bar{padding: 0}
+    md-menu-bar{padding: 0;}
+    md-list-item > md-icon:first-child:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon){
+      margin-right: 12px;
+    }
   }
 }
 .checks{
  md-icon.ng-isolate-scope{ width: 24px; height: 24px; position: relative; padding-top: 12px; left: 12px;}
-
 }
 
-  ._md-open-menu-container{
-    margin-top: -100px;
-    margin-left: -200px;
-    md-menu-content{
-      max-height: 600px;
-    }
+.innermenus{
+  margin-top: -100px;
+  max-height: 500px;
+  md-menu-item > md-icon{
+    width: 24px;
+    padding-right: 0;
+    pointer-events: none;
   }
+}
+#containerForResults{overflow-y: scroll; max-height: 400px;}
 
 .truncate{
   overflow: hidden; text-overflow: ellipsis;

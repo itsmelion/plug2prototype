@@ -28,10 +28,7 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important; }
-
-.internal-header md-input-container .md-errors-spacer {
+.searchinput .md-errors-spacer {
   position: absolute;
   margin-top: 32px; }
 
@@ -61,6 +58,8 @@
     padding: 0; }
   .filterpull .innerfilters md-menu-bar {
     padding: 0; }
+  .filterpull .innerfilters md-list-item > md-icon:first-child:not(.md-avatar-icon), .filterpull .innerfilters md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
+    margin-right: 12px; }
 
 .checks md-icon.ng-isolate-scope {
   width: 24px;
@@ -69,11 +68,17 @@
   padding-top: 12px;
   left: 12px; }
 
-._md-open-menu-container {
+.innermenus {
   margin-top: -100px;
-  margin-left: -200px; }
-  ._md-open-menu-container md-menu-content {
-    max-height: 600px; }
+  max-height: 500px; }
+  .innermenus md-menu-item > md-icon {
+    width: 24px;
+    padding-right: 0;
+    pointer-events: none; }
+
+#containerForResults {
+  overflow-y: scroll;
+  max-height: 400px; }
 
 .truncate {
   overflow: hidden;

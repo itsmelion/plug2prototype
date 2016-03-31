@@ -15,8 +15,9 @@
 }
 
 .innermenus{
+  box-shadow: 2px 2px 10px #B3B3B3;
   margin-top: -100px;
-  max-height: 510px;
+  max-height: 565px;
   md-menu-item > md-icon{
     width: 24px;
     padding-right: 0;
@@ -25,3 +26,8 @@
 
 }
 #containerForResults{overflow-y: scroll; max-height: 390px;}
+
+.savefilter{
+  background: #fafafa;
+  padding-top: 2rem;
+}

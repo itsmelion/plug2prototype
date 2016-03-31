@@ -17,20 +17,48 @@
 </head>
 <body ng-app="PlugDawnbreak" layout="row" ng-controller="MyController" ng-cloak >
 
-	<md-sidenav flex="noshrink" style="max-width:240px"  layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
-			  <md-toolbar flex="none" class="user-toolbar md-theme-light" layout="column" layout-padding style="background-image: url(master_img/userbg.jpg);">
+	<md-sidenav flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2 sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
+			  <md-toolbar flex="none" class="md-theme-light toolbar-height" layout="column" layout-padding>
           <img src="master_img/brand.png" width="72px" alt="logo" />
-          <md-list-item class="md-2-line">
-            <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
-              <div class="md-list-item-text">
-                <h3>Christhopher Lion</h3>
-                <md-input-container md-no-float>
-                <md-select placeholder="lion@stormcloud.me" ng-model="usermail" class="md-caption">
-    			       <md-option> lion@stormcloud.me </md-option>
-                  <md-option> christhopher.leao@plugcrm.net </md-option>
-    			    	</md-select></md-input-container>
-              </div>
-          </md-list-item>
+      <md-menu>
+        <md-button ng-click="$mdOpenMenu($event)" layout="row" layout-align="start center">
+          <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" /> <h3 class="truncate">Christhopher Lion</h3>
+        </md-button>
+        <md-menu-content width="4" >
+          <md-menu-item>
+            <md-button ng-click="$nowhere()">
+                <div layout="row" flex>
+                  <p flex>Editar perfil</p>
+                  <md-icon md-menu-origin md-font-icon="material-icons ">account_circle</md-icon>
+                </div>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="$nowhere()">
+                <div layout="row" flex>
+                  <p flex>Conta</p>
+                  <md-icon md-menu-origin md-font-icon="material-icons ">card_membership</md-icon>
+                </div>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="$nowhere()">
+                <div layout="row" flex>
+                  <p flex>Indique e Ganhe</p>
+                  <md-icon md-menu-origin md-font-icon="material-icons ">group_add</md-icon>
+                </div>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="$nowhere()">
+                <div layout="row" flex>
+                  <p flex>Seja um Parceiro</p>
+                  <md-icon md-menu-origin md-font-icon="material-icons ">mood</md-icon>
+                </div>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
 			  </md-toolbar>
     <div layout-align="space-around center" layout-padding>
         <md-list-item ng-click="$nowhere()">
@@ -74,7 +102,7 @@
 
 <div flex tabIndex="1" layout="column" role="main" >
 
-  <md-toolbar ng-show="!showSearch" flex="none" class="internal-header md-theme-light" layout-padding >
+  <md-toolbar ng-show="!showSearch" flex="none" class="internal-header md-theme-light toolbar-height" layout-padding >
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
           <md-icon md-font-icon="material-icons ">menu</md-icon>
@@ -86,40 +114,48 @@
             <md-icon md-font-icon="material-icons ">search</md-icon>
           </md-button>
 
-        <md-button class="md-icon-button" ng-click="$nowhere()">
+        <md-button class="notification" ng-click="$nowhere()">
           <md-icon md-font-icon="material-icons ">notifications</md-icon>
+          <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
         </md-button>
       </div>
 
 
-    <div class="md-toolbar-tools-bottom toolbarselect" >
+    <div  class="md-toolbar-tools toolbarselect maintoolbarselect stick-bottom" >
       <md-input-container class="md-subhead">
-        <md-select placeholder="Negociacoes" ng-model="user">
-          <md-option ng-value="user">Negocieacos</md-option>
+        <label>Visão</label>
+        <md-select ng-model="user">
+          <md-option >Negocieacos</md-option>
         </md-select>
       </md-input-container>
       <md-input-container class="md-subhead" >
-        <md-select placeholder="Negociacoes" ng-model="user">
-          <md-option ng-value="user">Negocieacos</md-option>
-          <md-option ng-value="user">Negocieacos</md-option>
+        <label>Responsável</label>
+        <md-select ng-model="user">
+          <md-option >Todas os Negócios</md-option>
+          <md-option >Negocieacos</md-option>
         </md-select>
       </md-input-container>
         <md-input-container class="md-subhead" >
-          <md-select placeholder="Negociacoes" ng-model="user">
-            <md-option ng-value="user">Negocieacos</md-option>
-            <md-option ng-value="user">Negocieacos</md-option>
-            <md-option ng-value="user">Negocieacos</md-option>
+          <label>Funil de vendas</label>
+          <md-select ng-model="user">
+            <md-option>Todas as etapas</md-option>
+            <md-option>Negocieacos</md-option>
+            <md-option>Negocieacos</md-option>
           </md-select>
         </md-input-container>
+
+
+
+
         <span flex></span>
-        <md-button ng-click="toggleRight()" md-ink-ripple="#916bd2">
+        <md-button ng-click="toggleRight()" md-ink-ripple="#916bd2" style="right: 12px;">
           <md-icon md-font-icon="material-icons">filter_list</md-icon>
         </md-button>
     </div>
 
   </md-toolbar>
 
-      <md-toolbar ng-show="showSearch" style="background-color: #c2c2c2" class="md-whiteframe-2dp md-theme-light" >
+      <md-toolbar ng-show="showSearch" style="background-color: #c2c2c2;" class="md-whiteframe-2dp md-theme-light" >
           <div class="md-toolbar-tools">
             <md-button ng-click="showSearch = !showSearch" aria-label="Back">
               <md-icon md-font-icon="material-icons">arrow_back</md-icon>
@@ -137,8 +173,8 @@
           </div>
         </md-toolbar>
 
-<md-content flex>
-  <div ng-show="!showBar" class="subtoolbar" layout-margin tabIndex="2" style="border-left: 3px solid transparent; outline: 0;">
+<ui-view layout="column" layout-fill>
+  <div ng-show="!showBar" class="subtoolbar" layout-margin style="border-left: 3px solid transparent; outline: 0;">
         <md-checkbox aria-label="check"></md-checkbox>
          <md-button  class="md-caption truncate" ng-click="$nowhere()" style="width: 88px">
            Responsável
@@ -163,12 +199,12 @@
          </md-button>
   </div>
 
-  <div ng-show="showBar" layout-margin tabIndex="2" flex="row" style="border-left: 3px solid transparent; outline: 0;">
+  <div ng-show="showBar" class="checkbar" flex="none" layout-margin>
         <md-checkbox aria-label="check"></md-checkbox>
          <span class="md-caption">
            3 selecionados
          </span>
-         <md-input-container>
+         <md-input-container class="md-caption">
           <label>TRANSFERIR PARA</label>
           <md-select ng-model="transfer">
             <md-option>
@@ -176,7 +212,7 @@
             </md-option>
           </md-select>
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-caption">
          <label>ALTERAR STATUS</label>
          <md-select ng-model="transfer">
            <md-option>
@@ -184,7 +220,7 @@
            </md-option>
          </md-select>
        </md-input-container>
-       <md-input-container>
+       <md-input-container class="md-caption">
         <label>MOVER PARA ETAPA</label>
         <md-select ng-model="transfer">
           <md-option>
@@ -192,7 +228,7 @@
           </md-option>
         </md-select>
       </md-input-container>
-      <md-input-container>
+      <md-input-container class="md-caption">
        <label>ADICIONAR/ALTERAR</label>
        <md-select ng-model="transfer">
          <md-option>
@@ -200,7 +236,7 @@
          </md-option>
        </md-select>
      </md-input-container>
-     <md-input-container>
+     <md-input-container class="md-caption">
       <label>ENVIAR</label>
       <md-select ng-model="transfer">
         <md-option>
@@ -208,7 +244,7 @@
         </md-option>
       </md-select>
      </md-input-container>
-     <md-input-container>
+     <md-input-container class="md-caption">
       <label>CRIAR</label>
       <md-select ng-model="transfer">
         <md-option>
@@ -223,16 +259,16 @@
 
 
 
-<ui-view layout="column" layout-fill>
+
 
   <md-sidenav class="md-sidenav-right md-whiteframe-3dp filterpull" md-disable-backdrop="true" md-component-id="right">
-        <md-toolbar class="md-theme-light md-primary md-hue-1" md-theme="plugPurple">
+        <md-toolbar class="md-theme-light md-primary md-hue-1 toolbar-height" md-theme="plugPurple">
           <md-list>
           <md-list-item>
             <p>Filtros: 4 ativos </p><span flex></span>
-            <md-icon md-font-icon="material-icons">filter_list</md-icon>
+            <md-icon ng-click="toggleRight()" md-font-icon="material-icons">filter_list</md-icon>
           </md-list-item>
-          <md-list-item class="md-subhead">
+          <md-list-item class="md-subhead stick-bottom">
             <md-select placeholder="Selecionar filtros salvos" ng-model="user">
               <md-option ng-value="jackson">Filtro do Jackson</md-option>
               <md-option ng-value="Luana">Filtro dahora da Luana</md-option>
@@ -261,7 +297,7 @@
                 <md-list>
                   <md-list-item class="md-2-line">
                     <md-icon class="material-icons md-discrete">check</md-icon>
-                  <md-input-container class="md-block" flex-gt-sm>
+                  <md-input-container class="md-block">
                   <label>Nome do Negócio</label>
                   <input ng-model="Co">
                   </md-input-container>
@@ -425,7 +461,7 @@
           <p class="md-subtitle">Salvar Filtro</p>
             <md-list>
               <md-list-item class="md-2-line">
-              <md-input-container class="md-block" flex-gt-sm>
+              <md-input-container class="md-block">
               <label>Nome do Filtro</label>
               <input ng-model="Co">
               </md-input-container>
@@ -448,7 +484,7 @@
               </md-menu-content>
             </md-menu>
 
-            <md-button ng-click="$nothing()">
+            <md-button ng-click="toggleRight()">
               Cancelar
             </md-button>
             <md-button ng-click="$nothing()">
@@ -457,7 +493,7 @@
           </div>
       </md-sidenav>
 
-
+<md-content flex>
 
 
 <div>

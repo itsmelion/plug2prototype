@@ -54,7 +54,7 @@
 
 .innermenus {
   margin-top: -100px;
-  max-height: 500px; }
+  max-height: 510px; }
   .innermenus md-menu-item > md-icon {
     width: 24px;
     padding-right: 0;
@@ -62,7 +62,7 @@
 
 #containerForResults {
   overflow-y: scroll;
-  max-height: 400px; }
+  max-height: 390px; }
 
 .table-list {
   margin: 0;
@@ -206,6 +206,32 @@
   .progress li.active ~ li svg {
     stroke: #aaaaaa; }
 
+.toolbar-height {
+  min-height: 160px; }
+
+.stick-bottom {
+  position: absolute !important;
+  bottom: 0.8rem; }
+
+.sidebar {
+  max-width: 240px; }
+  .sidebar md-toolbar {
+    background-image: url("../master_img/userbg.jpg");
+    background-size: cover; }
+    .sidebar md-toolbar > md-menu {
+      margin: 0;
+      position: absolute;
+      bottom: 0.8rem; }
+      .sidebar md-toolbar > md-menu > button {
+        margin: 0;
+        text-transform: none;
+        padding-right: 0.6rem; }
+        .sidebar md-toolbar > md-menu > button img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 1rem; }
+
 .searchinput .md-errors-spacer {
   position: absolute;
   margin-top: 32px; }
@@ -214,13 +240,45 @@
   margin: 0 6px;
   padding: 8px; }
 
-.user-toolbar {
-  background-size: cover; }
-
 .subtoolbar {
   outline: 0; }
   .subtoolbar * {
     text-align: left; }
+
+.maintoolbarselect {
+  padding-top: 10px; }
+  .maintoolbarselect md-input-container:not(.md-input-invalid).md-input-has-value label {
+    color: rgba(255, 255, 255, 0.7); }
+  .maintoolbarselect md-select ._md-select-value {
+    color: white;
+    border-bottom-color: transparent; }
+
+.notification > span {
+  font-size: .75rem;
+  top: -.275rem;
+  position: relative;
+  line-height: 0;
+  margin-left: -.6rem; }
+  .notification > span > span {
+    z-index: 1;
+    margin-left: 0.1rem;
+    top: -0.1rem;
+    position: relative; }
+
+.notification > span i {
+  position: absolute;
+  top: -.375rem;
+  left: -0.375rem;
+  font-size: 1.4rem;
+  color: #de5c5c;
+  z-index: -1; }
+
+.checkbar {
+  border-left: 3px solid transparent;
+  outline: 0;
+  min-height: 80px;
+  padding-top: 12px;
+  padding-bottom: 6px; }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }

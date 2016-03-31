@@ -1,3 +1,30 @@
+.toolbar-height{
+  min-height: 160px;
+}
+.stick-bottom{
+  position: absolute !important;
+  bottom: 0.8rem;
+}
+
+.sidebar{
+  max-width:240px;
+  md-toolbar {
+    background-image: url('../master_img/userbg.jpg');
+    background-size: cover;
+    > md-menu{
+      margin: 0;
+      position: absolute;
+      bottom: 0.8rem;
+      > button{
+      margin: 0;
+      text-transform: none;
+      padding-right: 0.6rem;
+      img{width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;}
+      }
+    }
+  }
+}
+
 .searchinput .md-errors-spacer{
   position: absolute;
   margin-top: 32px;
@@ -8,11 +35,39 @@
   margin: 0 6px; padding: 8px}
 }
 
-.user-toolbar{
-  background-size: cover;
-}
-
 .subtoolbar{
   outline: 0;
   *{text-align: left;}
+}
+.maintoolbarselect{
+  padding-top: 10px;
+  md-input-container:not(.md-input-invalid).md-input-has-value label{
+  color: rgba(255,255,255,0.7);
+  }
+  md-select ._md-select-value{color: rgb(255,255,255); border-bottom-color: transparent;}
+}
+
+
+.notification{
+  > span{
+    font-size: .75rem;
+    top: -.275rem;
+    position: relative;
+    line-height: 0;
+    margin-left: -.6rem;
+    > span{
+    z-index: 1;
+    margin-left: 0.1rem;
+    top: -0.1rem;
+    position: relative;
+    }
+  }
+  > span i{position: absolute; top: -.375rem; left:-0.375rem; font-size: 1.4rem; color: #de5c5c; z-index: -1;}
+}
+.checkbar{
+  border-left: 3px solid transparent;
+  outline: 0;
+  min-height: 80px;
+  padding-top:12px;
+  padding-bottom: 6px;
 }

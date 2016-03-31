@@ -16,11 +16,12 @@
 
 .innermenus{
   margin-top: -100px;
-  max-height: 500px;
+  max-height: 510px;
   md-menu-item > md-icon{
     width: 24px;
     padding-right: 0;
     pointer-events: none;
   }
+
 }
-#containerForResults{overflow-y: scroll; max-height: 400px;}
+#containerForResults{overflow-y: scroll; max-height: 390px;}

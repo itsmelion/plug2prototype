@@ -1,17 +1,10 @@
 .filterpull{
   .innerfilters {
-    padding-top: .8rem;
-    >md-list >md-list-item >md-icon{position: absolute; margin: 0; top: 50%; margin-top: -1rem; left: 12px;}
-    >md-list >md-list-item {padding-left: 48px;}
-    md-list{padding: 0;}
-    md-menu-bar{padding: 0;}
-    md-list-item > md-icon:first-child:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon){
-      margin-right: 12px;
-    }
+    padding-top: 1.5rem;
+    md-list > md-list-item.md-no-proxy {margin-bottom: .5rem;}
+    md-list > md-list-item.md-no-proxy > md-input-container{margin-bottom: 0; width: 100%; margin-bottom: -1rem;}
+    md-menu-bar { padding: 0;}
   }
-}
-.checks{
- md-icon.ng-isolate-scope{ width: 24px; height: 24px; position: relative; padding-top: 12px; left: 12px;}
 }
 
 .innermenus{

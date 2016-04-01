@@ -6,7 +6,6 @@ $(function() {
 });
 
 
-
   app.config(function($mdIconProvider) {
     $mdIconProvider
       .defaultIconSet('master_img/icons/sets/core-icons.svg', 24);

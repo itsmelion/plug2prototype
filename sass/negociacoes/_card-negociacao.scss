@@ -10,10 +10,9 @@
 }
 
 .rate{
-  display: inline-block;
-  md-radio-button{display: inline-block; margin-bottom: 0}
-  md-radio-button ._md-container {display: none;}
-  md-radio-button ._md-label {margin-left: 0;}
+  md-radio-button{display: inline-block;}
+  md-radio-button div.md-container {display: none;}
+  md-radio-button div.md-label {margin-left: 0;}
   .material-icons{font-size: 20px}
   md-icon{width: 20px; height: 20px;}
 }

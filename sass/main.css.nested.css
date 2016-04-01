@@ -29,28 +29,15 @@
   font-feature-settings: 'liga'; }
 
 .filterpull .innerfilters {
-  padding-top: .8rem; }
-  .filterpull .innerfilters > md-list > md-list-item > md-icon {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    margin-top: -1rem;
-    left: 12px; }
-  .filterpull .innerfilters > md-list > md-list-item {
-    padding-left: 48px; }
-  .filterpull .innerfilters md-list {
-    padding: 0; }
+  padding-top: 1.5rem; }
+  .filterpull .innerfilters md-list > md-list-item.md-no-proxy {
+    margin-bottom: .5rem; }
+  .filterpull .innerfilters md-list > md-list-item.md-no-proxy > md-input-container {
+    margin-bottom: 0;
+    width: 100%;
+    margin-bottom: -1rem; }
   .filterpull .innerfilters md-menu-bar {
     padding: 0; }
-  .filterpull .innerfilters md-list-item > md-icon:first-child:not(.md-avatar-icon), .filterpull .innerfilters md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
-    margin-right: 12px; }
-
-.checks md-icon.ng-isolate-scope {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  padding-top: 12px;
-  left: 12px; }
 
 .innermenus {
   box-shadow: 2px 2px 10px #B3B3B3;
@@ -90,20 +77,21 @@
       margin-bottom: 24px;
       padding-left: 36px; } }
 
-.rate {
+.rate md-radio-button {
   display: inline-block; }
-  .rate md-radio-button {
-    display: inline-block;
-    margin-bottom: 0; }
-  .rate md-radio-button ._md-container {
-    display: none; }
-  .rate md-radio-button ._md-label {
-    margin-left: 0; }
-  .rate .material-icons {
-    font-size: 20px; }
-  .rate md-icon {
-    width: 20px;
-    height: 20px; }
+
+.rate md-radio-button div.md-container {
+  display: none; }
+
+.rate md-radio-button div.md-label {
+  margin-left: 0; }
+
+.rate .material-icons {
+  font-size: 20px; }
+
+.rate md-icon {
+  width: 20px;
+  height: 20px; }
 
 .userpic .md-avatar {
   margin: 0; }
@@ -216,7 +204,7 @@
 
 .stick-bottom {
   position: absolute !important;
-  bottom: 0.8rem; }
+  bottom: 0rem; }
 
 .sidebar {
   max-width: 240px; }
@@ -237,26 +225,32 @@
           border-radius: 50%;
           margin-right: 1rem; }
 
-.searchinput .md-errors-spacer {
+.searchinput md-input-container input {
+  border-color: none; }
+
+.searchinput md-input-container .md-errors-spacer {
   position: absolute;
   margin-top: 32px; }
-
-.toolbarselect md-input-container {
-  margin: 0 6px;
-  padding: 8px; }
 
 .subtoolbar {
   outline: 0; }
   .subtoolbar * {
     text-align: left; }
 
-.maintoolbarselect {
-  padding-top: 10px; }
-  .maintoolbarselect md-input-container:not(.md-input-invalid).md-input-has-value label {
-    color: rgba(255, 255, 255, 0.7); }
-  .maintoolbarselect md-select ._md-select-value {
-    color: white;
-    border-bottom-color: transparent; }
+.maintoolbarselect md-input-container .md-select-value.md-select-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: none; }
+
+.maintoolbarselect md-input-container.md-input-has-value label {
+  color: rgba(255, 255, 255, 0.7); }
+
+.maintoolbarselect md-input-container .md-select-value {
+  border-bottom: none;
+  color: white; }
+
+@media screen and (max-width: 490px) {
+  .maintoolbarselect {
+    display: inline-table; } }
 
 .notification > span {
   font-size: .75rem;
@@ -277,6 +271,20 @@
   font-size: 1.4rem;
   color: #de5c5c;
   z-index: -1; }
+
+.notification-Menu {
+  background-color: #e0e0e0;
+  padding: 0;
+  padding-bottom: 1.5rem; }
+  .notification-Menu h3 {
+    padding: 0 1.5rem; }
+  .notification-Menu md-toolbar {
+    margin-bottom: 1rem; }
+  .notification-Menu md-menu-item {
+    margin: 0.1rem .5rem; }
+  .notification-Menu button.md-button {
+    background-color: #fafafa;
+    border-radius: 6px; }
 
 .checkbar {
   border-left: 3px solid transparent;

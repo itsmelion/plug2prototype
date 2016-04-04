@@ -1,13 +1,19 @@
 .toolbar-height{
-  min-height: 160px;
+  min-height: 135px;
 }
 .stick-bottom{
   position: absolute !important;
   bottom: 0rem;
 }
 
+.btn-indent{
+  md-list-item div.md-button._md-no-style{
+  padding: 0 28px;
+  }
+}
+
 .sidebar{
-  max-width:240px;
+  max-width:220px;
   md-toolbar {
     background-image: url('../master_img/userbg.jpg');
     background-size: cover;

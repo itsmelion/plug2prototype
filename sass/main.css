@@ -77,21 +77,20 @@
       margin-bottom: 24px;
       padding-left: 36px; } }
 
-.rate md-radio-button {
-  display: inline-block; }
-
-.rate md-radio-button div.md-container {
+.rate md-radio-button ._md-container {
   display: none; }
 
-.rate md-radio-button div.md-label {
+.rate md-radio-button ._md-label {
   margin-left: 0; }
 
 .rate .material-icons {
-  font-size: 20px; }
+  font-size: 16px; }
 
 .rate md-icon {
-  width: 20px;
-  height: 20px; }
+  width: 13px;
+  height: 15px;
+  min-width: 0;
+  min-height: 0; }
 
 .userpic .md-avatar {
   margin: 0; }
@@ -200,14 +199,17 @@
     stroke: #aaaaaa; }
 
 .toolbar-height {
-  min-height: 160px; }
+  min-height: 135px; }
 
 .stick-bottom {
   position: absolute !important;
   bottom: 0rem; }
 
+.btn-indent md-list-item div.md-button._md-no-style {
+  padding: 0 28px; }
+
 .sidebar {
-  max-width: 240px; }
+  max-width: 220px; }
   .sidebar md-toolbar {
     background-image: url("../master_img/userbg.jpg");
     background-size: cover; }

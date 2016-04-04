@@ -70,8 +70,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  min-width: 145px;
-  max-width: 620px;
+  min-width: 45px;
+  max-width: 150px;
 }
 
 .progress li {
@@ -95,7 +95,7 @@
     content: "fiber_manual_record";
     font-size: 0.7rem;
     position: absolute;
-    right: .4rem;
+    right: .35rem;
     cursor: pointer;
     z-index: 2;
   }
@@ -103,7 +103,7 @@
 
 
 .progress li.active {
-  svg{stroke:#1dc2e7; transition: 0.3s ease;}
+  svg{stroke:#1dc2e7; transition: 0.25s ease;}
   &:after{transition: 0.2s ease; font-size: 1.2rem; right: 0; }
 }
 

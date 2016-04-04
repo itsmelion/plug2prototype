@@ -4,7 +4,7 @@
 <!-- General Meta -->
     <meta charset="UTF-8" />
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-		<title>PlugCRM {Dawnbreak}</title>
+		<title>PlugCRM {Inbox}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -112,12 +112,13 @@
         <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
           <md-icon md-font-icon="material-icons ">menu</md-icon>
         </md-button>
-        <h1 style="font-size: 20px !important;">Negociacoes</h1>
+        <h1 style="font-size: 26px !important; color: white;">Negociações</h1>
         <span flex></span>
 
-        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-            <md-icon md-font-icon="material-icons ">search</md-icon>
-          </md-button>
+        <md-input-container md-no-float class="md-block searchinput">
+         <md-icon md-font-icon="material-icons ">search</md-icon>
+         <input ng-model="user.search" type="text" placeholder="Pesquisar">
+       </md-input-container>
 
 
           <md-menu md-position-mode="target-right target" >
@@ -125,7 +126,7 @@
                       <md-icon md-font-icon="material-icons ">notifications</md-icon>
                       <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
                     </md-button>
-                    <md-menu-content class="notification-Menu" width="7" >
+                    <md-menu-content class="notification-Menu" width="6" >
                     <md-toolbar md-theme="plugOrange" layout="row">
                       <h3> Notificações </h3>
                       <md-icon md-font-icon="material-icons ">notifications</md-icon>
@@ -168,7 +169,7 @@
       </div>
 
 
-    <div  class="md-toolbar-tools toolbarselect maintoolbarselect stick-bottom" >
+    <div style="margin-top: 28px" class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect" >
       <md-input-container class="md-subhead">
         <label>Visão</label>
         <md-select ng-model="user">
@@ -190,31 +191,14 @@
             <md-option>Negocieacos</md-option>
           </md-select>
         </md-input-container>
-
-
-
-
         <span flex></span>
-        <md-button ng-click="toggleRight()" md-ink-ripple="#916bd2" style="right: 12px;">
+        <md-button ng-click="toggleRight()" md-ink-ripple="#916bd2">
           <md-icon md-font-icon="material-icons">filter_list</md-icon>
         </md-button>
     </div>
 
   </md-toolbar>
 
-      <md-toolbar ng-show="showSearch" style="background-color: #c2c2c2;" class="md-whiteframe-2dp md-theme-light" >
-          <div class="md-toolbar-tools searchinput">
-            <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-              <md-icon md-font-icon="material-icons">arrow_back</md-icon>
-            </md-button>
-            <md-input-container class="md-theme-light" flex>
-              <input ng-model="search" placeholder="Digite sua pesquisa">
-            </md-input-container>
-            <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-              <md-icon md-font-icon="material-icons">search</md-icon>
-            </md-button>
-          </div>
-        </md-toolbar>
 
 <ui-view layout="column" layout-fill>
   <div ng-show="!showBar" class="subtoolbar" layout-margin style="border-left: 3px solid transparent; outline: 0;">
@@ -761,16 +745,18 @@
 <div>
 <md-card layout-wrap class="table-list" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
 
-<div layout-align="center center" layout="row" flex="90" flex-gt-sm="25">
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="5">
   <div layout-margin layout="row" layout-align="center center" >
     <md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox>
-  </div>
+  </div></div>
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="10">
     <md-list flex="none"  class="userpic">
       <md-list-item>
       <img class="md-avatar" src="master_img/dummy_square.png">
       <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
       </md-list-item>
-    </md-list>
+    </md-list></div>
+<div layout-align="center center" layout="row" flex="90" flex-gt-sm="15">
     <md-list flex="noshrink" class="who" flex="85">
       <md-list-item>
       <span class="truncate">Louis Lourence</span>
@@ -781,7 +767,7 @@
     </md-list>
 </div>
 
-  <div flex="70" flex-gt-sm="30" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
+  <div flex="70" flex-gt-sm="10" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
     <div flex="noshrink">
       <md-radio-group class="rate">
         <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
@@ -791,18 +777,8 @@
         <md-radio-button value="DUUUDE, Marry me!"><md-tooltip>NOOOOSSSA !!</md-tooltip><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
       </md-radio-group>
     </div>
-    <md-list flex="noshrink" class="recorrencia">
-      <md-list-item style="min-width:90px;">
-      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>lens</md-icon>
-      <p class="truncate">R$ 12.338,<span>00</span></p>
-      </md-list-item>
-      <md-list-item style="min-width:90px;">
-      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>lens</md-icon>
-      <p class="truncate">R$ 1200,<span>00</span></p>
-      </md-list-item>
-    </md-list>
   </div>
-  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+<div flex="70" flex-gt-sm="15" layout-padding layout="row" layout-align="space-between center" layout-align-xs="center center" layout-align-sm="center center">
     <div flex="noshrink">
       <ol layout="row" class="progress">
         <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
@@ -814,7 +790,18 @@
         <li flex><md-tooltip>Fechamento</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
       </ol>
     </div>
-
+  </div>
+  <div flex="70" flex-gt-sm="15" layout="row" layout-align="center center">
+    <md-list flex="noshrink" class="recorrencia">
+      <md-list-item style="min-width:90px;">
+      <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>lens</md-icon>
+      <p class="truncate">R$ 12.338,<span>00</span></p>
+      </md-list-item>
+      <md-list-item style="min-width:90px;">
+      <md-icon class="material-icons"><md-tooltip>Recorrentes</md-tooltip>lens</md-icon>
+      <p class="truncate">R$ 1200,<span>00</span></p>
+      </md-list-item>
+    </md-list>
   </div>
   <div flex="80" flex-gt-sm="20" class="tarefas" layout="row" layout-align="space-around center" >
     <div flex="none" layout="row">

@@ -1,10 +1,6 @@
 .toolbar-height{
   min-height: 135px;
 }
-.stick-bottom{
-  position: absolute !important;
-  bottom: 0rem;
-}
 
 .btn-indent{
   md-list-item div.md-button._md-no-style{
@@ -32,13 +28,8 @@
 }
 
 .searchinput {
-  md-input-container{
-    input{border-color: none;}
-    .md-errors-spacer{
-    position: absolute;
-    margin-top: 32px;
-    }
-  }
+  input{border-color: rgba(255,255,255,.30); color: rgba(255,255,255,1);}
+  input::-webkit-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {color: rgba(255,255,255,.50);}
 }
 
 .subtoolbar{
@@ -79,9 +70,7 @@
   button.md-button{ background-color: #fafafa; border-radius: 6px;}
 }
 .checkbar{
-  border-left: 3px solid transparent;
+  border-left: 4px solid transparent;
   outline: 0;
-  min-height: 80px;
   padding-top:12px;
-  padding-bottom: 6px;
 }

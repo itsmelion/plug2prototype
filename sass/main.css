@@ -106,32 +106,31 @@
     font-size: .8rem;
     color: rgba(0, 0, 0, 0.37); }
 
-.recorrencia md-list-item > div.md-primary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item > div.md-secondary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item > md-icon.md-secondary:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > div.md-primary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > div.md-secondary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon.md-secondary:not(.md-avatar-icon) {
-  width: auto;
-  margin-top: 3px;
-  margin-bottom: 0;
-  min-height: 0; }
-
-.recorrencia span {
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 0.8rem;
-  margin-left: 10px; }
-
-.recorrencia p > span {
-  color: inherit;
-  font-size: 0.8rem;
-  vertical-align: top;
-  margin-left: 0; }
-
-.recorrencia md-list-item > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
-  margin-right: 10px;
-  font-size: .8rem; }
-
-.recorrencia md-list-item, .recorrencia md-list-item ._md-list-item-inner {
-  min-height: 32px; }
-
-.recorrencia md-icon {
-  height: auto; }
+.recorrencia {
+  cursor: default; }
+  .recorrencia md-list-item > div.md-primary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item > div.md-secondary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item > md-icon.md-secondary:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > div.md-primary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > div.md-secondary > md-icon:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon.md-secondary:not(.md-avatar-icon) {
+    width: auto;
+    margin-top: 3px;
+    margin-bottom: 0;
+    min-height: 0; }
+  .recorrencia md-list-item > p {
+    font-size: 0.9rem; }
+  .recorrencia span {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.65rem;
+    margin-left: 10px; }
+  .recorrencia p > span {
+    color: inherit;
+    font-size: 0.65rem;
+    vertical-align: top;
+    margin-left: 0; }
+  .recorrencia md-list-item > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
+    margin-right: 0px;
+    font-size: .6rem; }
+  .recorrencia md-list-item, .recorrencia md-list-item ._md-list-item-inner {
+    min-height: 21px; }
+  .recorrencia md-icon {
+    height: auto; }
 
 .tarefas md-list-item .md-avatar, .tarefas md-list-item .md-avatar-icon, .tarefas md-list-item ._md-list-item-inner .md-avatar, .tarefas md-list-item ._md-list-item-inner .md-avatar-icon {
   margin-top: 0px;
@@ -162,14 +161,14 @@
   line-height: 2.1rem;
   color: #1dc2e7; }
   .progress li:first-of-type {
-    width: 10px; }
+    width: 3px; }
 
 .progress li svg {
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: -0.8rem;
-  margin-top: -1px;
+  left: -0.7rem;
+  margin-top: -2px;
   stroke: #1dc2e7;
   stroke-width: 3;
   width: 100%; }
@@ -178,7 +177,7 @@
   font-family: 'Material Icons';
   -webkit-font-feature-settings: 'liga';
   content: "fiber_manual_record";
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   position: absolute;
   right: .4rem;
   cursor: pointer;
@@ -190,7 +189,7 @@
 
 .progress li.active:after {
   transition: 0.2s ease;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   right: 0; }
 
 .progress li.active ~ li {

@@ -19,12 +19,13 @@
 
 	<md-sidenav flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left md-whiteframe-z2 sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-md')">
 			  <md-toolbar flex="none" class="md-theme-light toolbar-height" layout="column" layout-padding>
-          <img src="master_img/brand.png" width="72px" alt="logo" />
+          <img src="master_img/brand.png" width="71px" alt="logo" />
       <md-menu>
-        <md-button ng-click="$mdOpenMenu($event)" layout="row" layout-align="start center">
-          <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" /> <h2 class="truncate ">Christhopher Lion</h2>
+        <md-button ng-click="$mdOpenMenu($event)" layout="row">
+          <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
+          <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 16px;">arrow_drop_down</i></h3>
         </md-button>
-        <md-menu-content width="4" >
+        <md-menu-content width="3" >
           <md-menu-item>
             <md-button ng-click="$nowhere()">
                 <div layout="row" flex>
@@ -307,7 +308,7 @@
         <md-toolbar class="md-theme-light md-primary md-hue-1 toolbar-height" md-theme="plugPurple">
           <md-list>
           <md-list-item>
-            <p>Filtros: 4 ativos </p><span flex></span>
+            <p style="font-size: 16px;">Filtros: 4 ativos </p><span flex></span>
             <md-icon ng-click="toggleRight()" md-font-icon="material-icons">filter_list</md-icon>
           </md-list-item>
           <md-list-item class="md-subhead stick-bottom">

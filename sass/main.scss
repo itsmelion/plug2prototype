@@ -10,3 +10,14 @@
 .truncate{
   overflow: hidden; text-overflow: ellipsis;
 }
+
+a.md-default-theme:not(.md-button), a:not(.md-button){
+  color: inherit;
+  cursor: pointer;
+}
+
+a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover{
+  color: rgb(42,173,191);
+}
+
+md-checkbox{margin-bottom: 0;}

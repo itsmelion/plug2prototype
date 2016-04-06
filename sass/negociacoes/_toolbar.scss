@@ -13,6 +13,9 @@
   md-toolbar {
     background-image: url('../master_img/userbg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-origin: border-box;
     > md-menu{
       margin: 0;
       position: absolute;
@@ -34,15 +37,28 @@
 
 .subtoolbar{
   outline: 0;
-  *{text-align: left;}
+  border-left: 3px solid transparent;
+  a{
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.54) !important;
+    padding-right: 0.6rem;
+    box-sizing: content-box;
+    display: block;
+    &::after{
+    position: absolute;
+     font-family: 'Material Icons';
+     line-height: 12px;
+     -webkit-font-feature-settings: 'liga';
+      content: "expand_more";
+      font-size: .9rem;
+      margin-top: 3px;
+    }
+    &:hover{  color: rgba(26,128,128,.54) !important;}
+  }
 }
 .maintoolbarselect{
-  md-input-container .md-select-value.md-select-placeholder{color: rgba(255,255,255,.70); border-bottom: none;}
-  md-input-container.md-input-has-value label { color: rgba(255,255,255,.70);}
-  md-input-container .md-select-value{border-bottom: none; color: white;}
   @media screen and (max-width: 490px) {display: inline-table;}
 }
-
 
 .notification{
   > span{

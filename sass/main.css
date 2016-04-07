@@ -28,16 +28,16 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
-.filterpull .innerfilters {
-  padding-top: 1.5rem; }
-  .filterpull .innerfilters md-list > md-list-item.md-no-proxy {
-    margin-bottom: .5rem; }
-  .filterpull .innerfilters md-list > md-list-item.md-no-proxy > md-input-container {
-    margin-bottom: 0;
-    width: 100%;
-    margin-bottom: -1rem; }
-  .filterpull .innerfilters md-menu-bar {
-    padding: 0; }
+.filterpull .innerfilters md-list > md-list-item.md-no-proxy {
+  margin-bottom: .5rem; }
+
+.filterpull .innerfilters md-list > md-list-item.md-no-proxy > md-input-container {
+  margin-bottom: 0;
+  width: 100%;
+  margin-bottom: -1rem; }
+
+.filterpull .innerfilters md-menu-bar {
+  padding: 0; }
 
 .innermenus {
   box-shadow: 2px 2px 10px #B3B3B3;
@@ -225,6 +225,9 @@
   .progress li.active ~ li svg {
     stroke: #aaaaaa; }
 
+.card-info li {
+  list-style: none; }
+
 .toolbar-height {
   min-height: 135px; }
 
@@ -326,6 +329,12 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 
+body {
+  overflow-x: hidden; }
+
+h4 {
+  margin: 0; }
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -339,3 +348,49 @@ a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover {
 
 md-checkbox {
   margin-bottom: 0; }
+
+.visao-fav md-radio-button ._md-container {
+  display: none; }
+
+.visao-fav md-radio-button ._md-label {
+  margin-left: 0.5rem;
+  color: rgba(0, 0, 0, 0.37);
+  top: 0.5rem; }
+
+.visao-fav md-radio-button:hover ._md-label {
+  color: rgba(0, 0, 0, 0.54); }
+
+.notificationbar {
+  background-color: #f2f2f2; }
+  .notificationbar md-card .md-button {
+    line-height: 20px;
+    padding: 0.5rem 0;
+    text-align: center; }
+    .notificationbar md-card .md-button h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: .8rem;
+      margin-left: 1.5rem; }
+    .notificationbar md-card .md-button p {
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-bottom: .6rem;
+      margin-left: 1.5rem; }
+
+#task-seemore {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer; }
+  #task-seemore a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  #task-seemore:hover a {
+    color: rgba(26, 128, 128, 0.54) !important; }

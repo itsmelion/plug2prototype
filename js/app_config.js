@@ -60,11 +60,23 @@ app.config(function($mdThemingProvider) {
 
 // NEW MENU FEATURES
 
-  app.controller('MyController', function ($scope, $timeout, $mdSidenav, $log) {
+  app.controller('MyController', function ($scope, $timeout, $mdSidenav, $log, $mdDialog) {
       $scope.toggleLeft = buildDelayedToggler('left');
       $scope.toggleRight = buildToggler('right');
+      $scope.toggleNotification = buildToggler('notificationbar');
       $scope.isOpenRight = function(){
         return $mdSidenav('right').isOpen();
+      };
+      $scope.openConfirmModal = function() {
+        $mdDialog.show(
+          $mdDialog.alert()
+            .clickOutsideToClose(true)
+            .title('Are you sure dude?')
+            .textContent('You are suposed to think twice before complete this action')
+            .ariaLabel('crazyModal')
+            .ok('Of course i want, that is why i clicked it beforehand, fool!')
+
+        );
       };
       /**
            * Supplies a function that will continue to operate until the
@@ -120,7 +132,6 @@ app.config(function($mdThemingProvider) {
                 $log.debug("close RIGHT is done");
               });
           };
-
 
 
 });

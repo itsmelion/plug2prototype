@@ -122,7 +122,7 @@
 
 
           <md-menu md-position-mode="target-right target" >
-                    <md-button class="notification" ng-click="$mdOpenMenu($event)">
+                    <md-button class="notification" ng-click="toggleNotification()" md-ink-ripple="#D26B6B">
                       <md-icon md-font-icon="material-icons ">notifications</md-icon>
                       <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
                     </md-button>
@@ -169,11 +169,22 @@
       </div>
 
 
-    <div style="margin-top: 28px" class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect" >
-      <md-input-container class="md-subhead">
+    <div style="margin-top: 28px" class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect">
+      <md-input-container class="md-subhead" >
         <label>Visão</label>
-        <md-select ng-model="user">
-          <md-option >Negocieacos</md-option>
+        <md-select ng-model="selectedToppings">
+          <md-radio-group ng-model="data.group1" class="visao-fav">
+            <div layout="row">
+              <md-radio-button ng-click="showSimpleToast()" value="Apple"><i class="material-icons">star_border</i></md-radio-button>
+              <md-option flex ng-value="user8"> Negociacao</md-option>
+            </div>
+            <div layout="row">
+            <md-radio-button value="mango"><i class="material-icons">star_border</i></md-radio-button>
+            <md-option flex ng-value="user2" > Tarefas</md-option></div>
+            <div layout="row">
+            <md-radio-button value="banana"><i class="material-icons">star_border</i></md-radio-button>
+            <md-option flex ng-value="user3" > RaioX</md-option></div>
+          </md-radio-group>
         </md-select>
       </md-input-container>
       <md-input-container class="md-subhead" >
@@ -277,14 +288,7 @@
          <span class="md-caption">
            3 selecionados
          </span>
-         <md-input-container class="md-caption">
-          <label>TRANSFERIR PARA</label>
-          <md-select ng-model="transfer">
-            <md-option>
-              Area de Trabalho
-            </md-option>
-          </md-select>
-        </md-input-container>
+         <md-button ng-click="openConfirmModal()">Area de trabalho</md-button>
         <md-input-container class="md-caption">
          <label>ALTERAR STATUS</label>
          <md-select ng-model="transfer">
@@ -331,17 +335,69 @@
   </div>
 
 
-
+  <md-sidenav class="md-sidenav-right md-whiteframe-5dp notificationbar" md-disable-backdrop="true" md-component-id="notificationbar">
+      <md-toolbar class="md-theme-light md-warn toolbar-height" >
+        <md-list-item ng-click="toggleNotification()" style="outline: none;">
+          <md-icon md-font-icon="material-icons">notifications_none</md-icon>
+          <h2 flex> Notificações </h2>
+          <md-icon md-font-icon="material-icons">close</md-icon>
+        </md-list-item>
+            <md-button style="margin-top: 22px"><md-icon md-font-icon="material-icons">playlist_add_check</md-icon>&nbsp;Marcar tudo como Lido</md-button>
+      </md-toolbar>
+    <div style="padding: 12px 30px"><p style="text-align: center; font-size: 0.85rem; color: #999;">Você tem 7 notificações</p></div>
+    <md-card>
+      <md-list-item ng-click="null">
+      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
+      <div flex>
+        <h4>I love kitten. nhac! :3</h4>
+        <p>criado à 8 dias atrás</p>
+      </div>
+      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
+      </md-list-item>
+    </md-card>
+    <md-card>
+      <md-list-item ng-click="null">
+      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
+      <div flex>
+        <h4>I love kitten. nhac! :3</h4>
+        <p>criado à 8 dias atrás</p>
+      </div>
+      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
+      </md-list-item>
+    </md-card>
+    <md-card>
+      <md-list-item ng-click="null">
+      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
+      <div flex>
+        <h4>I love kitten. nhac! :3</h4>
+        <p>criado à 8 dias atrás</p>
+      </div>
+      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
+      </md-list-item>
+    </md-card>
+    <md-card>
+      <md-list-item ng-click="null">
+      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
+      <div flex>
+        <h4>I love kitten. nhac! :3</h4>
+        <p>criado à 8 dias atrás</p>
+      </div>
+      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
+      </md-list-item>
+    </md-card>
+    <div ng-click="null" id="task-seemore"><a>Ver todas</a></div>
+  </md-sidenav>
 
 
   <md-sidenav class="md-sidenav-right md-whiteframe-3dp filterpull" md-disable-backdrop="true" md-component-id="right">
         <md-toolbar class="md-theme-light md-primary md-hue-1 toolbar-height" md-theme="plugPurple">
           <md-list>
-          <md-list-item>
-            <p style="font-size: 16px;">Filtros: 4 ativos </p><span flex></span>
-            <md-icon ng-click="toggleRight()" md-font-icon="material-icons">filter_list</md-icon>
+          <md-list-item ng-click="toggleRight()" style="outline: none;">
+            <md-icon md-font-icon="material-icons">filter_list</md-icon>
+            <h2 flex >Filtros</h2>
+            <md-icon md-font-icon="material-icons">close</md-icon>
           </md-list-item>
-          <md-list-item class="md-subhead stick-bottom">
+          <md-list-item  class="md-subhead">
             <md-select placeholder="Selecionar filtros salvos" ng-model="user">
               <md-option ng-value="jackson">Filtro do Jackson</md-option>
               <md-option ng-value="Luana">Filtro dahora da Luana</md-option>
@@ -349,6 +405,7 @@
           </md-list-item>
         </md-list>
         </md-toolbar>
+        <div style="padding: 12px 30px"><p style="text-align: center; font-size: 0.85rem; color: #999;"> Você tem <a style="color: #45B4A3;"><md-tooltip>Campanha - Produto - Data</md-tooltip>4</a> filtros ativos</p></div>
         <md-content class="innerfilters" ng-controller="RightCtrl">
           <md-list>
             <md-list-item class="md-2-line">
@@ -860,44 +917,13 @@
 </div>
 
 <div flex="100" flex-gt-sm="5" layout="row" layout-align="end center">
-      <md-menu md-position-mode="target-right target" >
-            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
-              <md-icon md-menu-origin md-font-icon="material-icons ">info_outline</md-icon>
-            </md-button>
-            <md-menu-content width="4" >
-              <md-menu-item>
-                <md-button ng-click="$nowhere()">
-                    <div layout="row" flex>
-                      <p flex>Option</p>
-                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                    </div>
-                </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button ng-click="$nowhere()">
-                    <div layout="row" flex>
-                      <p flex>Option</p>
-                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                    </div>
-                </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button ng-click="$nowhere()">
-                    <div layout="row" flex>
-                      <p flex>Option</p>
-                      <md-icon md-menu-origin md-font-icon="material-icons ">home</md-icon>
-                    </div>
-                </md-button>
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
-    </div>
+  <md-button class="md-icon-button" ng-click="showListBottomSheet()">
+    <md-icon md-menu-origin md-font-icon="material-icons ">info_outline</md-icon>
+  </md-button>
+</div>
 
 </md-card>
  </div> <!--close card -->
-
-
-
 
 </ui-view>
 </md-content>
@@ -909,49 +935,49 @@
 
 
 <md-fab-speed-dial md-direction="up" class="md-scale md-fab-bottom-right" >
-        <md-fab-trigger >
-          <md-button tabIndex="10" class="md-fab md-accent md-hue-2" md-ink-ripple="#cbfff1">
-            <md-tooltip md-direction="left">Criar novo ...</md-tooltip>
-            <md-icon md-font-icon="material-icons ">add</md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions tabIndex="11">
-          <md-button class="md-fab md-raised md-mini md-primary">
-            <md-tooltip md-direction="left">Negociações</md-tooltip>
-            <md-icon md-font-icon="material-icons ">work</md-icon>
-          </md-button>
-          <md-button md-theme="plugPurple" class="md-fab md-raised md-mini md-primary">
-            <md-tooltip md-direction="left">Organizações</md-tooltip>
-            <md-icon md-font-icon="material-icons ">location_city</md-icon>
-          </md-button>
-          <md-button class="md-fab md-raised md-mini md-warn" >
-            <md-tooltip md-direction="left">Contacts</md-tooltip>
-            <md-icon md-font-icon="material-icons ">contacts</md-icon>
-          </md-button>
-          <md-button md-theme="plugOrange" class="md-fab md-raised md-mini md-primary">
-            <md-tooltip md-direction="left">Tarefas</md-tooltip>
-            <md-icon md-font-icon="material-icons ">assignment</md-icon>
-          </md-button>
-        </md-fab-actions>
-      </md-fab-speed-dial>
+    <md-fab-trigger >
+      <md-button tabIndex="10" class="md-fab md-accent md-hue-2" md-ink-ripple="#cbfff1">
+        <md-tooltip md-direction="left">Criar novo ...</md-tooltip>
+        <md-icon md-font-icon="material-icons ">add</md-icon>
+      </md-button>
+    </md-fab-trigger>
+    <md-fab-actions tabIndex="11">
+      <md-button class="md-fab md-raised md-mini md-primary">
+        <md-tooltip md-direction="left">Negociações</md-tooltip>
+        <md-icon md-font-icon="material-icons ">work</md-icon>
+      </md-button>
+      <md-button md-theme="plugPurple" class="md-fab md-raised md-mini md-primary">
+        <md-tooltip md-direction="left">Organizações</md-tooltip>
+        <md-icon md-font-icon="material-icons ">location_city</md-icon>
+      </md-button>
+      <md-button class="md-fab md-raised md-mini md-warn" >
+        <md-tooltip md-direction="left">Contacts</md-tooltip>
+        <md-icon md-font-icon="material-icons ">contacts</md-icon>
+      </md-button>
+      <md-button md-theme="plugOrange" class="md-fab md-raised md-mini md-primary">
+        <md-tooltip md-direction="left">Tarefas</md-tooltip>
+        <md-icon md-font-icon="material-icons ">assignment</md-icon>
+      </md-button>
+  </md-fab-actions>
+</md-fab-speed-dial>
 
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<!-- Angular Material requires Angular.js Libraries -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
-	<!-- Angular Material Library -->
-	<script src="sass/angular-material/angular-material.js"></script>
+<!-- Angular Material Library -->
+<script src="sass/angular-material/angular-material.js"></script>
 
-	<!-- Your application bootstrap  -->
-  <script type="text/javascript" src="js/app_config.js"></script>
+<!-- Your application bootstrap  -->
+<script type="text/javascript" src="js/app_config.js"></script>
 
-  <!-- Other Functionalities for angular activities -->
-  <script type="text/javascript" src="js/funil_select.js"></script>
-	<!-- Script for nice and ease-scroll for things like scrollspy <script type="text/javascript" src="js/smoothscroll.min.js"></script> -->
+<!-- Other Functionalities for angular activities -->
+<script type="text/javascript" src="js/funil_select.js"></script>
+<!-- Script for nice and ease-scroll for things like scrollspy <script type="text/javascript" src="js/smoothscroll.min.js"></script> -->
 </body>
 </html>

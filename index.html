@@ -288,7 +288,12 @@
          <span class="md-caption">
            3 selecionados
          </span>
-         <md-button ng-click="openConfirmModal()">Area de trabalho</md-button>
+         <md-list-item class="md-2-line" ng-click="openConfirmModal()">
+           <div class="md-list-item-text">
+             <p>Transferir</p>
+             <h3>Area de trabalho</h3>
+           </div>
+         </md-list-item>
         <md-input-container class="md-caption">
          <label>ALTERAR STATUS</label>
          <md-select ng-model="transfer">
@@ -916,9 +921,9 @@
     </a>
 </div>
 
-<div flex="100" flex-gt-sm="5" layout="row" layout-align="end center">
-  <md-button class="md-icon-button" ng-click="showListBottomSheet()">
-    <md-icon md-menu-origin md-font-icon="material-icons ">info_outline</md-icon>
+<div ng-controller="PtM" flex="100" flex-gt-sm="5" layout="row" layout-align="end center">
+  <md-button class="md-icon-button" ng-click="showGridBottomSheet()">
+    <md-icon  md-font-icon="material-icons ">info_outline</md-icon>
   </md-button>
 </div>
 

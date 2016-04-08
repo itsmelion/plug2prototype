@@ -132,6 +132,25 @@ app.config(function($mdThemingProvider) {
                 $log.debug("close RIGHT is done");
               });
           };
+        });
 
 
-});
+// BOTTOM SHEET
+        app.controller('PtM', function($scope, $timeout, $mdBottomSheet, $mdToast) {
+          $scope.showGridBottomSheet = function() {
+            $scope.alert = '';
+            $mdBottomSheet.show({
+              templateUrl: 'bottom-sheet-grid-template.html',
+              disableParentScroll: false,
+              clickOutsideToClose: true,
+              disableBackdrop: true
+            }).then(function(clickedItem) {
+              $mdToast.show(
+                    $mdToast.simple()
+                      .textContent(clickedItem['name'] + ' clicked!')
+                      .position('top right')
+                      .hideDelay(1500)
+                  );
+            });
+          };
+        })

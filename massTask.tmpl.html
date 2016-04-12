@@ -1,0 +1,65 @@
+<md-dialog  ng-cloak>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <!-- nome da negociação; fonte; campanha e resp -->
+      <md-card>
+        <md-subheader class="md-no-sticky">Criar tarefas em massa</md-subheader>
+        <div layout="row">
+          <md-input-container style="margin: 1.4rem 0.7rem 1rem 1rem" >
+            <label>Tipo de Tarefa</label>
+            <md-select ng-model="tasks">
+              <md-option >Ligacao</md-option>
+              <md-option >Email</md-option>
+              <md-option >Outro</md-option>
+            </md-select>
+          </md-input-container>
+          <md-input-container style="margin: 1.4rem 1rem 1rem 0.7rem">
+            <label>Assunto</label>
+          <textarea ng-model="user.assunto" md-maxlength="97" rows="3" ></textarea>
+          </md-input-container>
+            <md-datepicker style="margin: 1.65rem 1rem 1rem 0.7rem" ng-model="user.submissionDate" md-placeholder="Data"></md-datepicker>
+          <md-input-container class="md-icon-float md-icon-right md-block" style="margin: 1.4rem 0.7rem 1rem 0.7rem">
+        <label>Hora</label>
+        <md-icon class="md-icon-font">access_time</md-icon>
+        <input ng-model="user.donation" type="time">
+        <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+          </md-input-container>
+        </div>
+    </md-card>
+      <md-card>
+        <md-list class="fixedRows">
+          <md-subheader class="md-no-sticky">Responsável</md-subheader>
+          <md-input-container style="margin: 1rem 0 1rem 0" md-no-float class="md-block">
+            <input placeholder="Buscar">
+          </md-input-container>
+           <p class="md-caption black3">recent tags</p>
+          <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+            <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+            <div class="md-list-item-text compact">
+              <h3>Laura</h3>
+              <p>laura@runrun.it</p>
+            </div>
+          </md-list-item>
+          <md-list-item class="md-2-line contact-item selected"  ng-click="openConfirmModal()">
+            <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+            <div class="md-list-item-text compact">
+              <h3>Laura</h3>
+              <p>laura@runrun.it</p>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-card>
+  </div>
+
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-warn">
+        Cancel
+      </md-button>
+      <span flex></span>
+      <md-button>
+        Confirm
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>

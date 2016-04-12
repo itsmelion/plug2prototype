@@ -67,17 +67,7 @@ app.config(function($mdThemingProvider) {
       $scope.isOpenRight = function(){
         return $mdSidenav('right').isOpen();
       };
-      $scope.openConfirmModal = function() {
-        $mdDialog.show(
-          $mdDialog.alert()
-            .clickOutsideToClose(true)
-            .title('Are you sure dude?')
-            .textContent('You are suposed to think twice before complete this action')
-            .ariaLabel('crazyModal')
-            .ok('Of course i want, that is why i clicked it beforehand, fool!')
 
-        );
-      };
       /**
            * Supplies a function that will continue to operate until the
            * time is up.
@@ -154,3 +144,99 @@ app.config(function($mdThemingProvider) {
             });
           };
         })
+
+      app.controller('ModalCtrl', function($scope, $mdDialog, $mdMedia) {
+        $scope.openConfirmModal = function() {
+          $mdDialog.show(
+            $mdDialog.alert()
+              .clickOutsideToClose(true)
+              .title('Are you sure dude?')
+              .textContent('You are suposed to think twice before complete this action')
+              .ariaLabel('crazyModal')
+              .ok('Of course i want, that is why i clicked it beforehand, fool!')
+
+          );
+        };
+        $scope.openAvaliacaoModal = function() {
+            $mdDialog.show({
+              templateUrl: 'avaliacao.tmpl.html',
+              parent: angular.element(document.body),
+              clickOutsideToClose:true
+            })
+        };
+        $scope.openCampaignModal = function() {
+          $mdDialog.show({
+            templateUrl: 'campanha.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true
+          })
+        };
+        $scope.openFontModal = function() {
+          $mdDialog.show({
+            templateUrl: 'fonte.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true
+          })
+        };
+        $scope.openProductModal = function() {
+          $mdDialog.show({
+            templateUrl: 'produto.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true
+          })
+        };
+        $scope.openBulkNegociacaoModal = function() {
+          $mdDialog.show({
+            templateUrl: 'bulkNegociacao.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true
+          })
+        };
+        $scope.openMassTaskModal = function() {
+          $mdDialog.show({
+            templateUrl: 'massTask.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true
+          })
+        };
+
+      })
+
+    // Visao Favorita TOAST
+    .controller('ToastCtrl', function($scope, $mdToast) {
+  var last = {
+      bottom: false,
+      top: true,
+      left: false,
+      right: true
+    };
+  $scope.toastPosition = angular.extend({},last);
+  $scope.getToastPosition = function() {
+    sanitizePosition();
+    return Object.keys($scope.toastPosition)
+      .filter(function(pos) { return $scope.toastPosition[pos]; })
+      .join(' ');
+  };
+  function sanitizePosition() {
+    var current = $scope.toastPosition;
+    if ( current.bottom && last.top ) current.top = false;
+    if ( current.top && last.bottom ) current.bottom = false;
+    if ( current.right && last.left ) current.left = false;
+    if ( current.left && last.right ) current.right = false;
+    last = angular.extend({},current);
+  }
+      $scope.showActionToast = function() {
+          var pinTo = $scope.getToastPosition();
+          var toast = $mdToast.simple()
+            .textContent('Ok, Salvei sua visao Favorita!')
+            .action('UNDO')
+            .highlightAction(true)
+            .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
+            .position(pinTo);
+          $mdToast.show(toast).then(function(response) {
+            if ( response == 'ok' ) {
+              alert('You clicked the \'UNDO\' action.');
+            }
+          });
+        };
+      })

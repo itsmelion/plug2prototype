@@ -34,3 +34,28 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+
+
+
+.black8{
+  color: rgba(0,0,0,0.87);
+}
+.black5{
+  color: rgba(0,0,0,0.54);
+}
+.black3{
+  color: rgba(0,0,0,0.38);
+  &:hover{color: rgba(0,0,0,0.54); cursor: normal;}
+}
+.black1{
+  color: rgba(0,0,0,0.12);
+  &:hover{color: rgba(0,0,0,0.37); cursor: normal;}
+}
+
+.white{ color: #ffffff;}
+.white7{
+  color: rgba(255,255,255,0.7);
+}
+.white5{
+  color: rgba(255,255,255,0.5);
+}

@@ -61,6 +61,12 @@ md-content{
   .material-icons{font-size: 16px}
   md-icon{width: 13px; height: 15px; min-width: 0; min-height: 0;}
 }
+.rateBig{
+  md-radio-button ._md-container {display: none;}
+  md-radio-button ._md-label {margin-left: 1rem;}
+  .material-icons{font-size: 32px}
+  md-icon{width: 26px; height: 30px; min-width: 0; min-height: 0;}
+}
 
 .userpic{
 .md-avatar{margin:0;}

@@ -28,6 +28,33 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
+.black8 {
+  color: rgba(0, 0, 0, 0.87); }
+
+.black5 {
+  color: rgba(0, 0, 0, 0.54); }
+
+.black3 {
+  color: rgba(0, 0, 0, 0.38); }
+  .black3:hover {
+    color: rgba(0, 0, 0, 0.54);
+    cursor: normal; }
+
+.black1 {
+  color: rgba(0, 0, 0, 0.12); }
+  .black1:hover {
+    color: rgba(0, 0, 0, 0.37);
+    cursor: normal; }
+
+.white {
+  color: #ffffff; }
+
+.white7 {
+  color: rgba(255, 255, 255, 0.7); }
+
+.white5 {
+  color: rgba(255, 255, 255, 0.5); }
+
 .filterpull .innerfilters md-list > md-list-item.md-no-proxy {
   margin-bottom: .5rem; }
 
@@ -123,6 +150,21 @@
 .rate md-icon {
   width: 13px;
   height: 15px;
+  min-width: 0;
+  min-height: 0; }
+
+.rateBig md-radio-button ._md-container {
+  display: none; }
+
+.rateBig md-radio-button ._md-label {
+  margin-left: 1rem; }
+
+.rateBig .material-icons {
+  font-size: 32px; }
+
+.rateBig md-icon {
+  width: 26px;
+  height: 30px;
   min-width: 0;
   min-height: 0; }
 
@@ -245,23 +287,17 @@
     .sidebar md-toolbar > md-menu {
       margin: 0;
       position: absolute;
-      bottom: 0.8rem; }
-      .sidebar md-toolbar > md-menu > button {
-        margin: 0;
-        text-transform: none;
-        padding-right: 0.6rem; }
-        .sidebar md-toolbar > md-menu > button img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          margin-right: 1rem; }
+      bottom: 0; }
 
-.searchinput input {
-  border-color: rgba(255, 255, 255, 0.3);
-  color: white; }
-
-.searchinput input::-webkit-input-placeholder, .searchinput input:-moz-placeholder, .searchinput input::-moz-placeholder, .searchinput input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5); }
+.searchinput {
+  min-width: 240px;
+  margin: 0;
+  padding: 0; }
+  .searchinput input {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white; }
+  .searchinput input::-webkit-input-placeholder, .searchinput input:-moz-placeholder, .searchinput input::-moz-placeholder, .searchinput input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; }
 
 .subtoolbar {
   outline: 0;
@@ -283,9 +319,19 @@
     .subtoolbar a:hover {
       color: rgba(26, 128, 128, 0.54) !important; }
 
+.maintoolbarselect md-select.md-default-theme ._md-select-value._md-select-placeholder, .maintoolbarselect md-select ._md-select-value._md-select-placeholder {
+  color: rgba(255, 255, 255, 0.87); }
+
+.maintoolbarselect md-toolbar.md-default-theme:not(.md-menu-toolbar), .maintoolbarselect md-toolbar:not(.md-menu-toolbar) {
+  color: white; }
+
+.maintoolbarselect md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, .maintoolbarselect md-input-container:not(.md-input-invalid).md-input-has-value label {
+  color: rgba(255, 255, 255, 0.7); }
+
 @media screen and (max-width: 490px) {
-  .maintoolbarselect {
-    display: inline-table; } }
+  .maintoolbarselect > div {
+    width: 100%;
+    margin: 0.5rem 0; } }
 
 .notification > span {
   font-size: .75rem;
@@ -321,10 +367,19 @@
     background-color: #fafafa;
     border-radius: 6px; }
 
-.checkbar {
-  border-left: 4px solid transparent;
-  outline: 0;
-  padding-top: 12px; }
+.bulkActions {
+  font-size: 0.8rem; }
+  .bulkActions md-button {
+    text-align: left; }
+  .bulkActions md-menu button.md-button {
+    text-transform: none;
+    color: rgba(0, 0, 0, 0.54); }
+    .bulkActions md-menu button.md-button span {
+      font-size: 0.8rem;
+      font-weight: 400; }
+    .bulkActions md-menu button.md-button i.material-icons {
+      vertical-align: middle;
+      font-size: 17px; }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }

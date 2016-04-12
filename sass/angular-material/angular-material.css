@@ -1829,8 +1829,9 @@ md-icon {
 md-input-container {
   display: inline-block;
   position: relative;
-  padding: 2px;
+  padding: 5px;
   margin: 0;
+  margin-top: 20px;
   vertical-align: middle;
   /*
    * The .md-input class is added to the input/textarea
@@ -1907,11 +1908,10 @@ md-input-container {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 100%;
     order: 1;
     pointer-events: none;
     -webkit-font-smoothing: antialiased;
-    padding-left: 3px;
+    padding-left: 6px;
     padding-right: 0;
     z-index: 1;
     transform: translate3d(0, 28px, 0) scale(1);
@@ -1923,7 +1923,7 @@ md-input-container {
       padding-left: 0; }
     [dir=rtl] md-input-container label:not(.md-no-float):not(._md-container-ignore), [dir=rtl]
     md-input-container ._md-placeholder {
-      padding-right: 3px; }
+      padding-right: 6px; }
     [dir=rtl] md-input-container label:not(.md-no-float):not(._md-container-ignore), [dir=rtl]
     md-input-container ._md-placeholder {
       transform-origin: right top; }
@@ -1980,14 +1980,14 @@ md-input-container {
       flex: none !important; }
   md-input-container .md-char-counter {
     text-align: right;
-    padding-right: 2px;
+    padding-right: 5px;
     padding-left: 0; }
     [dir=rtl] md-input-container .md-char-counter {
       text-align: left; }
     [dir=rtl] md-input-container .md-char-counter {
       padding-right: 0; }
     [dir=rtl] md-input-container .md-char-counter {
-      padding-left: 2px; }
+      padding-left: 5px; }
   md-input-container .md-input-messages-animation {
     position: relative;
     order: 4;
@@ -2025,7 +2025,7 @@ md-input-container {
   md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-placeholder label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
     transform: translate3d(0, 6px, 0) scale(0.75);
     transition: transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
-    width: calc((100% - 14px) / 0.75); }
+    width: calc((100% - 17px) / 0.75); }
   md-input-container.md-input-has-value label {
     transition: none; }
   md-input-container.md-input-focused .md-input,
@@ -2054,7 +2054,7 @@ md-input-container {
   md-input-container.md-icon-left > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-left > label .md-placeholder, md-input-container.md-icon-right > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-right > label .md-placeholder {
-    width: calc(100% - 36px - 14px); }
+    width: calc(100% - 36px - 17px); }
   md-input-container.md-icon-left.md-input-focused > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-left.md-input-focused > label .md-placeholder, md-input-container.md-icon-left.md-input-has-placeholder > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-left.md-input-has-placeholder > label .md-placeholder, md-input-container.md-icon-left.md-input-has-value > label:not(.md-no-float):not(._md-container-ignore),
@@ -2062,7 +2062,7 @@ md-input-container {
   md-input-container.md-icon-right.md-input-focused > label .md-placeholder, md-input-container.md-icon-right.md-input-has-placeholder > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-right.md-input-has-placeholder > label .md-placeholder, md-input-container.md-icon-right.md-input-has-value > label:not(.md-no-float):not(._md-container-ignore),
   md-input-container.md-icon-right.md-input-has-value > label .md-placeholder {
-    width: calc((100% - 36px - 14px) / 0.75); }
+    width: calc((100% - 36px - 17px) / 0.75); }
   md-input-container.md-icon-left {
     padding-left: 36px;
     padding-right: 0; }

@@ -1,7 +1,13 @@
 angular.module('PlugDawnbreak', ['ngMaterial'])
 var app = angular.module('PlugDawnbreak', ['ngMaterial']);
 app.config(function($mdThemingProvider) {
-
+  var LIGHT_FOREGROUND = {
+    name: 'light',
+    '1': 'rgba(255,255,255,1.0)',
+    '2': 'rgba(255,255,255,0.7)',
+    '3': 'rgba(255,255,255,0.3)',
+    '4': 'rgba(255,255,255,0.12)'
+  };
     //create yr own palette
     $mdThemingProvider.definePalette('plug', {
         '50': 'E0F7FA',   // #E0F7FA
@@ -21,6 +27,7 @@ app.config(function($mdThemingProvider) {
         'contrastDefaultColor': 'light',    // whether, by default, text(contrast) on this palette should be dark or light
         'contrastDarkColors': ['50', '100','A100'], //hues which contrast should be 'dark' by default
         'contrastLightColors': 'light'    // could also specify this if default was 'dark'
+
     });
 
     $mdThemingProvider.definePalette('Success', {
@@ -43,17 +50,39 @@ app.config(function($mdThemingProvider) {
         'contrastLightColors': 'light'    // could also specify this if default was 'dark'
     });
 
+    $mdThemingProvider.definePalette('Blank', {
+        '50': 'E0E0E0',
+        '100': 'E0E0E0',
+        '200': 'FFFFFF',
+        '300': 'FFFFFF',
+        '400': 'FFFFFF',
+        '500': 'FFFFFF',
+        '600': 'FAFAFA',
+        '700': 'FAFAFA',
+        '800': 'F7F7F7',
+        '900': 'F7F7F7',
+        'A100': 'E0E0E0',
+        'A200': 'E0E0E0',
+        'A400': 'F1F1F1',
+        'A700': 'FFFFFF',
+        'contrastDefaultColor': 'light' // could also specify this if default was 'dark'
+
+    });
+
     $mdThemingProvider.theme('default')
           .primaryPalette('plug')
           .accentPalette('Success')
           .warnPalette('red')
-          .backgroundPalette('grey');
+          .backgroundPalette('grey')
+
 
     $mdThemingProvider.theme('plugPurple')
           .primaryPalette('deep-purple')
     $mdThemingProvider.theme('plugOrange')
           .primaryPalette('deep-orange')
-
+    $mdThemingProvider.theme('plugBlank')
+          .primaryPalette('Blank')
+          // .foregroundPalette['3'] = 'rgba(255,255,255,.87)';
 });
 
 

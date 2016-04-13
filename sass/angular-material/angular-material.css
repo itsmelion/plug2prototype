@@ -2461,7 +2461,7 @@ md-menu-content {
   display: flex;
   flex-direction: column;
   padding: 6px 0;
-  max-height: 228px;
+  max-height: 400px;
   overflow-y: auto; }
   md-menu-content.md-dense {
     max-height: 156px; }

@@ -6,28 +6,6 @@
   /* For IE6-8 */
   src: local("/node_modules/material-icons/Material Icons"), local("/node_modules/material-icons/MaterialIcons-Regular"), url(/node_modules/material-icons/MaterialIcons-Regular.woff2) format("woff2"), url(/node_modules/material-icons/MaterialIcons-Regular.woff) format("woff"), url(/node_modules/material-icons/MaterialIcons-Regular.ttf) format("truetype"); }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga'; }
-
 .black8 {
   color: rgba(0, 0, 0, 0.87); }
 
@@ -292,12 +270,18 @@
 .searchinput {
   min-width: 240px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: rgba(255, 255, 255, 0.87); }
   .searchinput input {
     border-color: rgba(255, 255, 255, 0.37);
     color: white; }
-  .searchinput input::-webkit-input-placeholder, .searchinput input:-moz-placeholder, .searchinput input::-moz-placeholder, .searchinput input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.5) !important; }
+  .searchinput md-input-container.md-plugBlank-theme .md-input {
+    color: rgba(255, 255, 255, 0.87);
+    border-color: rgba(255, 255, 255, 0.3); }
+
+md-input-container.md-plugBlank-theme .md-input {
+  color: rgba(255, 255, 255, 0.87);
+  border-color: rgba(255, 255, 255, 0.3); }
 
 .subtoolbar {
   outline: 0;
@@ -320,25 +304,14 @@
     .subtoolbar a:hover {
       color: rgba(26, 128, 128, 0.54) !important; }
 
-.maintoolbarselect md-input-container {
-  margin-top: 16px;
-  color: white;
-  padding: 5px 0;
-  line-height: 1; }
+.maintoolbarselect button span {
+  text-transform: none;
+  font-size: .8rem;
+  vertical-align: middle; }
 
-.maintoolbarselect md-select.md-default-theme ._md-select-value._md-select-placeholder, .maintoolbarselect md-select ._md-select-value._md-select-placeholder {
-  color: white; }
-
-.maintoolbarselect md-toolbar.md-default-theme:not(.md-menu-toolbar), .maintoolbarselect md-toolbar:not(.md-menu-toolbar) {
-  color: white; }
-
-.maintoolbarselect md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, .maintoolbarselect md-input-container:not(.md-input-invalid).md-input-has-value label {
-  color: white; }
-
-@media screen and (max-width: 490px) {
-  .maintoolbarselect > div {
-    width: 100%;
-    margin: 0.5rem 0; } }
+.maintoolbarselect button i.material-icons.ng-scope {
+  font-size: 1.5rem;
+  vertical-align: middle; }
 
 .notification > span {
   font-size: .75rem;
@@ -390,8 +363,8 @@
 .filteractive > span i {
   position: absolute;
   top: -.375rem;
-  left: -0.375rem;
-  font-size: 1.4rem;
+  left: -0.395rem;
+  font-size: 1.5rem;
   color: #BC8CD6;
   z-index: 1; }
 

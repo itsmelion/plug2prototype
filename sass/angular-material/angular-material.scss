@@ -4119,7 +4119,7 @@ md-menu-content {
   display: flex;
   flex-direction: column;
   padding: $baseline-grid 0;
-  max-height: $max-menu-height;
+  max-height: 400px;
   overflow-y: auto;
   &.md-dense {
     max-height: $max-dense-menu-height;

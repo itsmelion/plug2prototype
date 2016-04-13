@@ -127,7 +127,7 @@
       </div>
 
         <span flex></span>
-      <div layout="row" md-theme="plugOrange">
+      <div layout="row" md-theme="plugBlank">
         <md-input-container md-no-float class="md-block searchinput">
          <md-icon md-font-icon="material-icons ">search</md-icon>
          <input ng-model="user.search" type="text" placeholder="Pesquisar">
@@ -142,48 +142,161 @@
   </div>
 
 
-    <div  class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect" layout-xs="column">
+    <div  class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect" layout-xs="column" style="margin-top:12px;">
       <div layout-xs="column" flex-xs="100">
-    <md-input-container class="md-subhead" >
-            <label>Visão de negócio</label>
-            <md-select ng-model="dummyname" ng-controller="ToastCtrl">
-              <md-radio-group class="visao-fav">
-                <div layout="row">
-                <md-radio-button ng-click="showActionToast()" value="mango"><i class="material-icons">star_border</i></md-radio-button>
-                <md-option flex ng-value="user2" > Tarefas</md-option></div>
-                <div layout="row">
-                <md-radio-button ng-click="showActionToast()" value="banana"><i class="material-icons">star_border</i></md-radio-button>
-                <md-option flex ng-value="user3" > RaioX</md-option></div>
-                <div layout="row">
-                  <md-radio-button ng-click="showActionToast()" value="Apple"><i class="material-icons">star_border</i></md-radio-button>
-                  <md-option flex ng-value="user8"> Negociacao</md-option>
+        <md-menu md-offset="0 42">
+          <md-button ng-click="$mdOpenMenu()">
+             <span>Visão de Negociacão</span><i class="material-icons">arrow_drop_down</i>
+          </md-button>
+          <md-menu-content width="4" ng-controller="ToastCtrl">
+              <md-list-item class="md-2-line" ng-click="none()">
+                <div class="md-list-item-text">
+                  <h3> Negociações </h3>
                 </div>
-              </md-radio-group>
-            </md-select>
-          </md-input-container>
-          <md-input-container class="md-subhead" >
-            <label>Responsável</label>
-            <md-select ng-model="responsavel.selct">
-              <md-optgroup label="Minha equipe">
-              <md-option >Meus negócios</md-option>
-              <md-option >João do Plug</md-option>
-              <md-option >Laura do Plug</md-option>
-              </md-optgroup>
-              <md-optgroup label="Responsável">
-              <md-option >Fernanda F.</md-option>
-              <md-option >João do Plug</md-option>
-              <md-option >Laura do Plug</md-option>
-              </md-optgroup>
-            </md-select>
-          </md-input-container>
-            <md-input-container class="md-subhead" >
-              <label>Funil de vendas</label>
-              <md-select ng-model="user">
-                <md-option>Todas as etapas</md-option>
-                <md-option>Negocieacos</md-option>
-                <md-option>Negocieacos</md-option>
-              </md-select>
-            </md-input-container>
+                <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+                  <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+                  <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+                </md-button>
+              </md-list-item>
+              <md-list-item class="md-2-line" ng-click="none()">
+                <div class="md-list-item-text">
+                  <h3> Tarefas </h3>
+                </div>
+                <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+                  <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+                  <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+                </md-button>
+              </md-list-item>
+              <md-list-item class="md-2-line" ng-click="none()">
+                <div class="md-list-item-text">
+                  <h3> Previsão </h3>
+                </div>
+                <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+                  <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+                  <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+                </md-button>
+              </md-list-item>
+              <md-list-item class="md-2-line" ng-click="none()">
+                <div class="md-list-item-text">
+                  <h3> Criação </h3>
+                </div>
+                <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+                  <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+                  <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+                </md-button>
+              </md-list-item>
+          </md-menu-content>
+        </md-menu>
+
+
+
+          <md-menu md-offset="0 50">
+            <md-button ng-click="$mdOpenMenu()">
+               <span>Responsável</span><i class="material-icons">arrow_drop_down</i>
+            </md-button>
+            <md-menu-content width="5">
+
+                  <md-list class="fixedRows" layout="column" style="padding: 6px 0;">
+                    <md-card style="padding: 0 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                      <md-input-container style="margin-top:0" md-no-float class="md-block">
+                        <input style="border-bottom: 0" placeholder="Buscar Responsável">
+                      </md-input-container>
+                    </md-card>
+                    <div layout="row" style="margin: 0 6px 1.3rem 6px">
+                      <md-button class="md-no-ink">Meus negócios</md-button>
+                      <md-button class="md-no-ink">Todos</md-button>
+                    </div>
+                    <md-content>
+                    <md-subheader>Minha Equipe</md-subheader>
+                    <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+                      <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                      <div class="md-list-item-text compact">
+                        <h3>Laura</h3>
+                        <p>laura@runrun.it</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line contact-item selected"  ng-click="openConfirmModal()">
+                      <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                      <div class="md-list-item-text compact">
+                        <h3>Laura</h3>
+                        <p>laura@runrun.it</p>
+                      </div>
+                    </md-list-item>
+                    <md-subheader>Equipes</md-subheader>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>SP Rehagro</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>BH Rehagro</p>
+                      </div>
+                    </md-list-item>
+                    <md-subheader>Responsáveis</md-subheader>
+                    <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+                      <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                      <div class="md-list-item-text compact">
+                        <h3>Laura</h3>
+                        <p>laura@runrun.it</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line contact-item selected"  ng-click="openConfirmModal()">
+                      <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                      <div class="md-list-item-text compact">
+                        <h3>Laura</h3>
+                        <p>laura@runrun.it</p>
+                      </div>
+                    </md-list-item>
+                  </md-content>
+                  </md-list>
+
+            </md-menu-content>
+          </md-menu>
+          <md-menu md-offset="0 50">
+            <md-button ng-click="$mdOpenMenu()">
+               <span>Funil de Vendas</span><i class="material-icons">arrow_drop_down</i>
+            </md-button>
+            <md-menu-content width="4">
+
+                  <md-list class="fixedRows" layout="column" style="padding: 6px 0;">
+
+                    <div layout="row" style="margin: 0 6px .6rem 6px">
+                      <md-button class="md-no-ink">Todas as etapas</md-button>
+                    </div>
+                    <md-content>
+                    <md-subheader>Etapas do Funil</md-subheader>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Prospect</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Contato</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Proposta enviada</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Fechamento</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Grand Finals</p>
+                      </div>
+                    </md-list-item>
+
+                  </md-content>
+                  </md-list>
+
+            </md-menu-content>
+          </md-menu>
         </div>
         <span flex></span>
         <div  layout-align="end center">

@@ -3847,7 +3847,7 @@ md-list-item {
   &._md-no-proxy,
   ._md-no-style {
     position: relative;
-    padding: $list-item-padding-vertical $list-item-padding-horizontal;
+    padding: 0; //$list-item-padding-vertical $list-item-padding-horizontal
     flex: 1 1 auto;
 
     &.md-button {

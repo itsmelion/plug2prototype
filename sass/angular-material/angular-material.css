@@ -2207,7 +2207,7 @@ md-list-item {
   md-list-item._md-no-proxy,
   md-list-item ._md-no-style {
     position: relative;
-    padding: 0px 12px;
+    padding: 0;
     flex: 1 1 auto; }
     md-list-item._md-no-proxy.md-button,
     md-list-item ._md-no-style.md-button {

@@ -199,7 +199,13 @@ app.config(function($mdThemingProvider) {
             clickOutsideToClose:true
           })
         };
-
+      $scope.openColumnModal = function() {
+        $mdDialog.show({
+          templateUrl: 'colunas.tmpl.html',
+          parent: angular.element(document.body),
+          clickOutsideToClose:true
+        })
+      };
       })
 
     // Visao Favorita TOAST

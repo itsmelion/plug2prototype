@@ -1,0 +1,63 @@
+<md-dialog  ng-cloak>
+
+    <md-dialog-content  style="min-width: 300px">
+      <div class="md-dialog-content">
+        <md-list class="fixedRows">
+          <h3>Escolher colunas</h3>
+          <md-input-container style="margin: .7rem 0 1rem 0" md-no-float class="md-block">
+            <input placeholder="Pesquisar Coluna">
+          </md-input-container>
+            <md-subheader class="md-primary">Colunas Visíveis <span style="font-size: 0.6rem" class="black3">Selected: 6 of 7</span></md-subheader>
+            <md-list-item ng-click="nowhere()">
+              <p>Coluna</p>
+              <md-checkbox class="md-secondary" ng-model="yes.slect"></md-checkbox>
+            </md-list-item>
+            <md-list-item ng-click="nowhere()">
+              <p>Coluna</p>
+              <md-checkbox class="md-secondary" ng-model="yes.slect"></md-checkbox>
+            </md-list-item>
+            <md-list-item ng-click="nowhere()">
+              <p>Coluna</p>
+              <md-checkbox class="md-secondary" ng-model="yes.slect"></md-checkbox>
+            </md-list-item>
+            <md-list-item ng-click="nowhere()">
+              <p>Coluna</p>
+              <md-checkbox class="md-secondary" ng-model="yes.slect"></md-checkbox>
+            </md-list-item>
+            <md-list-item ng-click="nowhere()">
+              <p>Coluna</p>
+              <md-checkbox class="md-secondary" ng-model="yes.slect"></md-checkbox>
+            </md-list-item>
+        </md-list>
+
+        <md-list class="fixedRows">
+        <md-subheader >Não Visíveis</md-subheader>
+        <md-list-item ng-click="nowhere()">
+          <p>Coluna</p>
+          <md-checkbox class="md-secondary" ng-model="not.slect"></md-checkbox>
+        </md-list-item>
+        <md-list-item ng-click="nowhere()">
+          <p>Coluna</p>
+          <md-checkbox class="md-secondary" ng-model="not.slect"></md-checkbox>
+        </md-list-item>
+        <md-list-item ng-click="nowhere()">
+          <p>Coluna</p>
+          <md-checkbox class="md-secondary" ng-model="not.slect"></md-checkbox>
+        </md-list-item>
+        <md-list-item ng-click="nowhere()">
+          <p>Coluna</p>
+          <md-checkbox class="md-secondary" ng-model="not.slect"></md-checkbox>
+        </md-list-item>
+        </md-list>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-warn">
+        Cancel
+      </md-button>
+      <span flex></span>
+      <md-button style="margin-right:20px;">
+        Confirm
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>

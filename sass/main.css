@@ -301,7 +301,8 @@
 
 .subtoolbar {
   outline: 0;
-  border-left: 3px solid transparent; }
+  border-left: 3px solid transparent;
+  white-space: nowrap; }
   .subtoolbar a {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.54) !important;
@@ -366,6 +367,27 @@
   .notification-Menu button.md-button {
     background-color: #fafafa;
     border-radius: 6px; }
+
+.filteractive > span {
+  font-size: .70rem;
+  top: -.275rem;
+  position: relative;
+  line-height: 0;
+  margin-left: -.6rem;
+  z-index: 2; }
+  .filteractive > span > span {
+    z-index: 2;
+    margin-left: 0.1rem;
+    top: -0.1rem;
+    position: relative; }
+
+.filteractive > span i {
+  position: absolute;
+  top: -.375rem;
+  left: -0.375rem;
+  font-size: 1.4rem;
+  color: #BC8CD6;
+  z-index: 1; }
 
 .bulkActions {
   font-size: 0.8rem; }

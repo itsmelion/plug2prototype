@@ -3368,8 +3368,8 @@ md-input-container {
 
   label:not(.md-no-float):not(._md-container-ignore),
   ._md-placeholder {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
     white-space: nowrap;
     order: 1;
     pointer-events: none;
@@ -4776,6 +4776,7 @@ md-select {
         border-bottom-width: 2px;
         border-bottom-style: solid;
         padding-bottom: 0;
+        color: white;
       }
     }
   }
@@ -4786,7 +4787,7 @@ md-select {
   display: flex;
   align-items: center;
   padding: 2px 2px 1px;
-  background-color: rgba(0,0,0,0);
+  background-color: transparent;
   position: relative;
   box-sizing: content-box;
   min-width: 8 * $baseline-grid;
@@ -4800,7 +4801,7 @@ md-select {
     transform: translate3d(0, 2px, 0);
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
 
     ._md-text {
       display: inline;

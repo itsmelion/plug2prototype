@@ -1905,8 +1905,6 @@ md-input-container {
       vertical-align: top; }
   md-input-container label:not(.md-no-float):not(._md-container-ignore),
   md-input-container ._md-placeholder {
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
     order: 1;
     pointer-events: none;
@@ -2947,7 +2945,8 @@ md-select {
   md-select:not([disabled]):focus ._md-select-value {
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    color: white; }
 
 ._md-select-value {
   display: flex;
@@ -2965,7 +2964,7 @@ md-select {
     transform: translate3d(0, 2px, 0);
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; }
+    overflow: visible; }
     ._md-select-value > span:not(._md-select-icon) ._md-text {
       display: inline; }
   ._md-select-value ._md-select-icon {

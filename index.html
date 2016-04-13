@@ -68,8 +68,8 @@
 			  </md-toolbar>
     <div layout-align="space-around center" class="md-subhead btn-indent">
         <md-list-item layout="column">
-            <div flex><img src="master_img/lion404.jpg" width="120px" /></div>
-            <h4 flex>Compre o PlugPremium mano!</h4>
+            <div flex><img src="master_img/lion404.gif" width="150px" /></div>
+            <h4 class="black3" flex>Compre o PlugPremium!</h4>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item ng-click="$nowhere()">
@@ -163,9 +163,17 @@
           </md-input-container>
           <md-input-container class="md-subhead" >
             <label>Responsável</label>
-            <md-select ng-model="user">
-              <md-option >Todas os Negócios</md-option>
-              <md-option >Negocieacos</md-option>
+            <md-select ng-model="responsavel.selct">
+              <md-optgroup label="Minha equipe">
+              <md-option >Meus negócios</md-option>
+              <md-option >João do Plug</md-option>
+              <md-option >Laura do Plug</md-option>
+              </md-optgroup>
+              <md-optgroup label="Responsável">
+              <md-option >Fernanda F.</md-option>
+              <md-option >João do Plug</md-option>
+              <md-option >Laura do Plug</md-option>
+              </md-optgroup>
             </md-select>
           </md-input-container>
             <md-input-container class="md-subhead" >
@@ -943,9 +951,9 @@
                   </div>
                 </md-list-item>
               </md-list>
-              <md-menu-content width=4  class="innermenus">
-                  <div flex>&nbsp;&nbsp;<img src="master_img/lion404.jpg" width="200px" /></div>
-                  <h3 flex>There is nothing here</h3>
+              <md-menu-content width=4  class="innermenus" layout-align="center center">
+                  <div flex><img src="master_img/lion404.gif" width="150px" height="auto" /></div>
+                  <h4 class="black3" flex>You found the 404 Mage!</h4>
               </md-menu-content>
             </md-menu>
             <md-divider></md-divider>

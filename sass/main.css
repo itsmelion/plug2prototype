@@ -294,7 +294,7 @@
   margin: 0;
   padding: 0; }
   .searchinput input {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.37);
     color: white; }
   .searchinput input::-webkit-input-placeholder, .searchinput input:-moz-placeholder, .searchinput input::-moz-placeholder, .searchinput input:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.5) !important; }
@@ -320,14 +320,20 @@
     .subtoolbar a:hover {
       color: rgba(26, 128, 128, 0.54) !important; }
 
+.maintoolbarselect md-input-container {
+  margin-top: 16px;
+  color: white;
+  padding: 5px 0;
+  line-height: 1; }
+
 .maintoolbarselect md-select.md-default-theme ._md-select-value._md-select-placeholder, .maintoolbarselect md-select ._md-select-value._md-select-placeholder {
-  color: rgba(255, 255, 255, 0.87); }
+  color: white; }
 
 .maintoolbarselect md-toolbar.md-default-theme:not(.md-menu-toolbar), .maintoolbarselect md-toolbar:not(.md-menu-toolbar) {
   color: white; }
 
 .maintoolbarselect md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, .maintoolbarselect md-input-container:not(.md-input-invalid).md-input-has-value label {
-  color: rgba(255, 255, 255, 0.7); }
+  color: white; }
 
 @media screen and (max-width: 490px) {
   .maintoolbarselect > div {

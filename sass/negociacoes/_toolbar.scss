@@ -28,7 +28,7 @@
   min-width: 240px;
   margin: 0;
   padding: 0;
-  input{border-color: rgba(255,255,255,.30); color: rgba(255,255,255,1);}
+  input{border-color: rgba(255,255,255,.37); color: rgba(255,255,255,1);}
   input::-webkit-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {color: rgba(255,255,255,.50) !important;}
 
 }
@@ -56,14 +56,15 @@
   }
 }
 .maintoolbarselect{
+  md-input-container{margin-top: 16px; color: white; padding: 5px 0; line-height: 1;}
   md-select.md-default-theme ._md-select-value._md-select-placeholder, md-select ._md-select-value._md-select-placeholder{
-  color: rgba(255,255,255,.87);
+  color: white;
   }
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
   color: white;
 }
   md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label{
-  color: rgba(255,255,255,.7);
+  color: white;
   }
 
   @media screen and (max-width: 490px) { > div{width: 100%; margin: 0.5rem 0}}

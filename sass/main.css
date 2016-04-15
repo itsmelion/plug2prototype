@@ -66,12 +66,20 @@
 
 .table-list {
   min-height: 75px; }
+  .table-list:hover, .table-list :focus {
+    background-color: #f7f7f7; }
   @media screen and (min-width: 961px) {
     .table-list {
       margin: 0;
       border-bottom: 1px solid #e0e0e0;
       box-shadow: none;
       border-left: 3px solid transparent; } }
+  @media screen and (max-width: 959px) {
+    .table-list > div {
+      margin: 12px 1px; } }
+  @media screen and (max-width: 768px) {
+    .table-list > div {
+      margin: 12px 8px; } }
 
 .card-red {
   border-left: 3px solid #d53b3b; }
@@ -140,7 +148,10 @@
   min-height: 0; }
 
 .userpic .md-avatar {
-  margin: 0; }
+  margin: 0 auto;
+  width: 35px;
+  height: auto;
+  border-radius: 50%; }
 
 .who md-list-item .md-avatar, .who md-list-item .md-avatar-icon, .who md-list-item ._md-list-item-inner .md-avatar, .who md-list-item ._md-list-item-inner .md-avatar-icon {
   margin-top: 0px;
@@ -179,8 +190,8 @@
   .recorrencia md-icon {
     height: auto; }
 
-.tarefas > div > div._md-list-item-inner > div.md-list-item-text {
-  color: rgba(0, 0, 0, 0.87); }
+.tarefas a > md-list-item > md-icon {
+  margin: 0; }
 
 .tarefas .late {
   color: #bd992e; }
@@ -259,6 +270,8 @@
       margin: 0;
       position: absolute;
       bottom: 0; }
+  .sidebar md-list-item {
+    height: 42px; }
 
 .searchinput {
   min-width: 240px;
@@ -279,23 +292,39 @@ md-input-container.md-plugBlank-theme .md-input {
 .subtoolbar {
   outline: 0;
   border-left: 3px solid transparent;
-  white-space: nowrap; }
+  white-space: nowrap;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0; }
   .subtoolbar a {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, 0.54) !important;
     padding-right: 0.6rem;
     box-sizing: content-box;
-    display: block; }
-    .subtoolbar a::after {
+    display: block;
+    margin-left: 1rem; }
+    .subtoolbar a::before {
       position: absolute;
       font-family: 'Material Icons';
       line-height: 12px;
       -webkit-font-feature-settings: 'liga';
       content: "expand_more";
       font-size: .9rem;
-      margin-top: 3px; }
+      margin-top: 3px;
+      margin-left: -1rem; }
     .subtoolbar a:hover {
       color: rgba(26, 128, 128, 0.54) !important; }
+      .subtoolbar a:hover span {
+        color: rgba(26, 128, 128, 0.37); }
+    .subtoolbar a span {
+      font-size: 0.65rem;
+      vertical-align: middle;
+      color: rgba(0, 0, 0, 0.37); }
+  @media screen and (max-width: 768px) {
+    .subtoolbar a {
+      min-height: 32px;
+      line-height: 32px; }
+      .subtoolbar a::after {
+        line-height: 32px; } }
 
 .maintoolbarselect button span {
   text-transform: none;

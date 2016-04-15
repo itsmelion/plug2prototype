@@ -1535,7 +1535,7 @@ md-bottom-sheet {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 6 * $baseline-grid;
+        width: 8 * $baseline-grid;
         padding-bottom: 1 * $baseline-grid;
       }
 
@@ -1777,7 +1777,7 @@ button.md-button::-moz-focus-inner {
 
     display: block;
 
-    overflow: hidden;
+    // overflow: hidden;
 
     width: 0;
 
@@ -3720,7 +3720,7 @@ $list-item-dense-line-height: 1.05 !default;
 
 md-list {
   display: block;
-  padding: $list-padding-top $list-padding-right $list-padding-bottom $list-padding-left;
+  padding: 0;
 
   .md-subheader {
     font-size: $body-font-size-base;
@@ -4083,7 +4083,7 @@ $max-visible-items: 6 !default;
 $menu-item-height: 5 * $baseline-grid !default;
 $dense-menu-item-height: 4 * $baseline-grid !default;
 $max-menu-height: 5 * $baseline-grid + $max-visible-items * $menu-item-height !default;
-$max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-item-height !default;
+$max-dense-menu-height: 4 * $baseline-grid + $max-visible-items * $dense-menu-item-height !default;
 
 ._md-open-menu-container {
   position: fixed;
@@ -4134,8 +4134,8 @@ $max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-it
 md-menu-content {
   display: flex;
   flex-direction: column;
-  padding: $baseline-grid 0;
-  max-height: $max-menu-height;
+  padding: 0;
+  max-height: 420px; //$max-menu-height
   overflow-y: auto;
   &.md-dense {
     max-height: $max-dense-menu-height;

@@ -550,7 +550,7 @@ md-bottom-sheet {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 36px;
+        width: 48px;
         padding-bottom: 6px; }
       md-bottom-sheet.md-grid md-list-item .md-grid-item-content {
         border: 1px solid transparent;
@@ -713,7 +713,6 @@ button.md-button::-moz-focus-inner {
   .md-button-group > .md-button {
     flex: 1;
     display: block;
-    overflow: hidden;
     width: 0;
     border-width: 1px 0px 1px 1px;
     border-radius: 0;
@@ -2161,7 +2160,7 @@ md-input-container {
 
 md-list {
   display: block;
-  padding: 6px 0px 6px 0px; }
+  padding: 0; }
   md-list .md-subheader {
     font-size: 11px;
     font-weight: 500;
@@ -2542,11 +2541,11 @@ md-list-item {
 md-menu-content {
   display: flex;
   flex-direction: column;
-  padding: 6px 0;
-  max-height: 210px;
+  padding: 0;
+  max-height: 420px;
   overflow-y: auto; }
   md-menu-content.md-dense {
-    max-height: 156px; }
+    max-height: 168px; }
     md-menu-content.md-dense md-menu-item {
       height: 24px;
       min-height: 0px; }

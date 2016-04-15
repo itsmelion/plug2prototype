@@ -11,12 +11,15 @@ md-content{
 }
 .table-list{
   min-height: 75px;
+  &:hover , :focus{ background-color: #f7f7f7;}
   @media screen and (min-width: 961px){
     margin: 0;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: none;
     border-left: 3px solid transparent;
   }
+  @media screen and (max-width: 959px){> div{margin: 12px 1px;}}
+  @media screen and (max-width: 768px){> div{margin: 12px 8px;}}
 }
 .card-red{
   border-left: 3px solid #d53b3b;
@@ -69,7 +72,7 @@ md-content{
 }
 
 .userpic{
-.md-avatar{margin:0;}
+.md-avatar{margin:0 auto; width: 35px; height: auto; border-radius: 50%;}
 }
 .who{
   md-list-item .md-avatar, md-list-item .md-avatar-icon, md-list-item ._md-list-item-inner .md-avatar, md-list-item ._md-list-item-inner .md-avatar-icon {
@@ -105,9 +108,7 @@ md-content{
 }
 
 .tarefas{
-  > div > div._md-list-item-inner > div.md-list-item-text{
-    color: rgba(0,0,0,0.87);
-  }
+    a > md-list-item > md-icon{ margin: 0; }
   .late{color: rgb(189,153,46);}
   .danger{color: rgb(200,58,58);}
 }

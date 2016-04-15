@@ -67,9 +67,9 @@
       </md-menu>
 			  </md-toolbar>
     <div layout-align="space-around center" class="md-subhead btn-indent">
-        <md-list-item layout="column">
-            <div flex><img src="master_img/lion404.gif" width="150px" /></div>
-            <h4 class="black3" flex>Compre o PlugPremium!</h4>
+        <md-list-item layout="column" style="height: 135px">
+            <div><img src="master_img/lion404.gif" width="135px" /></div>
+            <h4 class="black3">Compre o PlugPremium!</h4>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item ng-click="$nowhere()">
@@ -197,16 +197,13 @@
             </md-button>
             <md-menu-content width="5">
 
-                  <md-list class="fixedRows" layout="column" style="padding: 6px 0;">
-                    <md-card style="padding: 0 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                  <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
+                    <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
                       <md-input-container style="margin-top:0" md-no-float class="md-block">
-                        <input style="border-bottom: 0" placeholder="Buscar Responsável">
+                        <input style="border-bottom: 0" placeholder="Escolha o Responsável">
                       </md-input-container>
                     </md-card>
-                    <div layout="row" style="margin: 0 6px 1.3rem 6px">
-                      <md-button class="md-no-ink">Meus negócios</md-button>
-                      <md-button class="md-no-ink">Todos</md-button>
-                    </div>
+
                     <md-content>
                     <md-subheader>Minha Equipe</md-subheader>
                     <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
@@ -301,7 +298,7 @@
         </div>
         <span flex></span>
         <div  layout-align="end center">
-          <md-button class="filteractive" ng-click="toggleRight()">
+          <md-button class="filteractive" ng-click="toggleRight()" style="padding-left: 1px">
             <md-icon md-font-icon="material-icons">filter_list</md-icon>
             <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
           </md-button>
@@ -314,55 +311,56 @@
 <ui-view flex layout="column" layout-fill >
 
 
-  <div layout-wrap layout="row" layout-align="start center" hide-xs ng-show="!showBar" class="subtoolbar" style="min-height: 44px;">
+  <div layout-wrap layout="row" layout-align="start center" layout-align-sm="space-between center" layout-align-md="space-around center" ng-show="!showBar" class="subtoolbar" style="min-height: 44px;">
 
-    <div layout-align="center center" layout="row" flex="15" flex-gt-sm="5" flex-md="5">
-      <div><md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox></div>
+    <div layout-align="center center" layout="row"  flex-gt-sm="5">
+      <div layout-margin><md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox></div>
     </div>
 
-    <div layout-align="center center" flex="25" flex-gt-sm="10" flex-md="5">
-      <div hide-md hide-sm >
-        <a class="truncate" style="text-align: center;">Responsável</a>
+    <div layout-align="center center" flex-gt-sm="10" hide-xs hide-sm>
+      <div >
+        <a class="truncate" style="text-align: center">Responsável</a>
       </div>
     </div>
 
-    <div flex="60" flex-gt-sm="20" layout-align="center center" >
+    <div flex="60" flex-gt-sm="20" layout-align="center center" hide-xs hide-sm>
       <div>
-        <a class="truncate">Negociação/Organização</a>
+        <a class="truncate">Negócio <span>(442)</span> / Organização <span>(320)</span></a>
       </div>
     </div>
 
-    <div flex="40" flex-gt-sm="10" layout-align="start center">
+    <div flex="40" flex-gt-sm="10" layout-align="start center" hide-xs hide-sm>
       <div>
         <a class="truncate" >Qualificação</a>
       </div>
     </div>
 
-    <div flex="60" flex-gt-sm="20" layout-align="center center">
+    <div flex="60" flex-gt-sm="20" layout-align="center center" hide-xs hide-sm>
       <div>
         <a class="truncate"  style="text-align: center;">Etapa do Funil</a>
       </div>
     </div>
 
-    <div flex="50" flex-gt-sm="15" layout-align="center center">
+    <div flex="50" flex-gt-sm="15" layout-align="center center" hide-xs hide-sm>
       <div>
-        <a class="truncate"  style="text-align: center;">Valores</a>
+        <a class="truncate" >Valores <span>(R$232,239,00)</span></a>
       </div>
     </div>
 
-    <div flex="50" flex-gt-sm="15" layout-align="center center" >
+    <div flex="50" flex-gt-sm="15" layout-align="center center" hide-xs hide-sm>
       <div>
-        <a class="truncate"  style="text-align: center;">Próxima Tarefa</a>
+        <a class="truncate" >Próxima Tarefa</a>
       </div>
     </div>
 
-    <div flex="100" flex-gt-sm="5" layout="row" layout-align="end center">
-      <div ng-controller="ModalCtrl">
-        <md-button class="md-icon-button" aria-label="list" ng-click="openColumnModal()" >
-          <md-icon md-font-icon="material-icons">view_list</md-icon>
-        </md-button>
+    <div flex-gt-sm="5" layout="row" layout-align="end center">
+        <div ng-controller="ModalCtrl">
+          <md-button class="md-icon-button" aria-label="list" ng-click="openColumnModal()" >
+            <md-icon md-font-icon="material-icons">view_list</md-icon>
+          </md-button>
+        </div>
       </div>
-    </div>
+
 </div>
 
 
@@ -374,20 +372,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
   <div ng-show="showBar" layout="row" layout-align="start center" layout-wrap class="bulkActions" ng-controller="ModalCtrl">
-        <div layout-align="start center" layout="row" flex="100" flex-gt-sm="15">
-          <div style="margin-left: 1rem;">
+        <div layout-align="start center" layout="row" flex-gt-sm="15">
+          <div style="margin-left: 1rem;" layout-margin>
             <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
-            <span ng-if="isChecked()">Un-</span>Select All
+            <span ng-if="isChecked()">3</span>Selected
             </md-checkbox>
           </div>
         </div>
@@ -404,11 +393,11 @@
 
                  <md-content layout="column">
                    <md-list class="fixedRows">
-                     <md-subheader class="md-no-sticky">Contacts</md-subheader>
+                     <md-subheader class="md-no-sticky">Transferir para:</md-subheader>
                      <md-input-container style="margin: 1rem 0 1rem 0" md-no-float class="md-block">
-                       <input placeholder="Buscar contato">
+                       <input placeholder="Buscar responsável">
                      </md-input-container>
-                      <p class="md-caption black3">recent contacts</p>
+                      <p class="md-caption black3">recent</p><br />
                      <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
                        <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
                        <div class="md-list-item-text compact">
@@ -1084,20 +1073,20 @@
 
 
 <div>
-<md-card layout-wrap class="table-list card-red" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" >
+<md-card layout-wrap class="table-list card-red" layout="row" layout-align="start center" layout-align-xs="space-around start" layout-align-sm="space-between start" layout-align-md="space-around center" >
 
-<div layout-align="center center" layout="row" flex="15" flex-gt-sm="5" flex-md="5">
+<div layout-align="center center" layout="row"  flex-gt-sm="5">
   <div><md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox></div>
 </div>
-<div layout-align="center center" layout="row" flex="25" flex-gt-sm="10" flex-md="5">
-    <md-list class="userpic">
-      <md-list-item>
+<div flex-gt-sm="10" layout-align="center center">
+
+      <div class="userpic">
       <img class="md-avatar" src="master_img/dummy_square.png">
       <!-- IF THERE IS NO IMAGE :::: <md-icon class="md-avatar-icon material-icons" >image</md-icon> -->
-      </md-list-item>
-    </md-list>
+      </div>
+
 </div>
-<div flex="60" flex-gt-sm="20" layout-align="start center" >
+<div flex="none" flex-gt-sm="20" layout-align="start center" >
     <md-list class="who">
       <md-list-item >
       <a ><span class="truncate">Louis Lourence</span></a>
@@ -1108,7 +1097,7 @@
     </md-list>
 </div>
 
-  <div flex="40" flex-gt-sm="10" layout="row" layout-align="start center">
+  <div flex="none" flex-gt-sm="10" layout="row" layout-align="start center">
       <md-radio-group class="rate">
         <md-radio-button value="Poor"><md-tooltip>Pobre</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
         <md-radio-button value="Hopeless"><md-tooltip>Sem esperança</md-tooltip><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
@@ -1118,7 +1107,7 @@
       </md-radio-group>
   </div>
 
-<div flex="60" flex-gt-sm="20" layout="row" layout-align="center center">
+<div flex="none" flex-gt-sm="20" layout="row" layout-align="center center">
       <ol layout="row" class="progress">
         <li flex="none"><md-tooltip>Prospect</md-tooltip><svg height="3"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
         <li flex class="active"><md-tooltip>Primeiro Contato</md-tooltip><svg height="3" width="100"><line x1="0" y1="0" x2="100" y2="0" /></svg></li>
@@ -1130,7 +1119,7 @@
       </ol>
   </div>
 
-  <div flex="50" flex-gt-sm="15" layout="row" layout-align="center center">
+  <div flex="none" flex-gt-sm="15" layout="row" layout-align="start center">
     <md-list class="recorrencia">
       <md-list-item style="min-width:90px;">
       <md-icon class="material-icons md-primary"><md-tooltip>Unicos</md-tooltip>lens</md-icon>
@@ -1143,8 +1132,8 @@
     </md-list>
   </div>
 
-  <div flex="50" flex-gt-sm="15" class="tarefas" layout="row" layout-align="center center" >
-    <a><md-list-item class="md-2-line tarefas">
+  <div flex="none" flex-gt-sm="15" class="tarefas" >
+    <a><md-list-item class="md-2-line">
       <md-icon hide-sm hide-md class="md-avatar-icon material-icons danger">phone</md-icon>
       <div class="md-list-item-text" layout="column">
         <h3>Reunião</h3>
@@ -1152,9 +1141,9 @@
       </div>
     </md-list-item>
     </a>
-</div>
+  </div>
 
-<div ng-controller="PtM" flex="100" flex-gt-sm="5" layout="row" layout-align="end center">
+<div ng-controller="PtM"  flex="none" flex-gt-sm="5" layout="row" layout-align="end center">
   <md-button class="md-icon-button" ng-click="showGridBottomSheet()">
     <md-icon  md-font-icon="material-icons ">info_outline</md-icon>
   </md-button>

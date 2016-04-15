@@ -205,7 +205,7 @@
                     </md-card>
 
                     <md-content class="md-subhead">
-                    <md-subheader> Sample Header </md-subheader>
+                    <md-subheader> Geral </md-subheader>
                     <md-list-item ng-click="openConfirmModal()">
                       <div class="md-list-item-text compact">
                         <p>Meus negócios</p>
@@ -253,13 +253,14 @@
             </md-button>
             <md-menu-content width="4">
 
-                  <md-list class="fixedRows" layout="column" style="padding: 6px 0;">
-
-                    <div layout="row" style="margin: 0 6px .6rem 6px">
-                      <md-button class="md-no-ink">Todas as etapas</md-button>
-                    </div>
-                    <md-content>
+                  <md-list class="fixedRows" layout="column">
+                    <md-content class="md-subhead">
                     <md-subheader>Etapas do Funil</md-subheader>
+                    <md-list-item ng-click="none()">
+                      <div class="md-list-item-text compact">
+                        <p>Todas as etapas</p>
+                      </div>
+                    </md-list-item>
                     <md-list-item ng-click="none()">
                       <div class="md-list-item-text compact">
                         <p>Prospect</p>
@@ -621,7 +622,7 @@
             <h2 flex >Filtros</h2>
             <md-icon md-font-icon="material-icons">close</md-icon>
           </md-list-item>
-          <md-list-item  class="md-subhead">
+          <md-list-item  class="md-subhead" layout-margin layout-padding>
             <md-select placeholder="Selecionar filtros salvos" ng-model="user">
               <md-option ng-value="jackson">Filtro do Jackson</md-option>
               <md-option ng-value="Luana">Filtro dahora da Luana</md-option>
@@ -633,7 +634,7 @@
 <md-divider></md-divider>
       <md-content class="innerfilters" ng-controller="RightCtrl">
           <md-list>
-            <md-list-item class="md-2-line" style="margin-left: 20px">
+            <md-list-item class="md-2-line">
               <md-icon class="material-icons md-discrete">check</md-icon>
               <div class="md-list-item-text">
                 <h3>Avaliações</h3>
@@ -650,7 +651,7 @@
           </md-list>
 
                 <md-list>
-                  <md-list-item style="margin-left: 20px">
+                  <md-list-item>
                     <md-icon class="material-icons md-discrete">check</md-icon>
                   <md-input-container class="md-block">
                   <label>Nome do Negócio</label>
@@ -660,8 +661,7 @@
                 </md-list>
 
 
-                <md-menu-bar layout="column" class="funil-item">
-                  <md-menu>
+                  <md-menu md-offset="-210 0">
                     <md-list>
                       <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
@@ -706,7 +706,7 @@
                       </md-menu-item>
                     </md-menu-content>
                   </md-menu>
-                  <md-menu>
+                  <md-menu md-offset="-210 0">
                     <md-list>
                       <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
@@ -831,42 +831,36 @@
                       </div>
                     </md-menu-content>
                   </md-menu>
-                  <md-menu>
                     <md-list>
                       <md-list-item class="md-2-line">
-                        <md-icon style="margin-left: 8px" class="material-icons md-discrete">check</md-icon>
+                        <md-icon class="material-icons md-discrete">check</md-icon>
                         <div class="md-list-item-text">
-                          <h3 style="margin-left: 12px">Data de criação</h3>
+                          <h3>Data de criação</h3>
+                          <md-datepicker  ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                    <md-list>
+                      <md-list-item class="md-2-line">
+                        <md-icon class="material-icons md-discrete">check</md-icon>
+                        <div class="md-list-item-text">
+                          <h3>Data do ultimo contato</h3>
                           <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
                         </div>
                       </md-list-item>
                     </md-list>
-                  </md-menu>
-                  <md-menu>
-                    <md-list>
-                      <md-list-item class="md-2-line">
-                        <md-icon style="margin-left: 8px" class="material-icons md-discrete">check</md-icon>
-                        <div class="md-list-item-text">
-                          <h3 style="margin-left: 12px">Data do ultimo contato</h3>
-                          <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-                        </div>
-                      </md-list-item>
-                    </md-list>
-                  </md-menu>
 
-                  <md-menu>
                     <md-list>
                       <md-list-item class="md-2-line">
-                        <md-icon style="margin-left: 8px" class="material-icons md-discrete">check</md-icon>
+                        <md-icon class="material-icons md-discrete">check</md-icon>
                         <div class="md-list-item-text">
-                          <h3 style="margin-left: 12px">Data da próxima tarefa</h3>
+                          <h3>Data da próxima tarefa</h3>
                           <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
                         </div>
                       </md-list-item>
                     </md-list>
-                  </md-menu>
 
-                  <md-menu>
+                  <md-menu md-offset="-210 0">
                     <md-list>
                       <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
@@ -943,7 +937,7 @@
                       </div>
                     </md-menu-content>
                   </md-menu>
-                  <md-menu>
+                  <md-menu md-offset="-210 0">
                     <md-list>
                       <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                         <md-icon class="material-icons md-discrete">check</md-icon>
@@ -1022,7 +1016,6 @@
                     </md-menu-content>
                   </md-menu>
 
-                </md-menu-bar>
 <md-divider></md-divider>
                 <md-button ng-click="$nothing()">
                   Limpar todos
@@ -1031,17 +1024,17 @@
         </md-content>
 <md-divider></md-divider>
         <div class="savefilter" layout-padding>
-          <span style="margin-left: 8px" class="md-subtitle">Salvar Filtro</span>
-            <md-list>
-              <md-list-item style="padding: 0;" style="margin-left: 8px">
+          <span class="md-subtitle">Salvar Filtro</span>
+
+              <md-list-item style="padding: 0;" >
               <md-input-container md-no-float class="md-block" style="margin: 0;">
 
               <input placeholder="Nome do filtro" ng-model="Co">
               </md-input-container>
               </md-list-item>
-            </md-list>
-            <md-menu>
-              <md-list style="margin-top: -2rem;">
+
+            <md-menu md-offset="-210 0">
+              <md-list>
                 <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
                   <md-icon class="material-icons md-discrete">check</md-icon>
                   <div class="md-list-item-text">
@@ -1055,7 +1048,6 @@
                   <h4 class="black3" flex>You found the 404 Mage!</h4>
               </md-menu-content>
             </md-menu>
-            <md-divider></md-divider>
             <md-button ng-click="toggleRight()">
               Cancelar
             </md-button>

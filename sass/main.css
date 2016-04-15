@@ -26,16 +26,27 @@
 .white5 {
   color: rgba(255, 255, 255, 0.5); }
 
-.filterpull .innerfilters md-list > md-list-item.md-no-proxy {
-  margin-bottom: .5rem; }
+.filterpull .innerfilters md-menu > md-list > md-list-item > div > div > div.md-list-item-text {
+  margin-left: -12px; }
 
-.filterpull .innerfilters md-list > md-list-item.md-no-proxy > md-input-container {
+.filterpull .innerfilters md-list-item > md-icon:first-child:not(.md-avatar-icon) {
+  margin-right: 12px;
+  margin-left: 11px; }
+
+.filterpull .innerfilters md-list > md-list-item > md-input-container {
   margin-bottom: 0;
   width: 100%;
-  margin-bottom: -1rem; }
+  padding-right: 2rem;
+  margin-bottom: .4rem; }
 
-.filterpull .innerfilters md-menu-bar {
-  padding: 0; }
+.filterpull .innerfilters md-list > md-list-item {
+  padding: 0;
+  margin-bottom: .4rem; }
+  .filterpull .innerfilters md-list > md-list-item > div h3 {
+    margin-left: 0; }
+  .filterpull .innerfilters md-list > md-list-item > div md-datepicker button.md-datepicker-button {
+    margin-left: 0;
+    padding-left: 0; }
 
 .innermenus {
   box-shadow: 2px 2px 10px #B3B3B3;
@@ -52,7 +63,7 @@
 
 .savefilter {
   background: #fafafa;
-  padding-top: 2rem; }
+  padding-top: 1rem; }
 
 .card404 {
   background-image: url("../master_img/lion404.jpg");
@@ -79,7 +90,7 @@
       margin: 12px 1px; } }
   @media screen and (max-width: 768px) {
     .table-list > div {
-      margin: 12px 8px; } }
+      margin: 12px 5px; } }
 
 .card-red {
   border-left: 3px solid #d53b3b; }
@@ -450,3 +461,7 @@ a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover {
 
 md-checkbox {
   margin-bottom: 0; }
+
+md-autocomplete {
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem; }

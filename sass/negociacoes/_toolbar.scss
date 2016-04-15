@@ -10,6 +10,7 @@
 
 .sidebar{
   max-width:220px;
+  box-shadow: 2px 0 10px #4D4D4D;
   md-toolbar {
     background-image: url('../master_img/userbg.jpg');
     background-size: cover;
@@ -23,6 +24,7 @@
     }
   }
   md-list-item{height: 42px;}
+  @media screen and(min-width: 960px){box-shadow: inset -5px 0 15px #cecece; md-toolbar{box-shadow: inset -5px 0 15px #545454;}}
 }
 
 .searchinput {
@@ -67,7 +69,7 @@ md-input-container.md-plugBlank-theme .md-input {
     &:hover{  color: rgba(26,128,128,.54) !important; span{color: rgba(26,128,128,.37);}}
     span{ font-size: 0.65rem; vertical-align: middle; color: rgba(0,0,0,0.37);}
   }
-  @media screen and (max-width: 768px){ a{min-height: 32px; line-height: 32px;&::after{line-height: 32px;}}}
+  @media screen and (max-width: 768px){ a{min-height: 32px; line-height: 32px;&::after{line-height: 32px;} md-checkbox{margin-left: 20px;}}}
 
 }
 .maintoolbarselect{

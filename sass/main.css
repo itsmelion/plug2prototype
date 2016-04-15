@@ -71,26 +71,35 @@
   background-size: 400px auto;
   background-repeat: no-repeat; }
 
-@media screen and (max-width: 960px) {
-  md-content {
-    background-color: #e0e0e0; } }
+md-content {
+  background-color: #f9f9f9; }
+  @media screen and (max-width: 960px) {
+    md-content {
+      background-color: #F1F1F1; } }
 
 .table-list {
   min-height: 75px; }
   .table-list:hover, .table-list :focus {
-    background-color: #f7f7f7; }
+    background-color: #fcfcfc; }
   @media screen and (min-width: 961px) {
     .table-list {
       margin: 0;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #E6E3E3;
       box-shadow: none;
       border-left: 3px solid transparent; } }
   @media screen and (max-width: 959px) {
     .table-list > div {
       margin: 12px 1px; } }
   @media screen and (max-width: 768px) {
-    .table-list > div {
-      margin: 12px 5px; } }
+    .table-list {
+      box-shadow: none;
+      border-radius: 0; }
+      .table-list > div {
+        margin: 12px 5px; }
+        .table-list > div:last-of-type {
+          margin-right: 11px; }
+        .table-list > div:first-of-type {
+          margin-left: 18px; } }
 
 .card-red {
   border-left: 3px solid #d53b3b; }
@@ -194,8 +203,9 @@
     vertical-align: top;
     margin-left: 0; }
   .recorrencia md-list-item > md-icon:first-child:not(.md-avatar-icon), .recorrencia md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
-    margin-right: 0px;
-    font-size: .6rem; }
+    margin-right: -10px;
+    font-size: .6rem;
+    margin-top: -1px; }
   .recorrencia md-list-item, .recorrencia md-list-item ._md-list-item-inner {
     min-height: 21px; }
   .recorrencia md-icon {
@@ -270,7 +280,8 @@
   padding: 0 28px; }
 
 .sidebar {
-  max-width: 220px; }
+  max-width: 220px;
+  box-shadow: 2px 0 10px #4D4D4D; }
   .sidebar md-toolbar {
     background-image: url("../master_img/userbg.jpg");
     background-size: cover;
@@ -283,6 +294,11 @@
       bottom: 0; }
   .sidebar md-list-item {
     height: 42px; }
+  @media screen and (min-width: 960px) {
+    .sidebar {
+      box-shadow: inset -5px 0 15px #cecece; }
+      .sidebar md-toolbar {
+        box-shadow: inset -5px 0 15px #545454; } }
 
 .searchinput {
   min-width: 240px;
@@ -335,7 +351,9 @@ md-input-container.md-plugBlank-theme .md-input {
       min-height: 32px;
       line-height: 32px; }
       .subtoolbar a::after {
-        line-height: 32px; } }
+        line-height: 32px; }
+      .subtoolbar a md-checkbox {
+        margin-left: 20px; } }
 
 .maintoolbarselect button span {
   text-transform: none;

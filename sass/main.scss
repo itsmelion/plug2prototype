@@ -24,39 +24,3 @@ a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover{
 }
 
 md-checkbox{margin-bottom: 0;}
-
-.visao-fav{
-  md-radio-button ._md-container{
-  display: none;
-  }
-  md-radio-button ._md-label{
-    margin-left: 0.5rem;
-    color: rgba(0,0,0,0.37);
-    top: 0.5rem;
-  }
-  md-radio-button:hover ._md-label{color: rgba(0,0,0,.54);}
-}
-
-.notificationbar{
-  background-color: #f2f2f2;
-  md-card .md-button{
-  line-height: 20px;
-  padding: 0.5rem 0;
-  text-align: center;
-  h4{font-size: 1rem; font-weight: 400; margin-top: .8rem; margin-left: 1.5rem;}
-  p{font-size: 0.8rem; font-weight: 300; margin-bottom: .6rem; margin-left: 1.5rem;}
-  }
-}
-#task-seemore{
-position: absolute;
-bottom: 0;
-width: 100%;
-background-color: #fff;
-border-top: 1px solid #ddd;
-padding: 0.8rem 1.2rem;
-box-sizing: border-box;
-outline: none;
-cursor: pointer;
-a{display: block; position: relative; width: 100%; height: 100%;}
-&:hover a{ color: rgba(26,128,128,.54) !important;}
-}

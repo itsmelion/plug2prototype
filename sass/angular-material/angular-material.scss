@@ -1615,7 +1615,7 @@ button.md-button::-moz-focus-inner {
   text-align: center;
 
   // Always uppercase buttons
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 500;
   font-size: $body-font-size-base;
   font-style: inherit;
@@ -4062,11 +4062,11 @@ md-list-item {
   }
 }
 
-$menu-border-radius: 2px !default;
+$menu-border-radius: 0px !default;
 $max-visible-items: 6 !default;
-$menu-item-height: 6 * $baseline-grid !default;
+$menu-item-height: 5 * $baseline-grid !default;
 $dense-menu-item-height: 4 * $baseline-grid !default;
-$max-menu-height: 2 * $baseline-grid + $max-visible-items * $menu-item-height !default;
+$max-menu-height: 3 * $baseline-grid + $max-visible-items * $menu-item-height !default;
 $max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-item-height !default;
 
 ._md-open-menu-container {
@@ -6467,7 +6467,6 @@ md-tooltip {
   overflow: hidden;
   pointer-events: none;
   border-radius: 2px;
-
   font-weight: 400;
   font-size: $tooltip-fontsize-sm;
   @media (min-width: $layout-breakpoint-sm) {
@@ -6476,8 +6475,8 @@ md-tooltip {
 
   ._md-content {
     position: relative;
-    white-space: nowrap;
     overflow: hidden;
+    white-space: normal;
     text-overflow: ellipsis;
     transform-origin: center top;
     transform: scale(0);
@@ -6494,7 +6493,7 @@ md-tooltip {
     }
     &._md-show-add {
       transition: $swift-ease-out;
-      transition-duration: .2s;
+      transition-duration: .15s;
       transform: scale(0);
       opacity: 0;
     }
@@ -6505,7 +6504,7 @@ md-tooltip {
     }
     &._md-show-remove {
       transition: $swift-ease-out;
-      transition-duration: .2s;
+      transition-duration: .15s;
       &._md-show-remove-active {
         transform: scale(0);
         opacity: 0;

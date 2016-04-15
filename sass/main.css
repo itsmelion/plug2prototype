@@ -333,19 +333,43 @@ md-input-container.md-plugBlank-theme .md-input {
   color: #de5c5c;
   z-index: -1; }
 
-.notification-Menu {
-  background-color: #e0e0e0;
-  padding: 0;
-  padding-bottom: 1.5rem; }
-  .notification-Menu h3 {
-    padding: 0 1.5rem; }
-  .notification-Menu md-toolbar {
-    margin-bottom: 1rem; }
-  .notification-Menu md-menu-item {
-    margin: 0.1rem .5rem; }
-  .notification-Menu button.md-button {
-    background-color: #fafafa;
-    border-radius: 6px; }
+.notificationbar {
+  background-color: #f2f2f2; }
+  .notificationbar md-card {
+    box-shadow: none; }
+  .notificationbar md-card .md-button {
+    line-height: 20px;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    text-align: center; }
+    .notificationbar md-card .md-button h4 {
+      font-size: .85rem;
+      font-weight: 400;
+      margin-top: .8rem;
+      margin-left: 1.5rem; }
+    .notificationbar md-card .md-button p {
+      font-size: .7rem;
+      font-weight: 300;
+      margin-bottom: .6rem;
+      margin-left: 1.5rem; }
+
+#task-seemore {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer; }
+  #task-seemore a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  #task-seemore:hover a {
+    color: rgba(26, 128, 128, 0.54) !important; }
 
 .filteractive > span {
   font-size: .70rem;
@@ -404,49 +428,3 @@ a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover {
 
 md-checkbox {
   margin-bottom: 0; }
-
-.visao-fav md-radio-button ._md-container {
-  display: none; }
-
-.visao-fav md-radio-button ._md-label {
-  margin-left: 0.5rem;
-  color: rgba(0, 0, 0, 0.37);
-  top: 0.5rem; }
-
-.visao-fav md-radio-button:hover ._md-label {
-  color: rgba(0, 0, 0, 0.54); }
-
-.notificationbar {
-  background-color: #f2f2f2; }
-  .notificationbar md-card .md-button {
-    line-height: 20px;
-    padding: 0.5rem 0;
-    text-align: center; }
-    .notificationbar md-card .md-button h4 {
-      font-size: 1rem;
-      font-weight: 400;
-      margin-top: .8rem;
-      margin-left: 1.5rem; }
-    .notificationbar md-card .md-button p {
-      font-size: 0.8rem;
-      font-weight: 300;
-      margin-bottom: .6rem;
-      margin-left: 1.5rem; }
-
-#task-seemore {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-  padding: 0.8rem 1.2rem;
-  box-sizing: border-box;
-  outline: none;
-  cursor: pointer; }
-  #task-seemore a {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%; }
-  #task-seemore:hover a {
-    color: rgba(26, 128, 128, 0.54) !important; }

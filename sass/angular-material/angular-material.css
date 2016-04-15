@@ -594,7 +594,7 @@ button.md-button::-moz-focus-inner {
   white-space: nowrap;
   min-width: 50px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 500;
   font-size: 11px;
   font-style: inherit;
@@ -2431,7 +2431,7 @@ md-list-item {
   top: 0;
   z-index: 100;
   opacity: 0;
-  border-radius: 2px; }
+  border-radius: 0px; }
   ._md-open-menu-container md-menu-divider {
     margin-top: 3px;
     margin-bottom: 3px;
@@ -4183,8 +4183,8 @@ md-tooltip {
       font-size: 12px; } }
   md-tooltip ._md-content {
     position: relative;
-    white-space: nowrap;
     overflow: hidden;
+    white-space: normal;
     text-overflow: ellipsis;
     transform-origin: center top;
     transform: scale(0);
@@ -4201,7 +4201,7 @@ md-tooltip {
         padding-right: 8px; } }
     md-tooltip ._md-content._md-show-add {
       transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-duration: .2s;
+      transition-duration: .15s;
       transform: scale(0);
       opacity: 0; }
     md-tooltip ._md-content._md-show, md-tooltip ._md-content._md-show-add-active {
@@ -4210,7 +4210,7 @@ md-tooltip {
       transform-origin: center top; }
     md-tooltip ._md-content._md-show-remove {
       transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-duration: .2s; }
+      transition-duration: .15s; }
       md-tooltip ._md-content._md-show-remove._md-show-remove-active {
         transform: scale(0);
         opacity: 0; }

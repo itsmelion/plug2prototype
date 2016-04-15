@@ -244,7 +244,12 @@ $checkbox-border-width: 2px !default;
 @mixin rtl-prop($ltr-prop, $rtl-prop, $value) {
   #{$ltr-prop}: $value;
   [dir=rtl] & {
+    // fallback for auto
+    #{$ltr-prop}: 0;
+    // fallback for IE
     #{$ltr-prop}: auto;
+    #{$ltr-prop}: initial;
+
     #{$rtl-prop}: $value;
   }
 }
@@ -3254,13 +3259,13 @@ md-icon {
 //  -moz-osx-font-smoothing:grayscale;
 //}
 
-$input-container-padding: 5px !default;
+$input-container-padding: 2px !default;
 
 $input-label-default-offset: 24px !default;
 $input-label-default-scale: 1.0 !default;
 $input-label-float-offset: 6px !default;
 $input-label-float-scale: 0.75 !default;
-$input-label-float-width: $input-container-padding + 12px !default;
+$input-label-float-width: $input-container-padding + 16px !default;
 
 $input-placeholder-offset: $input-label-default-offset !default;
 
@@ -3560,12 +3565,13 @@ md-input-container {
   .md-input {
     &[disabled],
     [disabled] & {
-      background-position: 0 bottom;
+      // The negative border width offsets the dotted "border" so
+      // it's placed in the same place as the solid one before it.
+      background-position: bottom $input-border-width-default * -1 left 0;
       // This background-size is coordinated with a linear-gradient set in input-theme.scss
       // to create a dotted line under the input.
       background-size: 4px 1px;
       background-repeat: repeat-x;
-      margin-bottom: -1px; // Shift downward so dotted line is positioned the same as other bottom borders
     }
   }
 
@@ -3714,7 +3720,7 @@ $list-item-dense-line-height: 1.05 !default;
 
 md-list {
   display: block;
-  padding: 5px 8px;
+  padding: $list-padding-top $list-padding-right $list-padding-bottom $list-padding-left;
 
   .md-subheader {
     font-size: $body-font-size-base;
@@ -3743,6 +3749,7 @@ md-list {
           @include rtl-prop(margin-right, margin-left, $list-item-primary-width - $list-item-dense-primary-avatar-width);
         }
         .md-avatar {
+          flex: none;
           width: $list-item-dense-primary-avatar-width;
           height: $list-item-dense-primary-avatar-width;
         }
@@ -3926,11 +3933,19 @@ md-list-item {
       box-sizing: content-box;
     }
     & .md-avatar {
+      flex: none;
       width: $list-item-primary-avatar-width;
       height: $list-item-primary-avatar-width;
     }
     & .md-avatar-icon {
       padding: 8px;
+
+      // Set the width/height to the same as the icon to fix issue on iOS Safari where the
+      // height: 100% was causing it to be larger than it's parent
+      svg {
+        width: $icon-size;
+        height: $icon-size;
+      }
     }
 
     & > md-checkbox {
@@ -4023,6 +4038,7 @@ md-list-item {
           font-size: $body-font-size-base;
           font-weight: 500;
           letter-spacing: 0.010em;
+          margin: $list-p-margin;
           line-height: $list-p-line-height;
         }
       }
@@ -4066,7 +4082,7 @@ $menu-border-radius: 0px !default;
 $max-visible-items: 6 !default;
 $menu-item-height: 5 * $baseline-grid !default;
 $dense-menu-item-height: 4 * $baseline-grid !default;
-$max-menu-height: 3 * $baseline-grid + $max-visible-items * $menu-item-height !default;
+$max-menu-height: 5 * $baseline-grid + $max-visible-items * $menu-item-height !default;
 $max-dense-menu-height: 2 * $baseline-grid + $max-visible-items * $dense-menu-item-height !default;
 
 ._md-open-menu-container {
@@ -4119,7 +4135,7 @@ md-menu-content {
   display: flex;
   flex-direction: column;
   padding: $baseline-grid 0;
-  max-height: 400px;
+  max-height: $max-menu-height;
   overflow-y: auto;
   &.md-dense {
     max-height: $max-dense-menu-height;
@@ -4303,12 +4319,23 @@ md-menu-content._md-menu-bar-menu.md-dense {
   }
 }
 
+$progress-circular-indeterminate-duration: 2.9s !default;
+
+@keyframes indeterminate-rotate {
+    0%       { transform: rotate(0deg); }
+    100%     { transform: rotate(360deg); }
+}
+
 // Used to avoid unnecessary layout
 md-progress-circular {
     position: relative;
 
     &._md-progress-circular-disabled {
         visibility: hidden;
+    }
+
+    &._md-mode-indeterminate svg {
+        animation: indeterminate-rotate $progress-circular-indeterminate-duration linear infinite;
     }
 
     svg {
@@ -4639,10 +4666,25 @@ md-radio-button {
   }
 }
 
+md-radio-group {
+  &.layout-column,
+  &.layout-xs-column, &.layout-gt-xs-column,
+  &.layout-sm-column, &.layout-gt-sm-column,
+  &.layout-md-column, &.layout-gt-md-column,
+  &.layout-lg-column, &.layout-gt-lg-column,
+  &.layout-xl-column {
+    md-radio-button {
+      margin-bottom: $radio-margin;
+    }
+  }
 
-
-
-    md-radio-group {
+  &.layout-row,
+  &.layout-xs-row, &.layout-gt-xs-row,
+  &.layout-sm-row, &.layout-gt-sm-row,
+  &.layout-md-row, &.layout-gt-md-row,
+  &.layout-lg-row, &.layout-gt-lg-row,
+  &.layout-xl-row {
+    md-radio-button {
       margin-top: 0;
       margin-bottom: 0;
       @include rtl(margin-left, 0, $radio-margin);
@@ -4652,19 +4694,20 @@ md-radio-button {
         margin-left: 0;
         margin-right: 0;
       }
-      &:focus {
-        outline: none;
-      }
-      &.md-focused {
-        .md-checked ._md-container:before {
-          left: -8px;
-          top: -8px;
-          right: -8px;
-          bottom: -8px;
-        }
-      }
     }
-
+  }
+  &:focus {
+    outline: none;
+  }
+  &.md-focused {
+    .md-checked ._md-container:before {
+      left: -8px;
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+    }
+  }
+}
 
 .md-inline-form {
   md-radio-group {
@@ -4787,7 +4830,9 @@ md-select {
   display: flex;
   align-items: center;
   padding: 2px 2px 1px;
-  background-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background-color: rgba(0,0,0,0);
   position: relative;
   box-sizing: content-box;
   min-width: 8 * $baseline-grid;
@@ -4989,13 +5034,13 @@ md-sidenav {
   &._md-locked-open-remove-active {
     transition: width $swift-ease-in-duration $swift-ease-in-timing-function,
                 min-width $swift-ease-in-duration $swift-ease-in-timing-function;
-    width: 0;
-    min-width: 0;
+    width: 0 !important;
+    min-width: 0 !important;
   }
 
   &._md-closed._md-locked-open-add {
-    width: 0;
-    min-width: 0;
+    width: 0 !important;
+    min-width: 0 !important;
     transform: translate3d(0%, 0, 0);
   }
 
@@ -5610,6 +5655,7 @@ $subheader-sticky-shadow: 0px 2px 4px 0 rgba(0,0,0,0.16) !default;
   font-size: $subheader-font-size;
   font-weight: $subheader-font-weight;
   line-height: $subheader-line-height;
+  margin: $subheader-margin;
   position: relative;
 
   ._md-subheader-inner {

@@ -20,7 +20,7 @@
     "angular-sanitize": "^1.5.3",
     "jasmine-core": "^2.4.1",
     "karma-chrome-launcher": "^0.2.3",
-    "material-design-icons": "^2.2.2"
+    "material-design-icons": "^2.2.3"
   },
   "devDependencies": {
     "angular-mocks": "latest",

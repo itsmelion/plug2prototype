@@ -1,0 +1,92 @@
+.toolbar-height{
+  min-height: 135px;
+  padding: .5rem .5rem 0 .5rem;
+}
+
+.btn-indent{
+  md-list-item div.md-button._md-no-style{
+  padding: 0 28px;
+  }
+}
+
+.sidebar{
+  max-width:220px;
+  box-shadow: 2px 0 10px #4D4D4D;
+  md-toolbar {
+    background-image: url('../master_img/userbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-origin: border-box;
+    > md-menu{
+      margin: 0;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  md-list-item{height: 42px;}
+  @media screen and(min-width: 960px){box-shadow: inset -5px 0 15px #cecece; md-toolbar{box-shadow: inset -5px 0 15px #545454;}}
+}
+
+.searchinput {
+  min-width: 240px;
+  margin: 0;
+  padding: 0;
+  color: rgba(255,255,255,.87);
+  input{border-color: rgba(255,255,255,.37); color: rgba(255,255,255,1);}
+  md-input-container.md-plugBlank-theme .md-input {
+    color: rgba(255,255,255,0.87);
+    border-color: rgba(255,255,255,0.3);
+    }
+}
+md-input-container.md-plugBlank-theme .md-input {
+  color: rgba(255,255,255,0.87);
+  border-color: rgba(255,255,255,0.3);
+  }
+
+  //Botão de Sininho de notificações
+  .notification{
+    > span{
+      font-size: .75rem;
+      top: -.275rem;
+      position: relative;
+      line-height: 0;
+      margin-left: -.6rem;
+      > span{
+      z-index: 1;
+      margin-left: 0.1rem;
+      top: -0.1rem;
+      position: relative;
+      }
+    }
+    > span i{position: absolute; top: -.375rem; left:-0.375rem; font-size: 1.4rem; color: #de5c5c; z-index: -1;}
+  }
+
+  //Estilo da Barra de notificações
+  .notificationbar{
+    background-color: #f2f2f2;
+    md-card{box-shadow: none;}
+    md-card .md-button{
+    line-height: 20px;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    h4{font-size: .85rem; font-weight: 400; margin-top: .8rem; margin-left: 1.5rem;}
+    p{font-size: .7rem; font-weight: 300; margin-bottom: .6rem; margin-left: 1.5rem;}
+    }
+  }
+
+  //btn 'Ver mais'(em notificacoes)
+  #task-seemore{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  a{display: block; position: relative; width: 100%; height: 100%;}
+  &:hover a{ color: rgba(26,128,128,.54) !important;}
+  }

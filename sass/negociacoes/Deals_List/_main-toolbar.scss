@@ -1,0 +1,25 @@
+//Drop buttons @Negociacoes-Listadas
+.maintoolbarselect{
+  button span{ text-transform: none; font-size: .8rem; vertical-align: middle;}
+  button i.material-icons.ng-scope{ font-size: 1.5rem; vertical-align: middle;}
+}
+
+
+//Bolinha roxa indicando Filtros
+.filteractive{
+  > span{
+    font-size: .70rem;
+    top: -.275rem;
+    position: relative;
+    line-height: 0;
+    margin-left: -.6rem;
+    z-index: 2;
+    > span{
+    z-index: 2;
+    margin-left: 0.1rem;
+    top: -0.1rem;
+    position: relative;
+    }
+  }
+  > span i{position: absolute; top: -.375rem; left:-0.395rem; font-size: 1.5rem; color: #BC8CD6; z-index: 1;}
+}

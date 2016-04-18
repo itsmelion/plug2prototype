@@ -6416,8 +6416,6 @@ md-toolbar {
 }
 
 .md-toolbar-tools {
-  font-size: $title-font-size-base;
-  letter-spacing: 0.005em;
   box-sizing: border-box;
   font-weight: 400;
   display: flex;
@@ -6427,7 +6425,6 @@ md-toolbar {
   width: 100%;
   height: $toolbar-tools-height;
   max-height: $toolbar-tools-height;
-  padding: 0 $toolbar-padding;
   margin: 0;
 
   h1, h2, h3 {

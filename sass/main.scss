@@ -1,7 +1,14 @@
 @import '../sass/_personal_vars.scss';
-@import '../sass/negociacoes/_filtros.scss';
-@import '../sass/negociacoes/_card-negociacao.scss';
-@import '../sass/negociacoes/_toolbar.scss';
+@import '../sass/_Main-bar.scss';
+
+//Listagem de Negociacões
+@import '../sass/negociacoes/Deals_list/_main-toolbar.scss';
+@import '../sass/negociacoes/Deals_list/_sub-toolbar.scss';
+@import '../sass/negociacoes/Deals_list/_card-negociacao.scss';
+@import '../sass/negociacoes/Deals_list/_filtros.scss';
+
+//Negociação Única
+@import '../sass/negociacoes/Deal_detail/_sub-toolbar.scss';
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -9,7 +16,8 @@
 body{
   overflow: hidden;
 }
-h4{margin: 0;}
+h4, h5{margin: 0;}
+h5{font-size: .8rem; font-weight: 400;}
 .truncate{
   overflow: hidden; text-overflow: ellipsis;
 }

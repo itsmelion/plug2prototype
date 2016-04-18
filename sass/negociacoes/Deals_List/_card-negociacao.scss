@@ -61,7 +61,7 @@ md-content{
 
 .rate{
   md-radio-button ._md-container {display: none;}
-  md-radio-button ._md-label {margin-left: 0;}
+  md-radio-button ._md-label {margin-left: 0; color: inherit;}
   .material-icons{font-size: 16px}
   md-icon{width: 13px; height: 15px; min-width: 0; min-height: 0;}
 }
@@ -124,20 +124,19 @@ md-content{
 }
 
 .progress li {
-  height: 35px;
+  height: 18px;
   white-space: nowrap;
   position: relative;
-  line-height: 2.1rem;
+  line-height: 19px;
   color: rgb(29, 194, 231);
   &:first-of-type{
-    width: 3px;
     margin-left: 1rem;
   }
 }
 
 
 .progress li {
-  svg{position: absolute; z-index: 1; top: 50%; left:-0.7rem; margin-top: -1px; stroke: #1dc2e7; stroke-width:3; width: 100%;}
+  svg{position: absolute; z-index: 1; top: 50%; left:-0.7rem; margin-top: 0px; stroke: #1dc2e7; stroke-width:3; width: 100%;}
   &:after{
     font-family: 'Material Icons';
     -webkit-font-feature-settings: 'liga';

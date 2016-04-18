@@ -3,24 +3,29 @@
 
 
 .black8{
-  color: rgba(0,0,0,0.87);
+  color: rgba(0,0,0,0.87) !important;
 }
 .black5{
-  color: rgba(0,0,0,0.54);
+  color: rgba(0,0,0,0.54) !important;
 }
 .black3{
-  color: rgba(0,0,0,0.38);
+  color: rgba(0,0,0,0.38) !important;
   &:hover{color: rgba(0,0,0,0.54); cursor: normal;}
 }
 .black1{
-  color: rgba(0,0,0,0.12);
+  color: rgba(0,0,0,0.12) !important;
   &:hover{color: rgba(0,0,0,0.37); cursor: normal;}
 }
 
-.white{ color: #ffffff;}
+.white{ color: #ffffff !important;}
 .white7{
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.7) !important;
 }
 .white5{
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.5) !important;
+}
+
+
+md-tabs.md-plugBlank-theme .md-tab{
+  color: rgba(255,255,255,0.7);
 }

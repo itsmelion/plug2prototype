@@ -61,8 +61,8 @@ app.config(function($mdThemingProvider) {
         '700': 'FAFAFA',
         '800': 'F7F7F7',
         '900': 'F7F7F7',
-        'A100': 'E0E0E0',
-        'A200': 'E0E0E0',
+        'A100': 'FAFAFA',
+        'A200': 'FAFAFA',
         'A400': 'F1F1F1',
         'A700': 'FFFFFF',
         'contrastDefaultColor': 'light' // could also specify this if default was 'dark'
@@ -82,7 +82,9 @@ app.config(function($mdThemingProvider) {
           .primaryPalette('deep-orange')
     $mdThemingProvider.theme('plugBlank')
           .primaryPalette('Blank')
-          // .foregroundPalette['3'] = 'rgba(255,255,255,.87)';
+          .accentPalette('Blank')
+          .warnPalette('red')
+          .backgroundPalette('Blank')
 });
 
 

@@ -1,0 +1,40 @@
+.subtoolbar{
+  outline: 0;
+  border-left: 3px solid transparent;
+  white-space: nowrap;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  a{
+    font-size: 0.8rem;
+    color: rgba(0,0,0,0.54) !important;
+    padding-right: 0.6rem;
+    box-sizing: content-box;
+    display: block;
+    margin-left: 1rem;
+    &::before{
+     position: absolute;
+     font-family: 'Material Icons';
+     line-height: 12px;
+     -webkit-font-feature-settings: 'liga';
+      content: "expand_more";
+      font-size: .9rem;
+      margin-top: 3px;
+      margin-left: -1rem;
+    }
+    &:hover{  color: rgba(26,128,128,.54) !important; span{color: rgba(26,128,128,.37);}}
+    span{ font-size: 0.65rem; vertical-align: middle; color: rgba(0,0,0,0.37);}
+  }
+  @media screen and (max-width: 768px){ a{min-height: 32px; line-height: 32px;&::after{line-height: 32px;} md-checkbox{margin-left: 20px;}}}
+
+}
+
+
+.bulkActions{
+  font-size: 0.8rem;
+  md-button{text-align: left;}
+  md-menu button.md-button{
+  text-transform: none;  color: rgba(0,0,0,0.54);
+  span{font-size: 0.8rem; font-weight: 400;}
+  i.material-icons{vertical-align: middle; font-size: 17px;}
+  }
+}

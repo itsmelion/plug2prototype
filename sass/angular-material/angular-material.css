@@ -4219,8 +4219,6 @@ md-toolbar {
       display: none; }
 
 .md-toolbar-tools {
-  font-size: 16px;
-  letter-spacing: 0.005em;
   box-sizing: border-box;
   font-weight: 400;
   display: flex;
@@ -4229,7 +4227,6 @@ md-toolbar {
   width: 100%;
   height: auto;
   max-height: auto;
-  padding: 0 12px;
   margin: 0; }
   .md-toolbar-tools h1, .md-toolbar-tools h2, .md-toolbar-tools h3 {
     font-size: inherit;

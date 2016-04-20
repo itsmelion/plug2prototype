@@ -1,0 +1,183 @@
+<div class="md-toolbar-tools"  layout-xs="column" >
+  <div layout="row" layout-align="start center" style="width: 100%;">
+    <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+      <md-icon md-font-icon="material-icons ">menu</md-icon>
+    </md-button>
+    <h1 layout-padding style="font-size: 24px !important; color: white;">Negociações</h1>
+</div>
+
+  <span flex></span>
+<div layout="row" md-theme="plugBlank">
+  <md-input-container md-no-float class="md-block searchinput">
+   <md-icon md-font-icon="material-icons ">search</md-icon>
+   <input ng-model="user.search" type="text" placeholder="Pesquisar">
+ </md-input-container>
+
+    <md-button class="notification" ng-click="toggleNotification()" md-ink-ripple="#D26B6B">
+      <md-icon md-font-icon="material-icons ">notifications</md-icon>
+      <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
+    </md-button>
+
+</div>
+</div>
+
+
+<div  class="md-toolbar-tools md-toolbar-tools-bottom maintoolbarselect" layout-xs="column" style="margin-top:36px;">
+
+<div layout-xs="column" flex-xs="100">
+  <md-menu md-offset="0 42">
+    <md-button ng-click="$mdOpenMenu()">
+       <span>Visão de Negociacão</span><i class="material-icons">arrow_drop_down</i>
+    </md-button>
+    <md-menu-content width="4" ng-controller="ToastCtrl">
+        <md-list-item class="md-2-line" ng-click="none()">
+          <div class="md-list-item-text">
+            <h3> Negociações </h3>
+          </div>
+          <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+            <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+            <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+          </md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line" ng-click="none()">
+          <div class="md-list-item-text">
+            <h3> Tarefas </h3>
+          </div>
+          <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+            <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+            <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+          </md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line" ng-click="none()">
+          <div class="md-list-item-text">
+            <h3> Previsão </h3>
+          </div>
+          <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+            <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+            <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+          </md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line" ng-click="none()">
+          <div class="md-list-item-text">
+            <h3> Criação </h3>
+          </div>
+          <md-button class="md-secondary md-icon-button" ng-click="showActionToast()" aria-label="call">
+            <md-tooltip md-delay="1000" md-direction="left">Favorite this view</md-tooltip>
+            <md-icon class="black3" md-font-icon="material-icons">star</md-icon>
+          </md-button>
+        </md-list-item>
+    </md-menu-content>
+  </md-menu>
+
+
+
+    <md-menu md-offset="0 50">
+      <md-button ng-click="$mdOpenMenu()">
+         <span>Responsável</span><i class="material-icons">arrow_drop_down</i>
+      </md-button>
+      <md-menu-content width="5">
+
+            <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
+              <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                <md-input-container style="margin-top:0" md-no-float class="md-block">
+                  <input style="border-bottom: 0" placeholder="Escolha o Responsável">
+                </md-input-container>
+              </md-card>
+
+              <md-content class="md-subhead">
+              <md-subheader> Geral </md-subheader>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>Meus negócios</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>Todos os negócios</p>
+                </div>
+              </md-list-item>
+              <md-subheader>Equipes</md-subheader>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>SP Rehagro</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>BH Rehagro</p>
+                </div>
+              </md-list-item>
+              <md-subheader>Responsáveis</md-subheader>
+              <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+                <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                <div class="md-list-item-text compact">
+                  <h3>Laura</h3>
+                  <p>laura@runrun.it</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-2-line contact-item selected"  ng-click="openConfirmModal()">
+                <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                <div class="md-list-item-text compact">
+                  <h3>Laura</h3>
+                  <p>laura@runrun.it</p>
+                </div>
+              </md-list-item>
+            </md-content>
+            </md-list>
+
+      </md-menu-content>
+    </md-menu>
+    <md-menu md-offset="0 50">
+      <md-button ng-click="$mdOpenMenu()">
+         <span>Funil de Vendas</span><i class="material-icons">arrow_drop_down</i>
+      </md-button>
+      <md-menu-content width="4">
+
+            <md-list class="fixedRows" layout="column">
+              <md-content class="md-subhead">
+              <md-subheader>Etapas do Funil</md-subheader>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Todas as etapas</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Prospect</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Contato</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Proposta enviada</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Fechamento</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="none()">
+                <div class="md-list-item-text compact">
+                  <p>Grand Finals</p>
+                </div>
+              </md-list-item>
+
+            </md-content>
+            </md-list>
+
+      </md-menu-content>
+    </md-menu>
+  </div>
+  <span flex></span>
+  <div  layout-align="end center">
+    <md-button class="filteractive" ng-click="toggleRight()" style="padding-left: 1px">
+      <md-icon md-font-icon="material-icons">filter_list</md-icon>
+      <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
+    </md-button>
+  </div>
+</div>

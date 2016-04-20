@@ -1,0 +1,47 @@
+<div layout-align="center center" layout="row"  flex-gt-sm="5">
+  <div style="margin: 6px 26px"><md-checkbox aria-label="check" ng-model="check" ng-click="showBar = !showBar"></md-checkbox></div>
+</div>
+
+<div layout-align="center center" flex-gt-sm="10" hide-xs hide-sm>
+  <div >
+    <a class="truncate" style="text-align: center">Responsável</a>
+  </div>
+</div>
+
+<div flex="60" flex-gt-sm="20" layout-align="center center" hide-xs hide-sm>
+  <div>
+    <a class="truncate">Negócio <span>(442)</span> / Organização <span>(320)</span></a>
+  </div>
+</div>
+
+<div flex="40" flex-gt-sm="10" layout-align="start center" hide-xs hide-sm>
+  <div>
+    <a class="truncate" >Qualificação</a>
+  </div>
+</div>
+
+<div flex="60" flex-gt-sm="20" layout-align="center center" hide-xs hide-sm>
+  <div>
+    <a class="truncate"  style="text-align: center;">Etapa do Funil</a>
+  </div>
+</div>
+
+<div flex="50" flex-gt-sm="15" layout-align="center center" hide-xs hide-sm>
+  <div>
+    <a class="truncate" >Valores <span>(R$232,239,00)</span></a>
+  </div>
+</div>
+
+<div flex="50" flex-gt-sm="15" layout-align="center center" hide-xs hide-sm>
+  <div>
+    <a class="truncate" >Próxima Tarefa</a>
+  </div>
+</div>
+
+<div flex-gt-sm="5" layout="row" layout-align="end center">
+  <div ng-controller="ModalCtrl" style="margin: 6px 18px">
+    <md-button class="md-icon-button" aria-label="list" ng-click="openColumnModal()" >
+      <md-icon md-font-icon="material-icons">view_list</md-icon>
+    </md-button>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="md-toolbar-tools"  layout-xs="column" >
+  <div layout="row">
+    <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+      <md-icon md-font-icon="material-icons ">menu</md-icon>
+    </md-button>
+    <md-button class="md-icon-button" ng-click="return()">
+      <md-icon md-font-icon="material-icons ">arrow_back</md-icon>
+    </md-button>
+  <md-list-item class="md-2-line">
+    <div class="md-list-item-text" layout="column">
+      <h2 style="font-size: 21px !important; color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
+      <h4>Galactic Federation of Planets</h4>
+    </div>
+  </md-list-item>
+</div>
+
+  <span flex></span>
+<div layout="row" md-theme="plugBlank">
+  <md-input-container md-no-float class="md-block searchinput">
+   <md-icon md-font-icon="material-icons ">search</md-icon>
+   <input ng-model="user.search" type="text" placeholder="Pesquisar">
+ </md-input-container>
+
+    <md-button class="notification" ng-click="toggleNotification()" md-ink-ripple="#D26B6B">
+      <md-icon md-font-icon="material-icons ">notifications</md-icon>
+      <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
+    </md-button>
+
+</div>
+</div>
+
+<div md-theme="plugBlank" style="margin-top: 25px">
+<md-tabs>
+<md-tab>Historico</md-tab>
+<md-tab>E-Mails(3)</md-tab>
+<md-tab>Tarefas</md-tab>
+<md-tab>Contatos</md-tab>
+<md-tab>Produtos</md-tab>
+<md-tab>Arquivos</md-tab>
+</md-tabs>
+</div>

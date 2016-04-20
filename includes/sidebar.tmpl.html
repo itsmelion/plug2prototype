@@ -1,0 +1,96 @@
+<md-sidenav flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-sm')">
+  <md-toolbar class="md-theme-light toolbar-height" layout="column" >
+      <div layout-margin><img src="master_img/brand.png" width="71px" alt="logo" /></div>
+    <md-menu md-offset="10 60">
+
+        <md-list-item layout-margin ng-click="$mdOpenMenu($event)" class="md-2-line">
+          <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
+          <div class="md-list-item-text">
+            <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
+          </div>
+        </md-list-item>
+
+
+      <md-menu-content width="3" >
+        <md-menu-item>
+          <md-button ng-click="$nowhere()">
+              <div layout="row" flex>
+                <p flex>Editar perfil</p>
+                <md-icon md-menu-origin md-font-icon="material-icons ">account_circle</md-icon>
+              </div>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="$nowhere()">
+              <div layout="row" flex>
+                <p flex>Conta</p>
+                <md-icon md-menu-origin md-font-icon="material-icons ">card_membership</md-icon>
+              </div>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="$nowhere()">
+              <div layout="row" flex>
+                <p flex>Indique e Ganhe</p>
+                <md-icon md-menu-origin md-font-icon="material-icons ">group_add</md-icon>
+              </div>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="$nowhere()">
+              <div layout="row" flex>
+                <p flex>Seja um Parceiro</p>
+                <md-icon md-menu-origin md-font-icon="material-icons ">mood</md-icon>
+              </div>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+      </md-toolbar>
+  <div layout-align="space-around center" class="md-subhead btn-indent">
+      <md-list-item layout="column" style="height: 135px">
+          <div><img src="master_img/lion404.gif" width="135px" /></div>
+          <h4 class="black3">Compre o PlugPremium!</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">work</md-icon>
+        <p> Negociações </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">location_city</md-icon>
+        <p> Organizações </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">contacts</md-icon>
+        <p> Contatos </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">assignment</md-icon>
+        <p> Tarefas </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">insert_chart</md-icon>
+        <p> Relatórios </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">dashboard</md-icon>
+        <p> Plug Live </p>
+      </md-list-item>
+  </div>
+  <span flex></span>
+  <div layout-align="space-around center" class="md-subhead btn-indent">
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">settings</md-icon>
+        <p> Configurações </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">help</md-icon>
+        <p> Ajuda </p>
+      </md-list-item>
+      <md-list-item ng-click="$nowhere()">
+        <md-icon md-font-icon="material-icons ">power_settings_new</md-icon>
+        <p>Sair</p>
+      </md-list-item>
+  </div>
+</md-sidenav>

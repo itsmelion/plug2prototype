@@ -1,0 +1,440 @@
+<md-toolbar class="md-theme-light md-primary md-hue-1 toolbar-height" md-theme="plugPurple">
+  <md-list>
+  <md-list-item ng-click="toggleRight()" style="outline: none;">
+    <md-icon md-font-icon="material-icons">filter_list</md-icon>
+    <h2 flex >Filtros</h2>
+    <md-icon md-font-icon="material-icons">close</md-icon>
+  </md-list-item>
+  <md-list-item  class="md-subhead" layout-margin layout-padding>
+    <md-select placeholder="Selecionar filtros salvos" ng-model="user">
+      <md-option ng-value="jackson">Filtro do Jackson</md-option>
+      <md-option ng-value="Luana">Filtro dahora da Luana</md-option>
+    </md-select>
+  </md-list-item>
+</md-list>
+</md-toolbar>
+<div style="padding: 12px 30px"><p style="text-align: center; font-size: 0.85rem; color: #999;"> Você tem <a style="color: #45B4A3;"><md-tooltip>Campanha - Produto - Data</md-tooltip>4</a> filtros ativos</p></div>
+<md-divider></md-divider>
+<md-content class="innerfilters" ng-controller="RightCtrl">
+  <md-list>
+    <md-list-item class="md-2-line">
+      <md-icon class="material-icons md-discrete">check</md-icon>
+      <div class="md-list-item-text">
+        <h3>Avaliações</h3>
+        <md-radio-group class="rate">
+          <md-radio-button value="none"><md-icon class="material-icons md-discrete">not_interested</md-icon></md-radio-button>
+          <md-radio-button value="Poor"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+          <md-radio-button value="Hopeless"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+          <md-radio-button value="Kind of good"><md-icon class="material-icons md-primary">star</md-icon></md-radio-button>
+          <md-radio-button value="Awesome"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+          <md-radio-button value="DUUUDE, Marry me!"><md-icon class="material-icons md-discrete">star</md-icon></md-radio-button>
+        </md-radio-group>
+      </div>
+    </md-list-item>
+  </md-list>
+
+        <md-list>
+          <md-list-item>
+            <md-icon class="material-icons md-discrete">check</md-icon>
+          <md-input-container class="md-block">
+          <label>Nome do Negócio</label>
+          <input ng-model="Co">
+          </md-input-container>
+          </md-list-item>
+        </md-list>
+
+
+          <md-menu md-offset="-210 0">
+            <md-list>
+              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Estado da Negociacão</h3>
+                  <p>Em Aberto</p>
+                </div>
+              </md-list-item>
+            </md-list>
+            <md-menu-content width=4  class="innermenus">
+              <md-menu-item>
+                <md-button md-ink-ripple="#3e8cc4" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Em Aberto</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">directions_run</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-ink-ripple="#3ec474" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Ganho</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">thumb_up</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-ink-ripple="#c4c32d" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Pausado</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">pause</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-ink-ripple="#c42d2d" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Perdido</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">thumb_down</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+          <md-menu md-offset="-210 0">
+            <md-list>
+              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Campanha</h3>
+                  <p class="truncate md-caption">item description</p>
+                </div>
+              </md-list-item>
+            </md-list>
+            <md-menu-content width=4  class="innermenus">
+              <md-menu-item >
+                <div layout="row" flex>
+                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                  <span md-highlight-text="searchText">Dummy text</span>
+                  </md-autocomplete>
+                </div>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Todos</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Com Campanha</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Sem Campanha</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <div id="containerForResults">
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+              </div>
+
+
+              <div layout="row">
+                <md-button md-no-ink class="md-primary">Cancel</md-button>
+                <md-button md-no-ink class="md-primary">Salvar</md-button>
+              </div>
+            </md-menu-content>
+          </md-menu>
+            <md-list>
+              <md-list-item class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Data de criação</h3>
+                  <md-datepicker  ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                </div>
+              </md-list-item>
+            </md-list>
+            <md-list>
+              <md-list-item class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Data do ultimo contato</h3>
+                  <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                </div>
+              </md-list-item>
+            </md-list>
+
+            <md-list>
+              <md-list-item class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Data da próxima tarefa</h3>
+                  <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                </div>
+              </md-list-item>
+            </md-list>
+
+          <md-menu md-offset="-210 0">
+            <md-list>
+              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Fonte</h3>
+                  <p class="truncate md-caption">Sem fonte</p>
+                </div>
+              </md-list-item>
+            </md-list>
+            <md-menu-content width=4  class="innermenus">
+              <md-menu-item >
+                <div layout="row" flex>
+                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                  <span md-highlight-text="searchText">Dummy text</span>
+                  </md-autocomplete>
+                </div>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Com Fonte</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Sem fonte</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Todos</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <div id="containerForResults">
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Dummy Result</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+
+              </div>
+
+              <div layout="row">
+                <md-button md-no-ink class="md-primary">Cancel</md-button>
+                <md-button md-no-ink class="md-primary">Salvar</md-button>
+              </div>
+            </md-menu-content>
+          </md-menu>
+          <md-menu md-offset="-210 0">
+            <md-list>
+              <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+                <md-icon class="material-icons md-discrete">check</md-icon>
+                <div class="md-list-item-text">
+                  <h3>Produto ou Serviço</h3>
+                  <p class="truncate md-caption">Adesivagem especial</p>
+                </div>
+              </md-list-item>
+            </md-list>
+            <md-menu-content width=4  class="innermenus">
+              <md-menu-item >
+                <div layout="row" flex>
+                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                  <span md-highlight-text="searchText">Dummy text</span>
+                  </md-autocomplete>
+                </div>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Todos</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Com produtos</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                    <div layout="row" flex>
+                      <p flex>Sem produtos</p>
+                      <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-divider></md-menu-divider>
+              <div id="containerForResults">
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Estojo de maquiagem da Mary Kay</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex>Panelas inox</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button md-prevent-menu-close="md-prevent-menu-close" ng-click="$nowhere()">
+                      <div layout="row" flex>
+                        <p flex> Carros hot-wheels</p>
+                        <md-icon md-menu-origin md-font-icon="material-icons ">check</md-icon>
+                      </div>
+                  </md-button>
+                </md-menu-item>
+
+              </div>
+
+
+              <div layout="row">
+                <md-button md-no-ink class="md-primary">Cancel</md-button>
+                <md-button md-no-ink class="md-primary">Salvar</md-button>
+              </div>
+            </md-menu-content>
+          </md-menu>
+
+<md-divider></md-divider>
+        <md-button ng-click="$nothing()">
+          Limpar todos
+        </md-button>
+
+</md-content>
+<md-divider></md-divider>
+<div class="savefilter" layout-padding>
+  <span class="md-subtitle">Salvar Filtro</span>
+
+      <md-list-item style="padding: 0;" >
+      <md-input-container md-no-float class="md-block" style="margin: 0;">
+
+      <input placeholder="Nome do filtro" ng-model="Co">
+      </md-input-container>
+      </md-list-item>
+
+    <md-menu md-offset="-210 0">
+      <md-list>
+        <md-list-item ng-click="$mdOpenMenu()" class="md-2-line">
+          <md-icon class="material-icons md-discrete">check</md-icon>
+          <div class="md-list-item-text">
+            <h3>Disponível para</h3>
+            <p>Todos</p>
+          </div>
+        </md-list-item>
+      </md-list>
+      <md-menu-content width=4  class="innermenus" layout-align="center center">
+          <div flex><img src="master_img/lion404.gif" width="150px" height="auto" /></div>
+          <h4 class="black3" flex>You found the 404 Mage!</h4>
+      </md-menu-content>
+    </md-menu>
+    <md-button ng-click="toggleRight()">
+      Cancelar
+    </md-button>
+    <md-button ng-click="$nothing()">
+      salvar
+    </md-button>
+  </div>

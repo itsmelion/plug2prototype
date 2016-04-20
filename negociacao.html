@@ -16,150 +16,14 @@
 	<link type="text/css" rel="stylesheet" href="sass/main.css" />
 </head>
 <body ng-app="PlugDawnbreak" layout="row" ng-controller="MyController" ng-cloak >
+<md-sidenav ng-include="'/includes/sidebar.tmpl.html'" flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-sm')"></md-sidenav>
+<md-sidenav ng-include="'/includes/notifications.tmpl.html'" class="md-sidenav-right md-whiteframe-5dp notificationbar" md-disable-backdrop="true" md-component-id="notificationbar"></md-sidenav>
+<ui-view tabIndex="1" role="main" layout-fill>
 
-<md-sidenav flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-sm')">
-<md-toolbar class="md-theme-light toolbar-height" layout="column" >
-    <div layout-margin><img src="master_img/brand.png" width="71px" alt="logo" /></div>
-  <md-menu md-offset="10 60">
+<md-toolbar flex="none" class="internal-header md-theme-light toolbar-height" >
+  <div ng-include="'/includes/deal/toolbar.tmpl.html'"></div>
+</md-toolbar>
 
-      <md-list-item layout-margin ng-click="$mdOpenMenu($event)" class="md-2-line">
-        <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
-        <div class="md-list-item-text">
-          <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
-        </div>
-      </md-list-item>
-
-
-    <md-menu-content width="3" >
-      <md-menu-item>
-        <md-button ng-click="$nowhere()">
-            <div layout="row" flex>
-              <p flex>Editar perfil</p>
-              <md-icon md-menu-origin md-font-icon="material-icons ">account_circle</md-icon>
-            </div>
-        </md-button>
-      </md-menu-item>
-      <md-menu-item>
-        <md-button ng-click="$nowhere()">
-            <div layout="row" flex>
-              <p flex>Conta</p>
-              <md-icon md-menu-origin md-font-icon="material-icons ">card_membership</md-icon>
-            </div>
-        </md-button>
-      </md-menu-item>
-      <md-menu-item>
-        <md-button ng-click="$nowhere()">
-            <div layout="row" flex>
-              <p flex>Indique e Ganhe</p>
-              <md-icon md-menu-origin md-font-icon="material-icons ">group_add</md-icon>
-            </div>
-        </md-button>
-      </md-menu-item>
-      <md-menu-item>
-        <md-button ng-click="$nowhere()">
-            <div layout="row" flex>
-              <p flex>Seja um Parceiro</p>
-              <md-icon md-menu-origin md-font-icon="material-icons ">mood</md-icon>
-            </div>
-        </md-button>
-      </md-menu-item>
-    </md-menu-content>
-  </md-menu>
-	  </md-toolbar>
-<div layout-align="space-around center" class="md-subhead btn-indent">
-    <md-list-item layout="column" style="height: 135px">
-        <div><img src="master_img/lion404.gif" width="135px" /></div>
-        <h4 class="black3">Compre o PlugPremium!</h4>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">work</md-icon>
-      <p> Negociações </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">location_city</md-icon>
-      <p> Organizações </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">contacts</md-icon>
-      <p> Contatos </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">assignment</md-icon>
-      <p> Tarefas </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">insert_chart</md-icon>
-      <p> Relatórios </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">dashboard</md-icon>
-      <p> Plug Live </p>
-    </md-list-item>
-</div>
-<span flex></span>
-<div layout-align="space-around center" class="md-subhead btn-indent">
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">settings</md-icon>
-      <p> Configurações </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">help</md-icon>
-      <p> Ajuda </p>
-    </md-list-item>
-    <md-list-item ng-click="$nowhere()">
-      <md-icon md-font-icon="material-icons ">power_settings_new</md-icon>
-      <p>Sair</p>
-    </md-list-item>
-</div>
-</md-sidenav>
-
-
-<div flex tabIndex="1" layout="column" role="main" layout-fill >
-
-  <md-toolbar flex="none" class="internal-header md-theme-light toolbar-height" >
-      <div class="md-toolbar-tools"  layout-xs="column" >
-        <div layout="row">
-          <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
-            <md-icon md-font-icon="material-icons ">menu</md-icon>
-          </md-button>
-          <md-button class="md-icon-button" ng-click="return()">
-            <md-icon md-font-icon="material-icons ">arrow_back</md-icon>
-          </md-button>
-        <md-list-item class="md-2-line">
-          <div class="md-list-item-text" layout="column">
-            <h2 style="font-size: 21px !important; color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-            <h4>Galactic Federation of Planets</h4>
-          </div>
-        </md-list-item>
-      </div>
-
-        <span flex></span>
-      <div layout="row" md-theme="plugBlank">
-        <md-input-container md-no-float class="md-block searchinput">
-         <md-icon md-font-icon="material-icons ">search</md-icon>
-         <input ng-model="user.search" type="text" placeholder="Pesquisar">
-       </md-input-container>
-
-          <md-button class="notification" ng-click="toggleNotification()" md-ink-ripple="#D26B6B">
-            <md-icon md-font-icon="material-icons ">notifications</md-icon>
-            <span><span>5</span><i class="material-icons">fiber_manual_record</i></span>
-          </md-button>
-
-      </div>
-  </div>
-
-  <div md-theme="plugBlank" style="margin-top: 25px">
-    <md-tabs>
-      <md-tab>Historico</md-tab>
-      <md-tab>E-Mails(3)</md-tab>
-      <md-tab>Tarefas</md-tab>
-      <md-tab>Contatos</md-tab>
-      <md-tab>Produtos</md-tab>
-      <md-tab>Arquivos</md-tab>
-    </md-tabs>
-  </div>
-  </md-toolbar>
 <md-subhead style="background-color: #fff" layout="row" class="Deal-sub-toolbar" layout-padding>
   <div layout-margin>
     <h5 class="black5">Etapa</h5>
@@ -222,71 +86,9 @@
 </div>
 </md-subhead>
 
-<ui-view flex layout="column" layout-fill >
-  <!-- Notification bar -->
-  <md-sidenav class="md-sidenav-right md-whiteframe-5dp notificationbar" md-disable-backdrop="true" md-component-id="notificationbar">
-      <md-toolbar class="md-theme-light md-warn toolbar-height" >
-        <md-list-item ng-click="toggleNotification()" style="outline: none;">
-          <md-icon md-font-icon="material-icons">notifications_none</md-icon>
-          <h2 flex> Notificações </h2>
-          <md-icon md-font-icon="material-icons">close</md-icon>
-        </md-list-item>
-            <md-button style="margin-top: 22px"><md-icon md-font-icon="material-icons">playlist_add_check</md-icon>&nbsp;Marcar tudo como Lido</md-button>
-      </md-toolbar>
-    <div style="padding: 12px 30px"><p style="text-align: center; font-size: 0.85rem; color: #999;">Você tem 7 notificações</p></div>
-    <md-card>
-      <md-list-item ng-click="null">
-      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
-      <div flex>
-        <h4>I love kitten. nhac! :3</h4>
-        <p>criado à 8 dias atrás</p>
-      </div>
-      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
-      </md-list-item>
-    </md-card>
-    <md-card>
-      <md-list-item ng-click="null">
-      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
-      <div flex>
-        <h4>I love kitten. nhac! :3</h4>
-        <p>criado à 8 dias atrás</p>
-      </div>
-      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
-      </md-list-item>
-    </md-card>
-    <md-card>
-      <md-list-item ng-click="null">
-      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
-      <div flex>
-        <h4>I love kitten. nhac! :3</h4>
-        <p>criado à 8 dias atrás</p>
-      </div>
-      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
-      </md-list-item>
-    </md-card>
-    <md-card>
-      <md-list-item ng-click="null">
-      <div><md-checkbox ng-model="person.selected"></md-checkbox></div>
-      <div flex>
-        <h4>I love kitten. nhac! :3</h4>
-        <p>criado à 8 dias atrás</p>
-      </div>
-      <md-icon md-font-icon="material-icons">fiber_new</md-icon>
-      </md-list-item>
-    </md-card>
-    <div ng-click="null" id="task-seemore"><a>Ver todas</a></div>
-  </md-sidenav>
-
-
-<md-content flex layout-fill>
-
-
-
-
-
+<md-content layout-fill>
 </md-content>
 </ui-view>
-</div>
 
 
 

@@ -1,0 +1,187 @@
+<div layout-align="start center" layout="row" flex-gt-sm="15">
+  <div style="margin-left: 1rem;" layout-margin>
+    <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
+    <span ng-if="isChecked()">3</span>Selected
+    </md-checkbox>
+  </div>
+</div>
+
+
+<div layout-align="center center" flex="100" flex-gt-sm="85">
+   <md-menu md-offset="-9 36">
+     <md-button ng-click="$mdOpenMenu()">
+        <span>Transferir</span><i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="4">
+
+       <div layout="column" ng-cloak>
+
+         <md-content layout="column">
+           <md-list class="fixedRows">
+             <md-subheader class="md-no-sticky">Transferir para:</md-subheader>
+             <md-input-container style="margin: 1rem 1.5rem 1rem 1.5rem" md-no-float class="md-block">
+               <input placeholder="Buscar responsável">
+             </md-input-container>
+              <p class="md-caption black3" style="margin: 0rem 0rem 0rem .7rem">Results</p><br />
+             <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+               <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+               <div class="md-list-item-text compact">
+                 <h3>Laura</h3>
+                 <p>laura@runrun.it</p>
+               </div>
+             </md-list-item>
+             <md-list-item class="md-2-line contact-item selected"  ng-click="openConfirmModal()">
+               <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+               <div class="md-list-item-text compact">
+                 <h3>Laura</h3>
+                 <p>laura@runrun.it</p>
+               </div>
+             </md-list-item>
+           </md-list>
+         </md-content>
+       </div>
+
+     </md-menu-content>
+   </md-menu>
+
+
+
+
+
+   <md-menu md-offset="-9 36">
+     <md-button ng-click="$mdOpenMenu()">
+       <span class="black5">Alterar Status</span><i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="3">
+        <md-subheader class="md-no-sticky">Alterar para:</md-subheader>
+       <md-button md-ink-ripple="#3e8cc4" ng-click="openConfirmModal()">
+         <div layout="row" flex>
+           <p flex>Em Aberto</p>
+           <md-icon md-menu-origin md-font-icon="material-icons ">directions_run</md-icon>
+         </div>
+       </md-button>
+       <md-button md-ink-ripple="#3ec474" ng-click="openConfirmModal()">
+         <div layout="row" flex>
+           <p flex>Ganho</p>
+           <md-icon md-menu-origin md-font-icon="material-icons ">thumb_up</md-icon>
+         </div>
+       </md-button>
+       <md-button md-ink-ripple="#c4c32d" ng-click="openConfirmModal()">
+         <div layout="row" flex>
+           <p flex>Pausado</p>
+           <md-icon md-menu-origin md-font-icon="material-icons ">pause</md-icon>
+         </div>
+       </md-button>
+       <md-button md-ink-ripple="#c42d2d" ng-click="openConfirmModal()">
+         <div layout="row" flex>
+           <p flex>Perdido</p>
+           <md-icon md-menu-origin md-font-icon="material-icons ">thumb_down</md-icon>
+         </div>
+       </md-button>
+     </md-menu-content>
+   </md-menu>
+   <md-menu md-offset="0 36">
+     <md-button ng-click="$mdOpenMenu()">
+       <span>Mover para</span> <i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="3" class="md-subhead">
+        <md-subheader class="md-no-sticky">Etapas do funil</md-subheader>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>Onboarding</p>
+        </md-list-item>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>First Contact</p>
+        </md-list-item>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>Exile</p>
+        </md-list-item>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>Jibber</p>
+        </md-list-item>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>Semi-Finals</p>
+        </md-list-item>
+        <md-list-item ng-click="openConfirmModal()">
+          <p>Grand-Finals</p>
+        </md-list-item>
+     </md-menu-content>
+   </md-menu>
+   <md-menu md-offset="-9 34">
+     <md-button ng-click="$mdOpenMenu()">
+       <span>Adicionar/Alterar</span> <i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="3" class="md-subhead">
+        <md-subheader class="md-no-sticky">Adicionar ou Alterar:</md-subheader>
+       <md-list-item ng-click="openAvaliacaoModal()">
+         <p>Avaliação</p>
+       </md-list-item>
+       <md-list-item ng-click="openCampaignModal()">
+         <p>Campanha</p>
+       </md-list-item>
+       <md-list-item ng-click="openFontModal()">
+         <p>Fonte</p>
+       </md-list-item>
+       <md-list-item ng-click="openProductModal()">
+         <p>Produto/Serviço</p>
+       </md-list-item>
+     </md-menu-content>
+   </md-menu>
+   <md-menu md-offset="-9 0">
+     <md-button ng-click="$mdOpenMenu()">
+       <span>Enviar</span> <i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="3">
+        <md-subheader class="md-no-sticky">Enviar para:</md-subheader>
+       <md-button ng-click="openConfirmModal()">
+           <p flex>Izap Email-Marketing</p>
+       </md-button>
+       <md-button ng-click="openConfirmModal()">
+           <p flex>MailChimp</p>
+       </md-button>
+     </md-menu-content>
+   </md-menu>
+   <md-menu md-offset="-9 0">
+     <md-button ng-click="$mdOpenMenu()">
+       <span>Criar</span> <i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="4">
+       <md-subheader class="md-no-sticky">Criar:</md-subheader>
+      <md-button ng-click="openBulkNegociacaoModal()">
+          <p flex>Negócios para organizações</p>
+      </md-button>
+      <md-button ng-click="openMassTaskModal()">
+          <p flex>Tarefas em Massa</p>
+      </md-button>
+     </md-menu-content>
+   </md-menu>
+   <md-menu md-offset="0 35">
+     <md-button ng-click="$mdOpenMenu()">
+       <span>Exportar</span> <i class="material-icons">arrow_drop_down</i>
+     </md-button>
+     <md-menu-content width="3" class="md-subhead">
+       <md-subheader class="md-no-sticky">Exportar dados em:</md-subheader>
+       <md-list-item ng-click="nowhere()">
+         <p>.csv</p>
+         <md-checkbox class="md-secondary" ng-model="topping.csv"></md-checkbox>
+       </md-list-item>
+       <md-list-item ng-click="nowhere()">
+         <p>.pdf</p>
+         <md-checkbox class="md-secondary" ng-model="topping.pdf"></md-checkbox>
+       </md-list-item>
+      <md-divider></md-divider>
+      <md-list-item ng-click="openConfirmModal()">
+        <p>Negociações</p>
+      </md-list-item>
+      <md-list-item ng-click="openConfirmModal()">
+        <p>Organizações</p>
+      </md-list-item>
+      <md-list-item ng-click="openConfirmModal()">
+        <p>Contatos</p>
+      </md-list-item>
+     </md-menu-content>
+   </md-menu>
+<md-button class="md-caption md-warn" ng-click="openConfirmModal()" >
+ Excluir
+</md-button>
+</div>
+<md-divider></md-divider>

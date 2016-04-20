@@ -1,3 +1,5 @@
-.Deal-sub-toolbar{
-  
+.Deal-sub-toolbar{}
+.contact-chip{
+  md-chips-wrap{box-shadow: none;}
+  md-chip{outline: 0; &:hover{opacity: .6;}}
 }

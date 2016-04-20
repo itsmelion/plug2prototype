@@ -461,6 +461,14 @@ md-content {
   background: #fafafa;
   padding-top: 1rem; }
 
+.contact-chip md-chips-wrap {
+  box-shadow: none; }
+
+.contact-chip md-chip {
+  outline: 0; }
+  .contact-chip md-chip:hover {
+    opacity: .6; }
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 

@@ -13,9 +13,7 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-body{
-  overflow: hidden;
-}
+body{overflow: hidden;}
 h4, h5{margin: 0;}
 h5{font-size: .8rem; font-weight: 400;}
 .truncate{

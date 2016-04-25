@@ -204,19 +204,19 @@ html, body {
  * Body Copy
  ************/
 .md-body-1 {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.010em;
   line-height: 20px; }
 
 .md-body-2 {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.010em;
   line-height: 24px; }
 
 .md-caption {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.020em; }
 
 .md-button {
@@ -596,7 +596,7 @@ button.md-button::-moz-focus-inner {
   text-align: center;
   text-transform: none;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   font-style: inherit;
   font-variant: inherit;
   font-family: inherit;
@@ -2162,7 +2162,7 @@ md-list {
   display: block;
   padding: 0; }
   md-list .md-subheader {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.010em;
     line-height: 1.2em; }
@@ -2215,7 +2215,7 @@ md-list {
   md-list.md-dense md-list-item.md-3-line > ._md-no-style .md-list-item-text h4,
   md-list.md-dense md-list-item.md-3-line > ._md-no-style .md-list-item-text p {
     line-height: 1.05;
-    font-size: 9px; }
+    font-size: 10px; }
   md-list.md-dense md-list-item.md-2-line .md-list-item-text h3, md-list.md-dense md-list-item.md-2-line > ._md-no-style .md-list-item-text h3, md-list.md-dense md-list-item.md-3-line .md-list-item-text h3, md-list.md-dense md-list-item.md-3-line > ._md-no-style .md-list-item-text h3 {
     font-size: 11px; }
   md-list.md-dense md-list-item.md-2-line div.md-button:first-child::before, md-list.md-dense md-list-item.md-2-line > ._md-no-style div.md-button:first-child::before {
@@ -2468,7 +2468,7 @@ md-list-item {
         white-space: nowrap;
         text-overflow: ellipsis; }
       md-list-item.md-2-line .md-list-item-text h4, md-list-item.md-2-line > ._md-no-style .md-list-item-text h4, md-list-item.md-3-line .md-list-item-text h4, md-list-item.md-3-line > ._md-no-style .md-list-item-text h4 {
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.010em;
         margin: 3px 0 1px 0;
         font-weight: 400;
@@ -2477,7 +2477,7 @@ md-list-item {
         white-space: nowrap;
         text-overflow: ellipsis; }
       md-list-item.md-2-line .md-list-item-text p, md-list-item.md-2-line > ._md-no-style .md-list-item-text p, md-list-item.md-3-line .md-list-item-text p, md-list-item.md-3-line > ._md-no-style .md-list-item-text p {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 500;
         letter-spacing: 0.010em;
         margin: 0 0 0 0;

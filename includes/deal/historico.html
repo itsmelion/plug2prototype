@@ -1,40 +1,157 @@
-<div layout="row" >
 
-<div flex="grow">
+  <div flex="grow">
+    <p>Próxima Negociação</p> <br /><br />
+    <p class="black3 md-subhead">nao tem mais o toggle; <br /> embaixo da ultima tarefa tem o campo de criar anotação;<br />
+    o filtro, fica embaixo, e o resto fica embaixo do filtro
+    </p>
+  </div>
 
+<div style="width: 300px; padding: 1rem;" class="md-caption black5">
+    <p>Responsável</p>
+    <md-list-item ng-click="null">
+      <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
+      <div class="md-list-item-text">
+        <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
+      </div>
+    </md-list-item>
+
+    <p>Contatos</p>
+
+      <md-chips class="contact-chip">
+        <md-chip class="md-caption" ng-click="null">Hockey</md-chip>
+        <md-chip class="md-caption" ng-click="null">Lacrosse</md-chip>
+        <md-chip class="md-caption" ng-click="null">Baseball</md-chip>
+      </md-chips>
+        <a  class="md-caption">+ Adicionar contato</a>
+
+      <div class="separador" layout="row" layout-align="start center">
+        <md-icon class="material-icons">location_city</md-icon>
+        <div>&nbsp;</div>
+      </div>
+      <h3 class="truncate" style="white-space: nowrap;">Intergalactic Federation of Planets</h3>
+  <div flex>
+    <p>Segmento</p>
+    <md-menu md-offset="0 50">
+      <md-button ng-click="$mdOpenMenu()">
+         <span>Venda de Feno</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
+      </md-button>
+      <md-menu-content width="3">
+            <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
+              <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                <md-input-container style="margin-top:0" md-no-float class="md-block">
+                  <input style="border-bottom: 0" placeholder="Escolha o segmento">
+                </md-input-container>
+              </md-card>
+
+              <md-content class="md-subhead">
+              <md-subheader> Segmento </md-subheader>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>Agropecuario</p>
+                </div>
+              </md-list-item>
+              <md-list-item ng-click="openConfirmModal()">
+                <div class="md-list-item-text compact">
+                  <p>Frutas</p>
+                </div>
+              </md-list-item>
+
+            </md-content>
+            </md-list>
+      </md-menu-content>
+    </md-menu>
+  </div>
+  <div flex>
+    <p>URL</p>
+    <a>http://stormcloud.me/</a>
 </div>
-<div flex="none" style="width: 300px">
-  <p>Responsável</p>
-  <md-list-item ng-click="null">
-    <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
-    <div class="md-list-item-text">
-      <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
-    </div>
-  </md-list-item>
-
-  <p>Contatos</p>
-
-    <md-chips class="contact-chip">
-      <md-chip ng-click="null">Hockey</md-chip>
-      <md-chip ng-click="null">Lacrosse</md-chip>
-      <md-chip ng-click="null">Baseball</md-chip>
-    </md-chips>
-      <a>+ Adicionar contato</a>
-
-    <div layout="row" layout-align="start center">
-      <md-icon class="material-icons">work</md-icon>
-      <span flex="grow">------------------------------</span>
-    </div>
-    <h3>Intergalactic Federation of Planets</h3>
-    <md-input-container>
-  <label>Segmento</label>
-  <md-select ng-model="someModel">
-    <md-option>Fonte do Tororó</md-option>
-    <md-option>Fonte do Rio</md-option>
-  </md-select>
-</md-input-container>
-
-
-</div>
-
+  <md-input-container class="md-block">
+    <label>Resumo</label>
+    <textarea placeholder="I <3 Nutella" ng-model="deal.resume" md-maxlength="144" rows="4"></textarea>
+  </md-input-container>
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Campo personalizado: CEP</label>
+    <input name="postalCode" ng-model="user.postalCode" placeholder="32340030"
+           required ng-pattern="/^[0-9]{8}$/" md-maxlength="8">
+  </md-input-container>
+  <div class="separador" layout="row" layout-align="start center">
+    <md-icon class="material-icons">work</md-icon>
+    <div>&nbsp;</div>
+  </div>
+      <h3 class="truncate" style="white-space: nowrap;">Lorem ipsum dolor sit amet, consecteur deals, deal with</h3>
+      <div flex>
+        <p>Fonte</p>
+        <md-menu md-offset="0 50">
+          <md-button ng-click="$mdOpenMenu()">
+             <span>Fonte do tororó</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
+          </md-button>
+          <md-menu-content width="3">
+                <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
+                  <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                    <md-input-container style="margin-top:0" md-no-float class="md-block">
+                      <input style="border-bottom: 0" placeholder="Busque sua fonte">
+                    </md-input-container>
+                  </md-card>
+                  <md-content class="md-subhead">
+                  <md-subheader> Segmento </md-subheader>
+                  <md-list-item ng-click="openConfirmModal()">
+                    <div class="md-list-item-text compact">
+                      <p>A fonte da água viva</p>
+                    </div>
+                  </md-list-item>
+                  <md-list-item ng-click="openConfirmModal()">
+                    <div class="md-list-item-text compact">
+                      <p>Fonte do tororó</p>
+                    </div>
+                  </md-list-item>
+                </md-content>
+                </md-list>
+          </md-menu-content>
+        </md-menu>
+      </div>
+      <div flex>
+        <p>Campanha</p>
+        <md-menu md-offset="0 50">
+          <md-button ng-click="$mdOpenMenu()">
+             <span>Campanha contra Dengue</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
+          </md-button>
+          <md-menu-content width="3">
+                <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
+                  <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
+                    <md-input-container style="margin-top:0" md-no-float class="md-block">
+                      <input style="border-bottom: 0" placeholder="Busque sua Campanha">
+                    </md-input-container>
+                  </md-card>
+                  <md-content class="md-subhead">
+                  <md-subheader> Campanha </md-subheader>
+                  <md-list-item ng-click="openConfirmModal()">
+                    <div class="md-list-item-text compact">
+                      <p>Dengue</p>
+                    </div>
+                  </md-list-item>
+                  <md-list-item ng-click="openConfirmModal()">
+                    <div class="md-list-item-text compact">
+                      <p>ZikaVírus</p>
+                    </div>
+                  </md-list-item>
+                </md-content>
+                </md-list>
+          </md-menu-content>
+        </md-menu>
+      </div>
+  <div layout="row" class="deal-previsao">
+      <div>
+      <p>Previsão</p>
+      <md-datepicker md-placeholder="12/12/2015" ng-model="birthday"></md-datepicker>
+      </div>
+      <div>
+      <p>End</p>
+      <md-datepicker md-placeholder="12/12/2015" ng-model="bend"></md-datepicker>
+      </div>
+  </div>
+  <md-input-container class="md-block">
+    <label>Campo personalizado 2</label>
+    <input name="Custom input2" ng-model="user.custom2" placeholder="Yerushalaim is impregnable"
+          md-maxlength="16">
+  </md-input-container>
 </div>

@@ -15,15 +15,18 @@
 	<link rel="stylesheet" href="sass/angular-material/angular-material.css">
 	<link type="text/css" rel="stylesheet" href="sass/main.css" />
 </head>
+
+
 <body ng-app="PlugDawnbreak" layout="row" ng-controller="MyController" ng-cloak >
+
+
 <md-sidenav ng-include="'/includes/sidebar.tmpl.html'" flex="noshrink" layout="column" md-component-id="left" class="md-sidenav-left sidebar" tabIndex="-2" md-is-locked-open="$mdMedia('gt-sm')"></md-sidenav>
 <md-sidenav ng-include="'/includes/notifications.tmpl.html'" class="md-sidenav-right md-whiteframe-5dp notificationbar" md-disable-backdrop="true" md-component-id="notificationbar"></md-sidenav>
-<ui-view tabIndex="1" role="main" layout-fill>
 
+<ui-view tabIndex="1" role="main" layout-fill>
 <md-toolbar flex="none" class="internal-header md-theme-light toolbar-height" >
   <div ng-include="'/includes/deal/toolbar.tmpl.html'"></div>
 </md-toolbar>
-
 <md-subhead style="background-color: #fff" layout="row" class="Deal-sub-toolbar" layout-padding>
   <div layout-margin>
     <h5 class="black5">Etapa</h5>
@@ -86,9 +89,7 @@
 </div>
 </md-subhead>
 
-<md-content layout-fill>
-<div ng-include="'/includes/deal/historico.html'"></div>
-</md-content>
+<md-content style="position:relative; height: 75%" layout="row" ng-include="'/includes/deal/historico.html'"><md-content>
 </ui-view>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

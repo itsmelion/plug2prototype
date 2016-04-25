@@ -3,3 +3,13 @@
   md-chips-wrap{box-shadow: none;}
   md-chip{outline: 0; &:hover{opacity: .6;}}
 }
+.separador{
+  margin: .8rem 0;
+  >md-icon{margin-right: 1rem;}
+  > div{ background-image: url('http://humanitiesinstitute.wfu.edu/files/2011/08/black-line.png'); width: 100%; background-position: center center; background-repeat: no-repeat;}
+}
+
+.deal-previsao{
+  button{display: none;}
+  .md-datepicker-input-container{margin-left: 0;}
+}

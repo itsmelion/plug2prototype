@@ -469,6 +469,22 @@ md-content {
   .contact-chip md-chip:hover {
     opacity: .6; }
 
+.separador {
+  margin: .8rem 0; }
+  .separador > md-icon {
+    margin-right: 1rem; }
+  .separador > div {
+    background-image: url("http://humanitiesinstitute.wfu.edu/files/2011/08/black-line.png");
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat; }
+
+.deal-previsao button {
+  display: none; }
+
+.deal-previsao .md-datepicker-input-container {
+  margin-left: 0; }
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 

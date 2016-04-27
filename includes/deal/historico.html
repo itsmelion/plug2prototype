@@ -1,9 +1,183 @@
 
-  <div flex="grow">
-    <p>Próxima Negociação</p> <br /><br />
-    <p class="black3 md-subhead">nao tem mais o toggle; <br /> embaixo da ultima tarefa tem o campo de criar anotação;<br />
-    o filtro, fica embaixo, e o resto fica embaixo do filtro
-    </p>
+  <div flex="grow" style="padding: 2rem;">
+
+    <!-- <p class="black3 md-subhead">nao tem mais o toggle; <br /> embaixo da ultima tarefa tem o campo de criar anotação;<br />
+    o filtro fica embaixo, e o resto fica embaixo do filtro
+    </p> -->
+    <div layout="row" layout-align="start center">
+      <p style="margin: 0 12px" class="md-subhead">Última tarefa</p><span flex></span>
+    </div>
+    <ul class="collapsible popout" data-collapsible="accordion">
+     <li>
+       <div class="collapsible-header">
+          <div class="type danger"><i class="material-icons danger">call</i>Ligação</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+              <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type late"><i class="material-icons late">people</i>Reunião</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+              <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+    </ul>
+
+    <br /><br />
+    <div layout="row" layout-align="start center">
+      <p class="md-subhead" style="margin: 0 12px">Histórico</p><span flex></span>
+      <div style="z-index: 1000">
+        <span class="md-subhead black5" >Filtrar:</span>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon class="material-icons">home</md-icon>
+        </md-button>
+      </div>
+    </div>
+    <ul class="collapsible popout" data-collapsible="accordion">
+     <li>
+       <div class="collapsible-header">
+          <div class="type danger"><i class="material-icons danger">home</i>Visita</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Visitar membro que está doente</h6>
+              <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type orange"><i class="material-icons orange">restaurant</i>Almoço</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Encontro com Supervisão</h6>
+              <p class="black5 md-caption"><span class="orange">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type late"><i class="material-icons late">assignment_turned_in</i>Tarefa</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Organizar rotina de trabalho</h6>
+              <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type purple"><i class="material-icons purple">local_post_office</i>Email</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">FWD: Stormcloud.me now with new Framework</h6>
+              <p class="black5 md-caption"><span class="purple">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type blue"><i class="material-icons blue">message</i>Anotação</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead truncate">Está escrito, Amai ao Senhor seu deus, único deus, de todo o seu coração, de toda sua alma e de todo seu entendimento.</h6>
+              <p class="black5 md-caption"><span class="blue">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+     <li>
+       <div class="collapsible-header">
+          <div class="type green"><i class="material-icons green">people</i>Reunião</div>
+          <div class="match">
+            <div>
+              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+              <p class="black5 md-caption"><span class="green">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+            </div>
+          </div>
+          <div>
+            <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">more_vert</md-icon>
+            </md-button>
+          </div>
+        </div>
+       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+     </li>
+
+    </ul>
+ <script>
+   $(document).ready(function(){
+     $('.collapsible').collapsible({
+       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+     });
+   });
+ </script>
   </div>
 
 <div style="width: 300px; padding: 1rem;" class="md-caption black5">

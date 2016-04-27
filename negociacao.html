@@ -89,7 +89,9 @@
 </div>
 </md-subhead>
 
-<md-content style="position:relative; height: 75%" layout="row" ng-include="'/includes/deal/historico.html'"><md-content>
+<div layout-fill>
+  <md-content style="position:relative; height: 550px;" layout="row" ng-include="'/includes/deal/historico.html'"><md-content>
+</div>
 </ui-view>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -107,6 +109,8 @@
 
 <!-- Other Functionalities for angular activities -->
 <script type="text/javascript" src="js/funil_select.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/collapsible.js"></script>
 <!-- Script for nice and ease-scroll for things like scrollspy <script type="text/javascript" src="js/smoothscroll.min.js"></script> -->
 </body>
 </html>

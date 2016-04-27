@@ -111,9 +111,13 @@ md-content{
 
 .tarefas{
     a > md-list-item > md-icon{ margin: 0; }
-  .late{color: rgb(189,153,46);}
-  .danger{color: rgb(200,58,58);}
 }
+.late{color: rgb(231,201,75);}
+.danger{color: rgb(200,58,58);}
+.purple{color: rgb(157,72,203);}
+.blue{color: rgb(112,188,226);}
+.green{color: rgb(72,196,122);}
+.orange{color: rgb(236,155,47);}
 
 // FUNIL SELECT
 .progress {

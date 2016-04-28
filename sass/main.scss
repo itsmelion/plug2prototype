@@ -13,7 +13,7 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-body{overflow: hidden;}
+body{overflow-x: hidden;}
 h4, h5, h6{margin: 0;}
 h5{font-size: .8rem; font-weight: 400;}
 .truncate{
@@ -33,3 +33,16 @@ a.md-default-theme:not(.md-button):hover, a:not(.md-button):hover{
 
 md-checkbox{margin-bottom: 0;}
 md-autocomplete{margin-top: 0.6rem; margin-bottom: 0.6rem;}
+
+.detail-deal{height: 100%;}
+.detail-deal > md-content{ height: calc(100% - 249px);}
+
+.criar-anotacao{
+  margin: 0;
+  border-radius: 0;
+  padding: 24px 24px 12px 24px;
+  .md-errors-spacer{position: absolute; bottom: 0; right: 0;}
+  textarea{transition: .2s ease;}
+  textarea:focus, textarea:active{height: 150px;}
+  .md-button{width: 100px;}
+}

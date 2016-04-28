@@ -1,9 +1,6 @@
+<div flex="grow" style="padding: 2rem;">
 
-  <div flex="grow" style="padding: 2rem;">
-
-    <!-- <p class="black3 md-subhead">nao tem mais o toggle; <br /> embaixo da ultima tarefa tem o campo de criar anotação;<br />
-    o filtro fica embaixo, e o resto fica embaixo do filtro
-    </p> -->
+    <!-- embaixo da ultima tarefa tem o campo de criar anotação; -->
     <div layout="row" layout-align="start center">
       <p style="margin: 0 12px" class="md-subhead">Última tarefa</p><span flex></span>
     </div>
@@ -44,6 +41,14 @@
      </li>
     </ul>
 
+    <br /><br />
+    <md-card class="criar-anotacao">
+      <h5>Criar anotação</h5>
+      <md-input-container md-no-float class="md-block">
+        <textarea aria-label="Criar anotação" ng-model="deal.notes" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+      </md-input-container>
+      <md-button>Criar</md-button>
+    </md-card>
     <br /><br />
     <div layout="row" layout-align="start center">
       <p class="md-subhead" style="margin: 0 12px">Histórico</p><span flex></span>

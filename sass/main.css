@@ -509,8 +509,7 @@ md-content {
   min-height: 56px;
   line-height: 56px;
   padding: .4rem .4rem .5rem 1.5rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd; }
+  background-color: #fff; }
   .collapsible-header i {
     width: 2rem;
     font-size: 1.6rem;
@@ -537,17 +536,12 @@ md-content {
     .collapsible-header > div:nth-of-type(2) {
       min-width: 150px;
       max-width: 450px; }
-    .collapsible-header > div:last-of-type {
-      display: none; }
-    .collapsible-header > div .md-button.md-icon-button {
-      margin: 0 6px;
-      height: auto;
-      min-width: 0;
-      line-height: 24px;
-      padding: 6px;
-      width: auto;
-      border-radius: 50%;
-      z-index: 1000; }
+
+.task-check {
+  position: relative;
+  right: 12px;
+  top: -45px;
+  float: right; }
 
 .collapsible-body {
   display: none;

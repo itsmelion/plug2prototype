@@ -1,17 +1,37 @@
-.Deal-sub-toolbar{}
+.Deal-sub-toolbar{ h5{margin-bottom: 1.2rem;}}
+.historico{
+  padding: 2rem;
+  @media screen and (max-width: 600px){padding: 5px;}
+}
+.char-counter-hack{
+  .md-errors-spacer{position: absolute; bottom: 0; right: 0;}
+}
 .contact-chip{
   md-chips-wrap{box-shadow: none;}
   md-chip{outline: 0; &:hover{opacity: .6;}}
 }
+
 .separador{
-  margin: .8rem 0;
+  margin: 2rem 0 .2rem 0 !important;
   >md-icon{margin-right: 1rem;}
-  > div{ background-image: url('http://humanitiesinstitute.wfu.edu/files/2011/08/black-line.png'); width: 100%; background-position: center center; background-repeat: no-repeat;}
+  > div{ background-image: url('/master_img/dash.svg'); width: 100%; height: 1px; background-position: center center; background-repeat: repeat;}
 }
 
 .deal-previsao{
+  > div {margin-right: 24px;}
   button{display: none;}
-  .md-datepicker-input-container{margin-left: 0;}
+  .md-datepicker-input-container{margin-left: 0;  button{display: block;}}
+}
+
+.Deal_detail{
+  h3{margin: 0 0 1.4rem 0}
+  > div{
+  margin-bottom: 28px;
+  &:first-of-type{ margin-bottom: 18px; .md-button{padding: 0 !important; line-height: 0;} .md-list-item-text h3{margin: 0;}}
+  &.custom-select{margin-bottom: 21px; button{padding: 0; margin: 0;}}
+  // &:nth-of-type(5){margin-bottom: 36px;}
+  >md-input-container { margin-top: 2.4rem; >label{font-size: 1rem; color: rgba(0,0,0,.54);} }
+  }
 }
 
 // collapsible
@@ -65,6 +85,8 @@ $collapsible-border-color: #ddd !default;
     right: 12px;
     top: -45px;
     float: right;
+    md-checkbox{margin-left: 12px;}
+    p{font-size: .7rem; text-align: center; color: rgba(0,0,0,.54);}
 }
 
 .collapsible-body {
@@ -95,6 +117,21 @@ $collapsible-border-color: #ddd !default;
     margin: 6px 0;
     // transform: scaleX(1);
   }
+}
+
+.drop-btn-truncate{
+text-overflow: ellipsis;
+white-space: nowrap;
+width: 100%;
+display: flex;
+padding: 0;
+margin: 0;
+min-height: auto;
+line-height: inherit;
+&.md-button.md-default-theme:not([disabled]):hover, &.md-button:not([disabled]):hover {
+    background-color: inherit;
+    color: #2aadbf;
+}
 }
 
 // collapsible

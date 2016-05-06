@@ -1,5 +1,33 @@
 angular.module('PlugDawnbreak', ['ngMaterial'])
-var app = angular.module('PlugDawnbreak', ['ngMaterial']);
+var app = angular.module('PlugDawnbreak', ['ngMaterial' , 'mdPickers']);
+
+
+
+  app.controller("mdPicker", ['$scope', '$mdpDatePicker', '$mdpTimePicker', function($scope, $mdpDatePicker, $mdpTimePicker){
+  	this.showDatePicker = function(ev) {
+    	$mdpDatePicker($scope.currentDate, {
+        targetEvent: ev
+      }).then(function(selectedDate) {
+        $scope.currentDate = selectedDate;
+      });;
+    };
+
+    this.filterDate = function(date) {
+      return moment(date).date() % 2 == 0;
+    };
+
+    this.showTimePicker = function(ev) {
+    	$mdpTimePicker($scope.currentTime, {
+        targetEvent: ev
+      }).then(function(selectedDate) {
+        $scope.currentTime = selectedDate;
+      });;
+    }
+  }]);
+
+
+
+
 app.config(function($mdThemingProvider) {
   var LIGHT_FOREGROUND = {
     name: 'light',
@@ -161,7 +189,7 @@ app.config(function($mdThemingProvider) {
           $scope.showGridBottomSheet = function() {
             $scope.alert = '';
             $mdBottomSheet.show({
-              templateUrl: '../includes/deal/deals_list/modals/bottom-sheet-grid-template.html',
+              templateUrl: '/includes/deals_list/modals/bottom-sheet-grid-template.html',
               disableParentScroll: false,
               clickOutsideToClose: true,
               disableBackdrop: true

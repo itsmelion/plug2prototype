@@ -11,22 +11,25 @@
     }
   ],
   "dependencies": {
-    "angular": "latest",
-    "angular-animate": "latest",
-    "angular-aria": "latest",
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
     "angular-material": "http://github.com/angular/bower-material/tarball/master",
     "angular-messages": "^1.5.1",
+    "angular-mocks": "^1.5.5",
     "angular-route": "^1.5.3",
     "angular-sanitize": "^1.5.3",
     "jasmine-core": "^2.4.1",
-    "karma-chrome-launcher": "^0.2.3",
-    "material-design-icons": "^2.2.3"
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "material-design-icons": "^2.2.3",
+    "moment": "^2.13.0"
   },
   "devDependencies": {
     "angular-mocks": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
-    "karma-jasmine": "latest",
+    "karma-jasmine": "^1.0.2",
     "live-server": "latest"
   },
   "scripts": {

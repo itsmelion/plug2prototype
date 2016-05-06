@@ -1,328 +1,456 @@
-<div flex="grow" style="padding: 2rem;">
+<div layout="row" class="char-counter-hack" style="margin-bottom: 120px">
+  <div flex="80" class="historico" ng-controller="ToastCtrl">
 
-    <!-- embaixo da ultima tarefa tem o campo de criar anotação; -->
-    <div layout="row" layout-align="start center">
-      <p style="margin: 0 12px" class="md-subhead">Última tarefa</p><span flex></span>
-    </div>
-    <ul class="collapsible popout" data-collapsible="accordion">
-     <li>
-       <div class="collapsible-header">
-          <div class="type danger"><i class="material-icons danger">call</i>Ligação</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
-              <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
-          </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type late"><i class="material-icons late">people</i>Reunião</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
-              <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
-          </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-    </ul>
+  <!--
+      -Deixar ganho perdido e pausado mais alegre
+  -->
 
-    <br /><br />
-    <md-card class="criar-anotacao">
-      <h5>Criar anotação</h5>
-      <md-input-container md-no-float class="md-block">
-        <textarea aria-label="Criar anotação" ng-model="deal.notes" md-maxlength="500" rows="5" md-select-on-focus></textarea>
-      </md-input-container>
-      <md-button>Criar</md-button>
-    </md-card>
-    <br /><br />
-    <div layout="row" layout-align="start center">
-      <p class="md-subhead" style="margin: 0 12px">Histórico</p><span flex></span>
-      <div style="z-index: 1000">
-        <span class="md-subhead black5" >Filtrar:</span>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon class="material-icons">home</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon class="material-icons">home</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon class="material-icons">home</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon class="material-icons">home</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon class="material-icons">home</md-icon>
-        </md-button>
+
+      <div layout="row" layout-align="start center">
+        <p style="margin: 0 12px" class="md-subhead">Próximas tarefas</p>
       </div>
-    </div>
-    <ul class="collapsible popout" data-collapsible="accordion">
-     <li>
-       <div class="collapsible-header">
-          <div class="type danger"><i class="material-icons danger">home</i>Visita</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Visitar membro que está doente</h6>
-              <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+      <ul class="collapsible popout" data-collapsible="accordion">
+       <li>
+         <div class="collapsible-header">
+            <div class="type danger"><i class="material-icons danger">call</i>Ligação</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type orange"><i class="material-icons orange">restaurant</i>Almoço</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Encontro com Supervisão</h6>
-              <p class="black5 md-caption"><span class="orange">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+          <div class="task-check" layout="column">
+            <md-checkbox ng-click="showActionToast()" ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
+            <p>Concluir</p>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type late"><i class="material-icons late">people</i>Reunião</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type late"><i class="material-icons late">assignment_turned_in</i>Tarefa</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Organizar rotina de trabalho</h6>
-              <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
+          <div class="task-check" layout="column">
+            <md-checkbox  ng-click="showActionToast()" ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
+            <p>Concluir</p>
           </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type purple"><i class="material-icons purple">local_post_office</i>Email</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">FWD: Stormcloud.me now with new Framework</h6>
-              <p class="black5 md-caption"><span class="purple">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
-          </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type blue"><i class="material-icons blue">message</i>Anotação</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead truncate">Está escrito, Amai ao Senhor seu deus, único deus, de todo o seu coração, de toda sua alma e de todo seu entendimento.</h6>
-              <p class="black5 md-caption"><span class="blue">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
-          </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
-     <li>
-       <div class="collapsible-header">
-          <div class="type green"><i class="material-icons green">people</i>Reunião</div>
-          <div class="match">
-            <div>
-              <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
-              <p class="black5 md-caption"><span class="green">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-            </div>
-          </div>
-        </div>
-        <div class="task-check">
-          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-          </md-checkbox>
-        </div>
-       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-     </li>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+      </ul>
 
-    </ul>
- <script>
-   $(document).ready(function(){
-     $('.collapsible').collapsible({
-       accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+      <br /><br />
+      <p style="margin: 0 12px" class="md-subhead">Lorem Ipsum</p>
+      <md-card class="criar-anotacao">
+        <md-tabs md-dynamic-height md-border-bottom>
+              <md-tab label="Criar Anotação">
+                <md-content>
+                  <md-input-container md-no-float class="md-block">
+                    <textarea placeholder="Digite sua anotação" aria-label="Criar anotação" ng-model="deal.notes" rows="5" md-select-on-focus></textarea>
+                  </md-input-container>
+                </md-content>
+              </md-tab>
+              <md-tab label="Criar Tarefa">
+                <md-content>
+                  <div layout-margin flex layout-wrap layout="row">
+                        <div flex="100">
+                          <h5 class="black3 ntask-heading">Tipo e assunto</h5>
+                        </div>
+                        <div class="fieldContainer"  flex="initial">
+                      <md-menu>
+                          <md-button aria-label="Open phone interactions menu" class="md-raised md-primary" ng-click="$mdOpenMenu()">
+                            <md-icon class="material-icons md-primary" >call</md-icon> Ligação
+                          </md-button>
+                          <md-menu-content width="3">
+                            <md-menu-item>
+                              <md-button ng-click="null">
+                                <md-icon class="material-icons md-primary" >star</md-icon>
+                                Call
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                              <md-button ng-click="null">
+                                <md-icon class="material-icons md-primary" >mail</md-icon>
+                                Mail
+                              </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                              <md-button ng-click="null">
+                                <md-icon class="material-icons md-primary" >star</md-icon>
+                                Rolezin
+                              </md-button>
+                            </md-menu-item>
+                          </md-menu-content>
+                        </md-menu></div>
+                        <div class="fieldContainer"  flex>
+                        <md-input-container class="md-block">
+                        <input name="Custom input3" ng-model="user.custom3" placeholder="Assunto">
+                        </md-input-container>
+                        </div>
+                      <div flex="100">
+                      <h5 class="black3 ntask-heading">Data</h5>
+                      </div>
+                      <div  flex="50" class="fieldContainer" ng-controller="mdPicker">
+                        <mdp-date-picker mdp-placeholder="Escolha a data" ng-model="currentDate"></mdp-date-picker>
+                      </div>
+                      <div flex="50" class="fieldContainer" ng-controller="mdPicker">
+                      <mdp-time-picker mdp-placeholder="Escolha a hora" ng-model="currentDate"></mdp-time-picker>
+                      </div>
+                      <div flex="100">
+                        <h5 class="black3 ntask-heading">Contatos e Resposáveis</h5>
+                      </div>
+                      <div  flex="50" class="fieldContainer">
+                        <div layout="row" flex layout-margin>
+                          <md-autocomplete placeholder="Buscar Contato" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                          <span md-highlight-text="searchText">Dummy text</span>
+                          </md-autocomplete>
+                        </div>
+                        <md-chips class="contact-chip">
+                          <md-chip class="md-caption" ng-click="null">Hockey</md-chip>
+                          <md-chip class="md-caption" ng-click="null">Lacrosse</md-chip>
+                          <md-chip class="md-caption" ng-click="null">Baseball</md-chip>
+                        </md-chips>
+                      </div>
+                      <div  flex="50" class="fieldContainer">
+                        <div layout="row" flex layout-margin>
+                          <md-autocomplete placeholder="Buscar Responsável" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                          <span md-highlight-text="searchText">Dummy text</span>
+                          </md-autocomplete>
+                        </div>
+                        <md-list-item class="md-2-line contact-item" ng-click="openConfirmModal()">
+                          <img ng-src="http://lorempixel.com/50/50/people" class="md-avatar" />
+                          <div class="md-list-item-text compact">
+                            <h3>Laura</h3>
+                            <p>laura@runrun.it</p>
+                          </div>
+                        </md-list-item>
+                      </div>
+                      <div  flex="100" class="fieldContainer">
+                        <md-card>
+                        <md-input-container md-no-float class="md-block">
+                          <textarea placeholder="Digite sua anotação" aria-label="Criar anotação" ng-model="deal.notes" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                        </md-card>
+                      </div>
+                  </div>
+                </md-content>
+              </md-tab>
+        </md-tabs>
+        <md-button>Criar</md-button>
+      </md-card>
+      <br /><br />
+      <div layout="row" layout-align="start center">
+        <p class="md-subhead" style="margin: 0 12px">Histórico</p><span flex></span>
+        <div style="z-index: 1000">
+          <span class="md-subhead black5" >Filtrar:</span>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">home</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">home</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">home</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">home</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon class="material-icons">home</md-icon>
+          </md-button>
+        </div>
+      </div>
+      <ul class="collapsible popout" data-collapsible="accordion">
+       <li>
+         <div class="collapsible-header">
+            <div class="type danger"><i class="material-icons danger">home</i>Visita</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Visitar membro que está doente</h6>
+                <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type orange"><i class="material-icons orange">restaurant</i>Almoço</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Encontro com Supervisão</h6>
+                <p class="black5 md-caption"><span class="orange">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type late"><i class="material-icons late">assignment_turned_in</i>Tarefa</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Organizar rotina de trabalho</h6>
+                <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type purple"><i class="material-icons purple">local_post_office</i>Email</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">FWD: Stormcloud.me now with new Framework</h6>
+                <p class="black5 md-caption"><span class="purple">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type blue"><i class="material-icons blue">message</i>Anotação</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead truncate">Está escrito, Amai ao Senhor seu deus, único deus, de todo o seu coração, de toda sua alma e de todo seu entendimento.</h6>
+                <p class="black5 md-caption"><span class="blue">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+       <li>
+         <div class="collapsible-header">
+            <div class="type green"><i class="material-icons green">people</i>Reunião</div>
+            <div class="match">
+              <div>
+                <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                <p class="black5 md-caption"><span class="green">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+              </div>
+            </div>
+          </div>
+         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+       </li>
+
+      </ul>
+   <script>
+     $(document).ready(function(){
+       $('.collapsible').collapsible({
+         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+       });
      });
-   });
- </script>
-  </div>
+   </script>
+    </div>
 
-<div style="width: 300px; padding: 1rem;" class="md-caption black5">
-    <p>Responsável</p>
-    <md-list-item ng-click="null">
-      <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
-      <div class="md-list-item-text">
-        <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
+  <div flex="noshrink" style="width: 300px; padding: 1rem;" layout-align="end start">
+    <div flex class="md-caption black5 Deal_detail" >
+      <div>
+          <p>Responsável</p>
+          <md-list-item ng-click="null">
+            <img src="master_img/dummy_square.png" class="md-avatar" alt="avatar" />
+            <div class="md-list-item-text">
+              <h3 class="truncate" style="font-size: 14px;">Christhopher Lion <i class="material-icons" style="font-size: 18px; vertical-align: middle">arrow_drop_down</i></h3>
+            </div>
+          </md-list-item>
+        </div>
+      <div>
+        <div class="separador" layout="row" layout-align="start center">
+          <md-icon class="material-icons">contacts</md-icon>
+          <div>&nbsp;</div>
+        </div>
+          <h3 class="truncate" style="white-space: nowrap;">Contatos</h3>
+
+          <md-chips class="contact-chip">
+            <md-chip class="md-caption" ng-click="null">Hockey</md-chip>
+            <md-chip class="md-caption" ng-click="null">Lacrosse</md-chip>
+            <md-chip class="md-caption" ng-click="null">Baseball</md-chip>
+          </md-chips>
+          <a  class="md-caption">+ Adicionar contato</a>
       </div>
-    </md-list-item>
-
-    <p>Contatos</p>
-
-      <md-chips class="contact-chip">
-        <md-chip class="md-caption" ng-click="null">Hockey</md-chip>
-        <md-chip class="md-caption" ng-click="null">Lacrosse</md-chip>
-        <md-chip class="md-caption" ng-click="null">Baseball</md-chip>
-      </md-chips>
-        <a  class="md-caption">+ Adicionar contato</a>
 
       <div class="separador" layout="row" layout-align="start center">
         <md-icon class="material-icons">location_city</md-icon>
         <div>&nbsp;</div>
       </div>
-      <h3 class="truncate" style="white-space: nowrap;">Intergalactic Federation of Planets</h3>
-  <div flex>
-    <p>Segmento</p>
-    <md-menu md-offset="0 50">
-      <md-button ng-click="$mdOpenMenu()">
-         <span>Venda de Feno</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
-      </md-button>
-      <md-menu-content width="3">
-            <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
-              <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
-                <md-input-container style="margin-top:0" md-no-float class="md-block">
-                  <input style="border-bottom: 0" placeholder="Escolha o segmento">
-                </md-input-container>
-              </md-card>
-
-              <md-content class="md-subhead">
-              <md-subheader> Segmento </md-subheader>
-              <md-list-item ng-click="openConfirmModal()">
-                <div class="md-list-item-text compact">
-                  <p>Agropecuario</p>
-                </div>
-              </md-list-item>
-              <md-list-item ng-click="openConfirmModal()">
-                <div class="md-list-item-text compact">
-                  <p>Frutas</p>
-                </div>
-              </md-list-item>
-
-            </md-content>
-            </md-list>
-      </md-menu-content>
-    </md-menu>
-  </div>
-  <div flex>
-    <p>URL</p>
-    <a>http://stormcloud.me/</a>
-  </div>
-  <md-input-container class="md-block">
-    <label>Resumo</label>
-    <textarea placeholder="I <3 Nutella" ng-model="deal.resume" md-maxlength="144" rows="4"></textarea>
-  </md-input-container>
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>Campo personalizado: CEP</label>
-    <input name="postalCode" ng-model="user.postalCode" placeholder="32340030"
-           required ng-pattern="/^[0-9]{8}$/" md-maxlength="8">
-  </md-input-container>
-  <div class="separador" layout="row" layout-align="start center">
-    <md-icon class="material-icons">work</md-icon>
-    <div>&nbsp;</div>
-  </div>
-      <h3 class="truncate" style="white-space: nowrap;">Lorem ipsum dolor sit amet, consecteur deals, deal with</h3>
-      <div flex>
-        <p>Fonte</p>
-        <md-menu md-offset="0 50">
-          <md-button ng-click="$mdOpenMenu()">
-             <span>Fonte do tororó</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
+        <md-menu md-offset="0 20">
+          <md-button ng-click="$mdOpenMenu()"  class="drop-btn-truncate">
+            <h3 class="truncate" style="white-space: nowrap; margin: 0;">Intergalactic Federation of Planets with a really Loooong name </h3><i class="material-icons">arrow_drop_down</i>
           </md-button>
-          <md-menu-content width="3">
-                <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
-                  <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
-                    <md-input-container style="margin-top:0" md-no-float class="md-block">
-                      <input style="border-bottom: 0" placeholder="Busque sua fonte">
-                    </md-input-container>
-                  </md-card>
-                  <md-content class="md-subhead">
-                  <md-subheader> Segmento </md-subheader>
-                  <md-list-item ng-click="openConfirmModal()">
-                    <div class="md-list-item-text compact">
-                      <p>A fonte da água viva</p>
-                    </div>
-                  </md-list-item>
-                  <md-list-item ng-click="openConfirmModal()">
-                    <div class="md-list-item-text compact">
-                      <p>Fonte do tororó</p>
-                    </div>
-                  </md-list-item>
-                </md-content>
-                </md-list>
+          <md-menu-content width="4" class="md-subhead">
+             <md-subheader class="md-no-sticky">Escolha a Organização</md-subheader>
+             <div flex layout-margin>
+               <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+               <span md-highlight-text="searchText">Dummy text</span>
+               </md-autocomplete>
+             </div>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>Org 1</p>
+             </md-list-item>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>Org 2</p>
+             </md-list-item>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>Org 3</p>
+             </md-list-item>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>Org 4</p>
+             </md-list-item>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>0rg 5</p>
+             </md-list-item>
+             <md-list-item ng-click="openConfirmModal()">
+               <p>OrG etc..</p>
+             </md-list-item>
           </md-menu-content>
         </md-menu>
-      </div>
-      <div flex>
-        <p>Campanha</p>
-        <md-menu md-offset="0 50">
-          <md-button ng-click="$mdOpenMenu()">
-             <span>Campanha contra Dengue</span><i class="material-icons" style="position: relative; top: 6px; font-size: 18px">arrow_drop_down</i>
-          </md-button>
-          <md-menu-content width="3">
-                <md-list class="fixedRows" layout="column" style="padding: 12px 0;">
-                  <md-card style="padding: 3px 12px 6px 12px; margin: 0 1.2rem .6rem .6rem; min-height: 42px;">
-                    <md-input-container style="margin-top:0" md-no-float class="md-block">
-                      <input style="border-bottom: 0" placeholder="Busque sua Campanha">
-                    </md-input-container>
-                  </md-card>
-                  <md-content class="md-subhead">
-                  <md-subheader> Campanha </md-subheader>
-                  <md-list-item ng-click="openConfirmModal()">
-                    <div class="md-list-item-text compact">
-                      <p>Dengue</p>
+          <a  class="md-caption" style="margin-bottom: 1.4rem; display: block">+ Ver mais detalhes</a>
+        <div  class="custom-select">
+          <p>Segmento</p>
+          <md-menu md-offset="0 36">
+            <md-button ng-click="$mdOpenMenu()" class="drop-btn-truncate">
+               <span>Venda de Feno</span><i class="material-icons">arrow_drop_down</i>
+            </md-button>
+            <md-menu-content width="3">
+                  <md-list class="fixedRows" layout="column">
+                    <div flex layout-margin>
+                      <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                      <span md-highlight-text="searchText">Dummy text</span>
+                      </md-autocomplete>
                     </div>
-                  </md-list-item>
-                  <md-list-item ng-click="openConfirmModal()">
-                    <div class="md-list-item-text compact">
-                      <p>ZikaVírus</p>
-                    </div>
-                  </md-list-item>
-                </md-content>
-                </md-list>
-          </md-menu-content>
-        </md-menu>
-      </div>
-  <div layout="row" class="deal-previsao">
+
+                    <md-content class="md-subhead">
+                    <md-subheader> Segmento </md-subheader>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>Agropecuario</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>Frutas</p>
+                      </div>
+                    </md-list-item>
+
+                  </md-content>
+                  </md-list>
+            </md-menu-content>
+          </md-menu>
+        </div>
+
+        <div>
+          <p>URL</p>
+          <a>http://stormcloud.me/</a>
+        </div>
+
       <div>
-      <p>Previsão</p>
-      <md-datepicker md-placeholder="12/12/2015" ng-model="birthday"></md-datepicker>
+        <md-input-container class="md-block">
+          <label>Resumo</label>
+          <textarea placeholder="I <3 Nutella" ng-model="deal.resume" rows="4"></textarea>
+        </md-input-container>
       </div>
+
       <div>
-      <p>End</p>
-      <md-datepicker md-placeholder="12/12/2015" ng-model="bend"></md-datepicker>
+        <md-input-container class="md-block">
+          <label>Campo personalizado: CEP</label>
+          <input name="postalCode" ng-model="user.postalCode" placeholder="32340030"
+                 required ng-pattern="/^[0-9]{8}$/">
+        </md-input-container>
       </div>
+
+        <div class="separador" layout="row" layout-align="start center">
+          <md-icon class="material-icons">work</md-icon>
+          <div>&nbsp;</div>
+        </div>
+
+        <h3 class="truncate" style="white-space: nowrap;">Lorem ipsum dolor sit amet, consecteur deals, deal with</h3>
+
+        <div  class="custom-select">
+          <p>Fonte</p>
+          <md-menu md-offset="0 36">
+            <md-button ng-click="$mdOpenMenu()" class="drop-btn-truncate">
+               <span>Fonte do tororó</span><i class="material-icons">arrow_drop_down</i>
+            </md-button>
+            <md-menu-content width="3">
+              <md-list class="fixedRows" layout="column">
+                <div flex layout-margin>
+                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                  <span md-highlight-text="searchText">Dummy text</span>
+                  </md-autocomplete>
+                </div>
+                    <md-content class="md-subhead">
+                    <md-subheader> Segmento </md-subheader>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>A fonte da água viva</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>Fonte do tororó</p>
+                      </div>
+                    </md-list-item>
+                  </md-content>
+                  </md-list>
+            </md-menu-content>
+          </md-menu>
+        </div>
+
+        <div  class="custom-select">
+          <p>Campanha</p>
+          <md-menu md-offset="0 50">
+            <md-button ng-click="$mdOpenMenu()"  class="drop-btn-truncate">
+               <span>Campanha contra Dengue</span><i class="material-icons">arrow_drop_down</i>
+            </md-button>
+            <md-menu-content width="3">
+              <md-list class="fixedRows" layout="column">
+                <div flex layout-margin>
+                  <md-autocomplete placeholder="Buscar" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+                  <span md-highlight-text="searchText">Dummy text</span>
+                  </md-autocomplete>
+                </div>
+                    <md-content class="md-subhead">
+                    <md-subheader> Campanha </md-subheader>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>Dengue</p>
+                      </div>
+                    </md-list-item>
+                    <md-list-item ng-click="openConfirmModal()">
+                      <div class="md-list-item-text compact">
+                        <p>ZikaVírus</p>
+                      </div>
+                    </md-list-item>
+                  </md-content>
+                  </md-list>
+            </md-menu-content>
+          </md-menu>
+        </div>
+
+      <div layout="row" class="deal-previsao">
+        <div>
+        <p>Previsão</p>
+        <md-datepicker md-placeholder="12/12/2015" ng-model="birthday"></md-datepicker>
+        </div>
+        <div>
+        <p>End</p>
+        <md-datepicker md-placeholder="12/12/2015" ng-model="bend"></md-datepicker>
+        </div>
+      </div>
+
+      <div>
+        <md-input-container class="md-block">
+        <label>Campo personalizado 2</label>
+        <input name="Custom input2" ng-model="user.custom2" placeholder="Yerushalaim is impregnable">
+        </md-input-container>
+      </div>
+    </div>
   </div>
-  <md-input-container class="md-block">
-    <label>Campo personalizado 2</label>
-    <input name="Custom input2" ng-model="user.custom2" placeholder="Yerushalaim is impregnable"
-          md-maxlength="16">
-  </md-input-container>
+
 </div>

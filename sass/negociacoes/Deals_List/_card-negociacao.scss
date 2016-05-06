@@ -97,7 +97,7 @@ md-content{
   }
   md-list-item > p {font-size: 0.9rem;}
   span{color: rgba(0,0,0,0.54); font-size: 0.65rem; margin-left: 10px;}
-  p >span{color: inherit; font-size: 0.65rem; vertical-align: top; margin-left: 0;}
+  p span{color: inherit; font-size: 0.65rem; vertical-align: top; margin-left: 0;}
   md-list-item > md-icon:first-child:not(.md-avatar-icon), md-list-item ._md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
     margin-right: -10px;
     font-size: .6rem;
@@ -136,10 +136,6 @@ md-content{
   &:first-of-type{
     margin-left: 1rem;
   }
-}
-
-
-.progress li {
   svg{position: absolute; z-index: 1; top: 50%; left:-0.7rem; margin-top: 0px; stroke: #1dc2e7; stroke-width:3; width: 100%;}
   &:after{
     font-family: 'Material Icons';
@@ -151,8 +147,19 @@ md-content{
     cursor: pointer;
     z-index: 2;
   }
+
 }
 
+.funil-past-days li{
+  &:hover{
+    &::before{ position: absolute; top: -1rem;  margin-left: .2rem; font-size: .8rem; color: rgba(0,0,0,.37); content: '5d'; &:first-of-type{margin-left: 1rem;}}
+    &:first-of-type::before{margin-left: -1.2rem;}
+  }
+}
+.funil-past-days li.active{
+  &::before{ position: absolute; top: -1rem; margin-left: .2rem; font-size: .8rem; color: rgba(0,0,0,.37); content: '5d'; }
+  &:first-of-type::before{margin-left: -1.2rem;}
+}
 
 .progress li.active {
   svg{stroke:#1dc2e7; transition: 0.25s ease;}

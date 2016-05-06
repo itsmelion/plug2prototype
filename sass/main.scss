@@ -1,5 +1,6 @@
 @import '../sass/_personal_vars.scss';
 @import '../sass/_Main-bar.scss';
+@import '../sass/extensions/mdPickers/mdPickers.css'; // Extensão que adiciona Datepickers e TimePickers mais bonitos.
 
 //Listagem de Negociacões
 @import '../sass/negociacoes/Deals_list/_main-toolbar.scss';
@@ -13,7 +14,8 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-body{overflow-x: hidden;}
+body{ height: 100%; position: relative;}
+ui-view{height: 100%;}
 h4, h5, h6{margin: 0;}
 h5{font-size: .8rem; font-weight: 400;}
 .truncate{
@@ -40,9 +42,40 @@ md-autocomplete{margin-top: 0.6rem; margin-bottom: 0.6rem;}
 .criar-anotacao{
   margin: 0;
   border-radius: 0;
-  padding: 24px 24px 12px 24px;
-  .md-errors-spacer{position: absolute; bottom: 0; right: 0;}
-  textarea{transition: .2s ease;}
-  textarea:focus, textarea:active{height: 150px;}
-  .md-button{width: 100px;}
+  md-input-container{margin-top: 0;}
+  textarea{transition: .2s ease; border-bottom: 0; height: 100px; padding: 0 20px; label{position: absolute; top: 0;}}
+  md-content{background: white;}
+}
+
+.editable:hover{
+  &::after{
+    position: absolute;
+    font-family: 'Material Icons';
+    line-height: 1.2rem;
+    -webkit-font-feature-settings: 'liga';
+     content: "create";
+     font-size: 1.2rem;
+     margin-left: .6rem;
+}
+}
+
+.fieldContainer{
+  margin: 0;
+  padding: 3px 0;
+  position: relative;
+  md-input-container{width: 100%;}
+  textarea{padding: 6px 12px;}
+.contact-chip md-chips-wrap{ margin: 0 12px;}
+  .md-char-counter{margin-right: 12px;}
+  md-list-item.md-2-line{margin: 0 12px;}
+  md-card{margin: 0 12px;}
+  // &:first-of-type{width: auto;}
+  // &:nth-of-type(2){width: calc(100% - 100px); margin-top: 7px;}
+  // &:nth-of-type(3){clear: both;}
+  // &:nth-of-type(5){clear: both;}
+  // &:nth-of-type(7){clear: both; height: auto; width: 100%;}
+}
+.ntask-heading{
+  margin-top: 1rem;
+  margin-bottom: .4rem;
 }

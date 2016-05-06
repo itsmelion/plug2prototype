@@ -375,7 +375,7 @@ md-content {
   color: #9d48cb; }
 
 .blue {
-  color: #70bce2; }
+  color: #29B6F6; }
 
 .green {
   color: #48c47a; }
@@ -568,52 +568,59 @@ md-content {
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
   margin: 5px -12px 5px -12px;
-  list-style: none; }
+  list-style: none;
+  box-sizing: border-box; }
 
 .collapsible-header {
   cursor: pointer;
-  min-height: 56px;
-  line-height: 56px;
+  line-height: 48px;
   padding: .4rem .4rem .5rem 1.5rem;
-  background-color: #fff; }
-  .collapsible-header i {
-    width: 2rem;
-    font-size: 1.6rem;
-    line-height: 56px;
-    display: block;
-    text-align: center;
-    margin-right: 1rem; }
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+  border-bottom: 2px solid #eee; }
   .collapsible-header > div {
-    display: inline-flex;
-    min-height: 56px;
-    line-height: 56px;
-    vertical-align: middle; }
-    .collapsible-header > div > div {
-      width: 100%; }
+    height: 48px; }
     .collapsible-header > div h6 {
-      line-height: 15px;
-      margin-top: 14px;
+      line-height: 32px;
       white-space: nowrap; }
     .collapsible-header > div p {
-      line-height: 15px;
-      margin-top: 3px; }
+      line-height: 6px;
+      margin-top: 0; }
     .collapsible-header > div:first-of-type {
       width: 130px; }
-    .collapsible-header > div:nth-of-type(2) {
-      min-width: 150px;
-      max-width: 450px; }
+      .collapsible-header > div:first-of-type md-icon {
+        margin-right: .6rem;
+        margin-left: 0; }
+      .collapsible-header > div:first-of-type > div {
+        margin-right: 1rem; }
 
 .task-check {
   position: relative;
-  right: 12px;
-  top: -45px;
-  float: right; }
-  .task-check md-checkbox {
-    margin-left: 12px; }
-  .task-check p {
-    font-size: .7rem;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.54); }
+  height: 48px;
+  width: 100%; }
+  .task-check md-fab-speed-dial {
+    top: 0;
+    right: 1px;
+    left: auto;
+    bottom: auto;
+    position: absolute; }
+  .task-check .md-button.md-fab {
+    line-height: 48px;
+    width: 48px;
+    height: 48px;
+    box-shadow: none;
+    display: none; }
+  .task-check button.md-warn.md-fab:not([disabled]):hover, .task-check button.md-warn.md-fab:not([disabled]):focus {
+    background: none;
+    display: none; }
 
 .collapsible-body {
   display: none;

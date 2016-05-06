@@ -2,6 +2,12 @@ angular.module('PlugDawnbreak', ['ngMaterial'])
 var app = angular.module('PlugDawnbreak', ['ngMaterial' , 'mdPickers']);
 
 
+    app.controller('TaskCompletion', function($scope) {
+      var self = this;
+      self.hidden = false;
+      self.isOpen = false;
+      self.hover = false;
+    });
 
   app.controller("mdPicker", ['$scope', '$mdpDatePicker', '$mdpTimePicker', function($scope, $mdpDatePicker, $mdpTimePicker){
   	this.showDatePicker = function(ev) {

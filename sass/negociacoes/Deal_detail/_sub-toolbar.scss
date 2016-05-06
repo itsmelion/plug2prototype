@@ -36,7 +36,7 @@
 
 // collapsible
 
-$collapsible-height: 56px !default;
+$collapsible-height: 48px !default;
 $collapsible-header-color: #fff !default;
 $collapsible-border-color: #ddd !default;
 // $num-cols: 12 !default;
@@ -49,44 +49,48 @@ $collapsible-border-color: #ddd !default;
   border-left: 1px solid $collapsible-border-color;
   margin: 5px -12px 5px -12px;
   list-style: none;
+  box-sizing: border-box;
 }
 
 .collapsible-header {
   cursor: pointer;
-  min-height: $collapsible-height;
   line-height: $collapsible-height;
   padding: .4rem .4rem .5rem 1.5rem;
   background-color: $collapsible-header-color;
-  i{
-    width: 2rem;
-    font-size: 1.6rem;
-    line-height: $collapsible-height;
-    display: block;
-    text-align: center;
-    margin-right: 1rem;
-  }
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+  border-bottom: 2px solid #eee;
   >div{
-    display: inline-flex;
-    min-height: $collapsible-height;
-    line-height: $collapsible-height;
-    vertical-align: middle;
-      > div{width: 100%;}
-      h6{line-height: 15px; margin-top: 14px; white-space: nowrap;}
-      p{line-height: 15px; margin-top: 3px;}
-      &:first-of-type{width: 130px;}
-      &:nth-of-type(2){min-width: 150px; max-width: 450px;}
-      // &:last-of-type{display: none; float: right;}
+      height: $collapsible-height;
+      h6{line-height: 32px; white-space: nowrap;}
+      p{line-height: 6px; margin-top: 0;}
+      &:first-of-type{ width: 130px; md-icon{margin-right: .6rem; margin-left: 0;} >div{margin-right: 1rem;}}
     }
-    // &:hover, &:focus { > div:last-of-type{display: inline-flex;} }
+
 }
 
 .task-check{
     position: relative;
-    right: 12px;
-    top: -45px;
-    float: right;
-    md-checkbox{margin-left: 12px;}
-    p{font-size: .7rem; text-align: center; color: rgba(0,0,0,.54);}
+    height: 48px;
+    width: 100%;
+  md-fab-speed-dial {top: 0; right: 1px; left: auto; bottom: auto; position: absolute;}
+  .md-button.md-fab {
+    line-height: 48px;
+    width: 48px;
+    height: 48px;
+    box-shadow: none;
+    display: none;}
+    button.md-warn.md-fab:not([disabled]):hover, button.md-warn.md-fab:not([disabled]):focus{
+    background: none;
+    display: none;
+    }
 }
 
 .collapsible-body {

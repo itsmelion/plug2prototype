@@ -12,34 +12,62 @@
       <ul class="collapsible popout" data-collapsible="accordion">
        <li>
          <div class="collapsible-header">
-            <div class="type danger"><i class="material-icons danger">call</i>Ligação</div>
-            <div class="match">
+            <div flex="initial" layout="row">
+              <md-icon class="material-icons danger">call</md-icon>
+              <div class="danger">Ligação</div>
+            </div>
+            <div flex="noshrink" class="match">
               <div>
                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
                 <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
               </div>
             </div>
+            <div flex class="task-check" ng-controller="TaskCompletion">
+              <md-fab-speed-dial md-direction="left" class="md-scale md-hover-full" ng-cloak
+              ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false" md-open="demo.isOpen" >
+                <md-fab-trigger>
+                  <md-button aria-label="menu" class="md-fab md-warn">
+                  </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button  ng-click="showActionToast()" class="md-raised md-mini md-primary"><md-icon class="material-icons">done</md-icon>&nbsp;Concluir</md-button>
+                    <md-button  ng-click="showActionToast()" class="md-mini"><md-icon class="material-icons">restore</md-icon>&nbsp;Adiar</md-button>
+                    <md-button  ng-click="showActionToast()" class="md-mini"><md-icon class="material-icons">create</md-icon>&nbsp;Editar</md-button>
+                </md-fab-actions>
+              </md-fab-speed-dial>
+            </div>
           </div>
-          <div class="task-check" layout="column">
-            <md-checkbox ng-click="showActionToast()" ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
-            <p>Concluir</p>
-          </div>
+
          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
        </li>
        <li>
          <div class="collapsible-header">
-            <div class="type late"><i class="material-icons late">people</i>Reunião</div>
-            <div class="match">
+            <div flex="initial" layout="row">
+              <md-icon class="material-icons black3">people</md-icon>
+              <div class="black3">Reunião</div>
+            </div>
+            <div flex="noshrink" class="match">
               <div>
                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
-                <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+                <p class="black5 md-caption"><span class="black5">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
               </div>
             </div>
+            <div flex class="task-check" ng-controller="TaskCompletion">
+              <md-fab-speed-dial md-direction="left" class="md-scale md-hover-full" ng-cloak
+              ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false" md-open="demo.isOpen" >
+                <md-fab-trigger>
+                  <md-button aria-label="menu" class="md-fab md-warn">
+                  </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button  ng-click="showActionToast()" class="md-raised md-mini md-primary"><md-icon class="material-icons">done</md-icon>&nbsp;Concluir</md-button>
+                    <md-button  ng-click="showActionToast()" class="md-mini"><md-icon class="material-icons">restore</md-icon>&nbsp;Adiar</md-button>
+                    <md-button  ng-click="showActionToast()" class="md-mini"><md-icon class="material-icons">create</md-icon>&nbsp;Editar</md-button>
+                </md-fab-actions>
+              </md-fab-speed-dial>
+            </div>
           </div>
-          <div class="task-check" layout="column">
-            <md-checkbox  ng-click="showActionToast()" ng-model="data.cb1" aria-label="Checkbox 1"></md-checkbox>
-            <p>Concluir</p>
-          </div>
+
          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
        </li>
       </ul>
@@ -166,78 +194,96 @@
         </div>
       </div>
       <ul class="collapsible popout" data-collapsible="accordion">
-       <li>
-         <div class="collapsible-header">
-            <div class="type danger"><i class="material-icons danger">home</i>Visita</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead">Visitar membro que está doente</h6>
-                <p class="black5 md-caption"><span class="danger">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
-       <li>
-         <div class="collapsible-header">
-            <div class="type orange"><i class="material-icons orange">restaurant</i>Almoço</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead">Encontro com Supervisão</h6>
-                <p class="black5 md-caption"><span class="orange">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
-       <li>
-         <div class="collapsible-header">
-            <div class="type late"><i class="material-icons late">assignment_turned_in</i>Tarefa</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead">Organizar rotina de trabalho</h6>
-                <p class="black5 md-caption"><span class="late">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
-       <li>
-         <div class="collapsible-header">
-            <div class="type purple"><i class="material-icons purple">local_post_office</i>Email</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead">FWD: Stormcloud.me now with new Framework</h6>
-                <p class="black5 md-caption"><span class="purple">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
-       <li>
-         <div class="collapsible-header">
-            <div class="type blue"><i class="material-icons blue">message</i>Anotação</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead truncate">Está escrito, Amai ao Senhor seu deus, único deus, de todo o seu coração, de toda sua alma e de todo seu entendimento.</h6>
-                <p class="black5 md-caption"><span class="blue">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
-       <li>
-         <div class="collapsible-header">
-            <div class="type green"><i class="material-icons green">people</i>Reunião</div>
-            <div class="match">
-              <div>
-                <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
-                <p class="black5 md-caption"><span class="green">Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
-              </div>
-            </div>
-          </div>
-         <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-       </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons danger">home</md-icon>
+               <div class="danger">Visita</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons orange">restaurant</md-icon>
+               <div class="orange">Almoço</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons late">assignment_turned_in</md-icon>
+               <div class="late">Tarefa</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons purple">local_post_office</md-icon>
+               <div class="purple">Email</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons md-primary">message</md-icon>
+               <div class="blue">Anotação</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+             <div flex="initial" layout="row">
+               <md-icon class="material-icons green">people</md-icon>
+               <div class="green">Reunião</div>
+             </div>
+             <div flex="noshrink" class="match">
+               <div>
+                 <h6 class="md-subhead">Ligar sobre o andamento da análise</h6>
+                 <p class="black5 md-caption"><span>Hoje às 18:00</span>, para <a>James T. Kirk</a>, CEO</p>
+               </div>
+             </div>
+           </div>
+          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+        </li>
 
       </ul>
    <script>

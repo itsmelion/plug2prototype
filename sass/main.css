@@ -707,7 +707,7 @@ md-autocomplete {
   .criar-anotacao textarea {
     transition: .2s ease;
     border-bottom: 0;
-    height: 100px;
+    height: 100px !important;
     padding: 0 20px; }
     .criar-anotacao textarea label {
       position: absolute;
@@ -744,3 +744,15 @@ md-autocomplete {
 .ntask-heading {
   margin-top: 1rem;
   margin-bottom: .4rem; }
+
+#empty-tasks {
+  background-image: url("/master_img/no_tasks.gif");
+  background-position: right -90px;
+  background-size: auto 250px;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 100%; }
+  #empty-tasks h1 {
+    position: absolute;
+    top: 110px;
+    left: 3rem; }

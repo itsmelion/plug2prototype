@@ -86,10 +86,8 @@
               <md-tab label="Criar Tarefa">
                 <md-content>
                   <div layout-margin flex layout-wrap layout="row">
-                        <div flex="100">
-                          <h5 class="black3 ntask-heading">Tipo e assunto</h5>
-                        </div>
                         <div class="fieldContainer"  flex="initial">
+                        <h5 class="black3 ntask-heading">Tipo</h5>
                       <md-menu>
                           <md-button aria-label="Open phone interactions menu" class="md-raised md-primary" ng-click="$mdOpenMenu()">
                             <md-icon class="material-icons md-primary" >call</md-icon> Ligação
@@ -116,23 +114,23 @@
                           </md-menu-content>
                         </md-menu></div>
                         <div class="fieldContainer"  flex>
-                        <md-input-container class="md-block">
+                        <h5 class="black3 ntask-heading">Assunto</h5>
+                        <md-input-container md-no-float class="md-block">
                         <input name="Custom input3" ng-model="user.custom3" placeholder="Assunto">
                         </md-input-container>
                         </div>
                       <div flex="100">
-                      <h5 class="black3 ntask-heading">Data</h5>
                       </div>
                       <div  flex="50" class="fieldContainer" ng-controller="mdPicker">
+                        <h5 class="black3 ntask-heading">Data</h5>
                         <mdp-date-picker mdp-placeholder="Escolha a data" ng-model="currentDate"></mdp-date-picker>
                       </div>
                       <div flex="50" class="fieldContainer" ng-controller="mdPicker">
+                        <h5 class="black3 ntask-heading">Hora</h5>
                       <mdp-time-picker mdp-placeholder="Escolha a hora" ng-model="currentDate"></mdp-time-picker>
                       </div>
-                      <div flex="100">
-                        <h5 class="black3 ntask-heading">Contatos e Resposáveis</h5>
-                      </div>
                       <div  flex="50" class="fieldContainer">
+                        <h5 class="black3 ntask-heading">Contatos</h5>
                         <div layout="row" flex layout-margin>
                           <md-autocomplete placeholder="Buscar Contato" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
                           <span md-highlight-text="searchText">Dummy text</span>
@@ -145,6 +143,7 @@
                         </md-chips>
                       </div>
                       <div  flex="50" class="fieldContainer">
+                        <h5 class="black3 ntask-heading">Responsáveis</h5>
                         <div layout="row" flex layout-margin>
                           <md-autocomplete placeholder="Buscar Responsável" flex md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
                           <span md-highlight-text="searchText">Dummy text</span>

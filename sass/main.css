@@ -726,7 +726,7 @@ md-autocomplete {
 
 .fieldContainer {
   margin: 0;
-  padding: 3px 0;
+  padding: 6px 6px;
   position: relative; }
   .fieldContainer md-input-container {
     width: 100%; }
@@ -740,6 +740,12 @@ md-autocomplete {
     margin: 0 12px; }
   .fieldContainer md-card {
     margin: 0 12px; }
+  .fieldContainer h5 {
+    margin: 0 12px; }
+  .fieldContainer .md-menu {
+    padding: 6px; }
+  .fieldContainer input {
+    margin-left: 6px; }
 
 .ntask-heading {
   margin-top: 1rem;

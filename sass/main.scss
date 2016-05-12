@@ -60,7 +60,7 @@ md-autocomplete{margin-top: 0.6rem; margin-bottom: 0.6rem;}
 
 .fieldContainer{
   margin: 0;
-  padding: 3px 0;
+  padding: 6px 6px;
   position: relative;
   md-input-container{width: 100%;}
   textarea{padding: 6px 12px;}
@@ -68,6 +68,9 @@ md-autocomplete{margin-top: 0.6rem; margin-bottom: 0.6rem;}
   .md-char-counter{margin-right: 12px;}
   md-list-item.md-2-line{margin: 0 12px;}
   md-card{margin: 0 12px;}
+  h5{margin: 0 12px;}
+  .md-menu{padding: 6px;}
+  input{margin-left: 6px;}
   // &:first-of-type{width: auto;}
   // &:nth-of-type(2){width: calc(100% - 100px); margin-top: 7px;}
   // &:nth-of-type(3){clear: both;}
@@ -77,6 +80,7 @@ md-autocomplete{margin-top: 0.6rem; margin-bottom: 0.6rem;}
 .ntask-heading{
   margin-top: 1rem;
   margin-bottom: .4rem;
+
 }
 
 #empty-tasks{
